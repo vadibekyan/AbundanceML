@@ -13,33 +13,34 @@ from sklearn.metrics import mean_absolute_error
 
 
 
-def score_dataset(X, y, model, scoring = 'MAE', cv = 5):
+def score_dataset(X, y, model, scoring='MAE', cv=5):
     """
-    Calculate the mean absolute error (MAE) score for a dataset using cross-validation.
+    Calculate the mean and std of MAE using cross-validation.
 
     Parameters:
-        X (array-like): The input features of the dataset.
-        y (array-like): The target variable of the dataset.
-        model: The machine learning model used for prediction.
+        X (DataFrame): Feature matrix.
+        y (Series): Target variable.
+        model: The machine learning model.
+        scoring (str): Scoring method.
+        cv (int): Number of cross-validation folds.
 
     Returns:
-        float: Mean absolute error score.
-
+        tuple: (mean_MAE, std_MAE)
     """
-    # Label encoding for categoricals
+    # Encode categoricals
+    X = X.copy()
     for colname in X.select_dtypes(["category", "object"]):
         X[colname], _ = X[colname].factorize()
 
-    # Perform cross-validation and calculate MAE score
-    score = cross_val_score(
-        model, X, y, cv=cv, scoring='neg_mean_absolute_error'
+    # Cross-validation scores
+    scores = cross_val_score(
+        model, X, y,
+        cv=cv,
+        scoring='neg_mean_absolute_error',
+        n_jobs=-1  # Use all CPUs
     )
-    
-    # Convert negative scores back to positive
-    mae = (-1 * score)
-    
-    # Calculate the mean of positive MAE scores
-    return mae.mean()
+    mae_scores = -scores
+    return mae_scores.mean(), mae_scores.std()
 
 def modified_learning_curve(X_train, y_train, X_test, y_test, model, N, CV=5, display=False, figure=True):
     """
