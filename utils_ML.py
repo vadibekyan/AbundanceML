@@ -127,3 +127,98 @@ def modified_learning_curve(X_train, y_train, X_test, y_test, model, N, CV=5, di
         plt.show()
 
     return results
+
+
+from copy import deepcopy
+
+class FeatureRemovingAdding:
+    def __init__(self, verbose=True, tolerance=1e-5):
+        self.verbose = verbose
+        self.tolerance = tolerance
+        self.history = []
+
+    def _log(self, msg):
+        if self.verbose:
+            print(msg)
+
+    def feature_to_remove(self, all_features, X, y, model_test_cv, maximize=True):
+        best_score = model_test_cv(X[all_features], y)
+        self._log(f'All features: {len(all_features)}')
+        self._log(f'List of input features: {all_features}')
+        self._log(f'With all features: score = {best_score:.5f}')
+
+        best_feature_to_remove = None
+
+        for i, feature in enumerate(all_features):
+            test_feature = all_features.copy()
+            test_feature.remove(feature)
+
+            new_score = model_test_cv(X[test_feature], y)
+            self._log(f'{i+1}/{len(all_features)}: Removing {feature} -> score = {new_score:.5f}')
+
+            if ((maximize and new_score > best_score + self.tolerance) or
+                (not maximize and new_score < best_score - self.tolerance)):
+                self._log(f'New best score: {new_score:.5f} (was {best_score:.5f})')
+                best_score = new_score
+                best_feature_to_remove = feature
+
+        return best_feature_to_remove
+
+    def iterative_feature_removal(self, all_features, X, y, model_test_cv, min_features=2, maximize=True):
+        all_features = all_features.copy()
+        removed_features = []
+
+        while len(all_features) > min_features:
+            best_feature_to_remove = self.feature_to_remove(all_features.copy(), X, y, model_test_cv, maximize)
+            if best_feature_to_remove is None:
+                break
+
+            removed_features.append(best_feature_to_remove)
+            all_features.remove(best_feature_to_remove)
+            self._log(f"Removing feature: {best_feature_to_remove}")
+            self.history.append((len(all_features), model_test_cv(X[all_features], y)))
+
+        self._log(f"Optimal set of features: {all_features}")
+        self._log(f"All removed features: {removed_features}")
+        return all_features
+
+    def feature_to_add(self, all_features, removed_features, X, y, model_test_cv, maximize=True):
+        best_score = model_test_cv(X[all_features], y)
+        self._log(f'Current features: {len(all_features)}')
+        self._log(f'With current features: score = {best_score:.5f}')
+
+        best_feature_to_add = None
+
+        for i, feature in enumerate(removed_features):
+            test_feature = all_features.copy()
+            test_feature.append(feature)
+
+            new_score = model_test_cv(X[test_feature], y)
+            self._log(f'{i+1}/{len(removed_features)}: Adding {feature} -> score = {new_score:.5f}')
+
+            if ((maximize and new_score > best_score + self.tolerance) or
+                (not maximize and new_score < best_score - self.tolerance)):
+                self._log(f'New best score: {new_score:.5f} (was {best_score:.5f})')
+                best_score = new_score
+                best_feature_to_add = feature
+
+        return best_feature_to_add
+
+    def iterative_feature_adding(self, all_features, removed_features, X, y, model_test_cv, maximize=True):
+        all_features = all_features.copy()
+        removed_features = removed_features.copy()
+        total_features = len(all_features) + len(removed_features)
+
+        while len(all_features) < total_features:
+            best_feature_to_add = self.feature_to_add(all_features.copy(), removed_features.copy(), X, y, model_test_cv, maximize)
+            if best_feature_to_add is None:
+                break
+
+            all_features.append(best_feature_to_add)
+            removed_features.remove(best_feature_to_add)
+            self._log(f"Adding feature: {best_feature_to_add}")
+            self.history.append((len(all_features), model_test_cv(X[all_features], y)))
+
+        self._log(f"Optimal set of features: {all_features}")
+        self._log(f"All remaining removed features: {removed_features}")
+        return all_features
