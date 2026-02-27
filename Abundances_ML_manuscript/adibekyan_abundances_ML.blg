@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: adibekyan_abundances_ML.aux
+The style file: aa.bst
+Database file #1: references.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 12 entries,
+            3039 wiz_defined-function locations,
+            760 strings with 20007 characters,
+and the built_in function-call counts, 34551 in all, are:
+= -- 2321
+> -- 5963
+< -- 4
++ -- 1989
+- -- 1977
+* -- 3545
+:= -- 6595
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 707
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 218
+empty$ -- 310
+format.name$ -- 2007
+if$ -- 6642
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 40
+num.names$ -- 48
+pop$ -- 703
+preamble$ -- 1
+purify$ -- 707
+quote$ -- 0
+skip$ -- 191
+stack$ -- 0
+substring$ -- 243
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 0
+while$ -- 48
+width$ -- 0
+write$ -- 122
