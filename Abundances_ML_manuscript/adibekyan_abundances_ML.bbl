@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Abdurro'uf} {et~al.}(2022){Abdurro'uf}, {Accetta}, {Aerts}, {Silva
@@ -45,11 +45,26 @@
 \bibitem[{{Bovy}(2015)}]{Bovy-15}
 {Bovy}, J. 2015, \apjs, 216, 29
 
+\bibitem[{Breiman(2001)}]{breiman2001}
+Breiman, L. 2001, Machine Learning, 45, 5
+
+\bibitem[{Chen \& Guestrin(2016)}]{chen2016}
+Chen, T. \& Guestrin, C. 2016, in Proceedings of the 22nd ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining, KDD '16 (New
+  York, NY, USA: Association for Computing Machinery), 785–794
+
+\bibitem[{Cortes \& Vapnik(1995)}]{cortes1995}
+Cortes, C. \& Vapnik, V. 1995, Machine Learning, 20, 273
+
 \bibitem[{{Delgado Mena} {et~al.}(2021){Delgado Mena}, {Adibekyan}, {Santos},
   {Tsantaki}, {Gonz{\'a}lez Hern{\'a}ndez}, {Sousa}, \& {Bertr{\'a}n de
   Lis}}]{DelgadoMena-21}
 {Delgado Mena}, E., {Adibekyan}, V., {Santos}, N.~C., {et~al.} 2021, \aap, 655,
   A99
+
+\bibitem[{Farrar \& Glauber(1967)}]{farrar1967}
+Farrar, D.~E. \& Glauber, R.~R. 1967, The Review of Economics and Statistics,
+  49, 92
 
 \bibitem[{{Feltzing} \& {Feuillet}(2023)}]{Feltzing-23}
 {Feltzing}, S. \& {Feuillet}, D. 2023, \apj, 953, 143
@@ -130,8 +145,21 @@
 {Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023, \aap,
   674, A1
 
+\bibitem[{Geurts {et~al.}(2006)Geurts, Ernst, \& Wehenkel}]{geurts2006}
+Geurts, P., Ernst, D., \& Wehenkel, L. 2006, Machine Learning, 63, 3
+
 \bibitem[{{Johnson} \& {Soderblom}(1987)}]{Johnson-87}
 {Johnson}, D. R.~H. \& {Soderblom}, D.~R. 1987, \aj, 93, 864
+
+\bibitem[{Ke {et~al.}(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, \&
+  Liu}]{ke2017}
+Ke, G., Meng, Q., Finley, T., {et~al.} 2017, in Advances in Neural Information
+  Processing Systems, ed. I.~Guyon, U.~V. Luxburg, S.~Bengio, H.~Wallach,
+  R.~Fergus, S.~Vishwanathan, \& R.~Garnett, Vol.~30 (Curran Associates, Inc.)
+
+\bibitem[{Kraskov {et~al.}(2004)Kraskov, St\"ogbauer, \&
+  Grassberger}]{kraskov2004}
+Kraskov, A., St\"ogbauer, H., \& Grassberger, P. 2004, Phys. Rev. E, 69, 066138
 
 \bibitem[{{Mayor} {et~al.}(2003){Mayor}, {Pepe}, {Queloz}, {Bouchy},
   {Rupprecht}, {Lo Curto}, {Avila}, {Benz}, {Bertaux}, {Bonfils}, {Dall},
@@ -140,6 +168,9 @@
   {Sivan}, {Sosnowska}, {Soto}, {Udry}, {van Kesteren}, {Weber}, \&
   {Weilenmann}}]{Mayor-03}
 {Mayor}, M., {Pepe}, F., {Queloz}, D., {et~al.} 2003, The Messenger, 114, 20
+
+\bibitem[{Prokhorenkova(2018)}]{prokhorenkova2018}
+Prokhorenkova, L. e.~a. 2018, NeurIPS
 
 \bibitem[{{Reddy} {et~al.}(2006){Reddy}, {Lambert}, \& {Allende
   Prieto}}]{Reddy-06}
@@ -153,5 +184,11 @@
 \bibitem[{Schwarzschild(1907)}]{Schwarzschild-1907}
 Schwarzschild, K. 1907, Nachrichten von der Gesellschaft der Wissenschaften zu
   Göttingen, 614
+
+\bibitem[{Shannon(1948)}]{shannon1948}
+Shannon, C.~E. 1948, The Bell System Technical Journal, 27, 379
+
+\bibitem[{Spearman(1904)}]{spearman1904}
+Spearman, C. 1904, American Journal of Psychology, 15, 72
 
 \end{thebibliography}

@@ -3,45 +3,61 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: adibekyan_abundances_ML.aux
 The style file: aa.bst
 Database file #1: references.bib
+I was expecting a `,' or a `}'---line 293 of file references.bib
+ :   
+ :   doi = {10.1007/BF00994018},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 305 of file references.bib
+ :   
+ :   doi = {10.1023/A:1010933404324},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 315 of file references.bib
+ :   
+ :   doi = {10.1007/s10994-006-6226-1},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 12 entries,
+You've used 22 entries,
             3039 wiz_defined-function locations,
-            760 strings with 20007 characters,
-and the built_in function-call counts, 34551 in all, are:
-= -- 2321
-> -- 5963
-< -- 4
-+ -- 1989
-- -- 1977
-* -- 3545
-:= -- 6595
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 707
-chr.to.int$ -- 12
-cite$ -- 12
-duplicate$ -- 218
-empty$ -- 310
-format.name$ -- 2007
-if$ -- 6642
+            831 strings with 21519 characters,
+and the built_in function-call counts, 38929 in all, are:
+= -- 2699
+> -- 6231
+< -- 12
++ -- 2082
+- -- 2056
+* -- 3877
+:= -- 7384
+add.period$ -- 22
+call.type$ -- 22
+change.case$ -- 771
+chr.to.int$ -- 22
+cite$ -- 22
+duplicate$ -- 424
+empty$ -- 597
+format.name$ -- 2114
+if$ -- 7527
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 40
-num.names$ -- 48
-pop$ -- 703
+missing$ -- 20
+newline$ -- 70
+num.names$ -- 89
+pop$ -- 776
 preamble$ -- 1
-purify$ -- 707
+purify$ -- 771
 quote$ -- 0
-skip$ -- 191
+skip$ -- 375
 stack$ -- 0
-substring$ -- 243
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 436
+swap$ -- 19
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 198
 warning$ -- 0
-while$ -- 48
+while$ -- 87
 width$ -- 0
-write$ -- 122
+write$ -- 222
+(There were 3 error messages)

@@ -22,7 +22,16 @@
                                 % For landscape tables, see the longtable examples.
 \usepackage{placeins}           % useful with \FloatBarrier, to keep 
                                 % onecolumn floats from drifting to the next section
-                                
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[options]{hyperref}
 % To add links in your PDF file, use the package "hyperref"
@@ -121,17 +130,42 @@ The distributions of stellar metallicities ([Fe/H]) for the two samples are disp
 To predict stellar metallicity, [Fe/H], we initially considered 9 kinematic and orbital parameters. These include the Galactic velocity components  ($\mathrm{U_{LSR}}$, $\mathrm{V_{LSR}}$, and $\mathrm{W_{LSR}}$) and the total space velocity ($\mathrm{UVW_{LSR}} = \sqrt{U_{\rm LSR}^2 + V_{\rm LSR}^2 + W_{\rm LSR}^2}$
 ),  orbital parameters derived from orbit integration (the maximum vertical excursion $Z_{\max}$, the pericentric and apocentric distances $R_{\rm peri}$ and $R_{\rm apo}$  and the orbital eccentricity $e$), as well as the probability of belonging to the Galactic thin-disk population, $P_{\rm gal}$.
 
-To quantify the statistical relationships between the kinematic properties and metallicity, we evaluated monotonic correlations using Spearman’s rank coefficient and nonlinear dependencies using mutual information (MI). MI quantifies the general statistical dependence between two variables, including nonlinear relationships, without assuming monotonicity or linearity. It therefore complements Spearman’s rank coefficient and allows us to identify features that may contain predictive information beyond simple monotonic trends.
+To quantify the statistical relationships between the kinematic properties and metallicity, we evaluated monotonic correlations using Spearman’s rank coefficient \citep{spearman1904} and nonlinear dependencies using mutual information (MI). MI quantifies the general statistical dependence between two variables, including nonlinear relationships, without assuming monotonicity or linearity \citep{shannon1948}. It therefore complements Spearman’s rank coefficient and allows us to identify features that may contain predictive information beyond simple monotonic trends.
 
 Among all parameters, $Z_{\max}$ and $P_{\rm gal}$ show the strongest correlations with metallicity, but with opposite signs. The maximum vertical excursion $Z_{\max}$ exhibits a clear negative correlation, indicating that stars reaching larger distances from the Galactic plane tend to be more metal-poor. In contrast, the thin-disk membership probability $P_{\rm gal}$ correlates positively with [Fe/H], consistent with the higher metallicities characteristic of thin-disk stars.
 
 While some quantitative differences are observed between the APOGEE and HARPS samples—reflecting their distinct stellar populations and selection functions—the overall trends remain consistent, with $Z_{\max}$ and $P_{\rm gal}$ emerging as the dominant kinematic predictors of metallicity.
 
-To assess multicollinearity among the input features, we computed the variance inflation factor (VIF). Large VIF values indicate strong linear dependence among variables.
+To assess multicollinearity among the input features, we computed the variance inflation factor (VIF), a standard diagnostic for linear dependence among predictors in regression analysis \citep{farrar1967}. Large VIF values indicate strong linear dependence among variables.
 
 As expected, several parameters exhibit large VIF values. Interestingly, the two strongest predictors identified in the correlation analysis, $Z_{\max}$ and $P_{\rm gal}$, also display comparatively low VIF values, indicating that their predictive power is not merely a consequence of linear redundancy with other orbital parameters.
 
 Although substantial multicollinearity is present (VIF $>$ 10 is typically considered as substantial), particularly among the derived velocity quantities, we retained all features in the subsequent analysis, as tree-based ensemble models are largely insensitive to correlated predictors. 
+
+
+\subsection{Baseline regression models}
+
+We benchmarked a diverse set of regression algorithms to predict stellar metallicity from these parameters. The tested models include linear regression (LR), support vector regression (SVR; \citealt{cortes1995}), random forest (RF; \citealt{breiman2001}), extra trees (ET; \citealt{geurts2006}), gradient boosting methods including XGBoost \citep{chen2016}, LightGBM \citep{ke2017}, and CatBoost \citep{prokhorenkova2018}, as well as a feed-forward deep neural network (DL). All models were evaluated using identical $k$-fold cross-validation splits.
+
+To provide a consistent baseline comparison, we adopted standard implementations of each algorithm with default hyperparameters and did not perform hyperparameter tuning. The goal of this experiment was to assess the intrinsic predictive power of the kinematic features
+rather than to optimize individual models.
+
+Linear regression, DL, and SVR yield RMSE values of approximately 0.21 dex. Given that the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex (corresponding to the RMSE of a trivial mean predictor), these models explain roughly 30\% of the total variance in [Fe/H]. This indicates that the metallicity–kinematics relation is intrinsically nonlinear. Tree-based ensemble models significantly outperform these approaches, with LightGBM achieving the lowest RMSE of $0.199 \pm 0.001$ dex ($R^2 \approx 0.41$). CatBoost and XGBoost produce nearly identical performance, while random forest and extra trees are slightly less accurate.
+
+We further explored ensemble strategies. A weighted voting regressor combining the best-performing tree-based models provides only marginal improvement, while a stacked ensemble using out-of-fold predictions and a ridge meta-learner achieves a small gain (RMSE $\approx 0.199$ dex). The limited improvement from ensembling reflects the high correlation between base-model predictions.
+
+We further explored ensemble strategies. A weighted voting regressor combining the strongest tree-based models did not yield a measurable improvement over the best individual learner. A stacked ensemble based on out-of-fold predictions and a ridge meta-learner provided a marginal gain, reducing the RMSE only at the fourth decimal level.
+
+This limited improvement reflects the high correlation between the predictions of the base models and indicates that performance is
+primarily constrained by the information content of the kinematic features rather than by algorithmic choice.
+
+
+We additionally explored a quantile-based transformation of the target variable, mapping [Fe/H] to a Gaussian distribution prior to training. While such transformations can stabilize variance and improve regression performance in skewed distributions, they did not yield any measurable improvement in our case. This result reflects both the approximately symmetric metallicity distribution
+and the robustness of tree-based ensemble methods to monotonic target transformations.
+
+Overall, the convergence of multiple algorithms, the absence of improvement from target transformation, and the limited gain from ensembling indicate that predictive performance is primarily limited by the information content of the kinematic features rather than by
+model architecture.
+
 
 \section{Predicting individual abundances}
 
@@ -240,7 +274,7 @@ To quantify nonlinear dependencies between the kinematic parameters and metallic
 we computed the mutual information (MI) between each feature and [Fe/H].
 Mutual information measures the general statistical dependence between two variables. Unlike correlation coefficients, MI does not assume linearity or monotonicity and is sensitive to arbitrary nonlinear relationships.
 
-An MI value of zero indicates statistical independence, while larger values imply stronger dependence. In this work, MI was estimated using a non-parametric k-nearest-neighbour approach (with $k$ = 3), which is well suited for continuous variables.
+An MI value of zero indicates statistical independence, while larger values imply stronger dependence. In this work, MI was estimated using a non-parametric k-nearest-neighbour approach (with $k$ = 3), which is well suited for continuous variables \citep{kraskov2004}.
 
 
 The MI values for both samples are shown in Figure~\ref{fig:mi_appendix}. Consistent with the correlation analysis, $Z_{\max}$ and $P_{\rm gal}$ (also eccentricity) contain the largest amount of predictive information.
@@ -341,6 +375,62 @@ Despite these differences in dispersion, the APOGEE sample largely encompasses t
 \caption{Comparison of kinematic and orbital parameters distributions between the APOGEE and HARPS samples. Upper panels show probability-normalized histograms; lower panels show boxplots.}
 \label{fig:feature_distributions}
 \end{figure*}
+
+
+\section{Regression benchmarks and ensemble models for [Fe/H]}
+
+This section provides the detailed benchmarking results for the regression models used to predict stellar metallicity from kinematic parameters, together with the configuration of the ensemble methods. The goal of this analysis was to assess the intrinsic predictive power of the kinematic features under a consistent evaluation framework rather than to optimize individual algorithms.
+
+All models were evaluated using 5-fold cross-validation with identical data splits. Performance was quantified using the root mean squared error (RMSE), mean absolute error (MAE), and coefficient of determination ($R^2$). Table~\ref{tab:cv_scores_full} summarizes the mean performance across folds, with the quoted RMSE uncertainties corresponding to the standard deviation over folds. The small standard deviations of the RMSE across folds indicate stable model performance.
+
+\begin{table*}
+\caption{Performance of regression models evaluated using 5-fold cross-validation.
+Reported values correspond to the mean across folds, with RMSE uncertainties
+indicating the standard deviation.}
+\centering
+\begin{tabular}{lccc}
+\hline
+Model & RMSE (dex) & MAE (dex) & $R^2$ \\
+\hline
+Linear Regression & $0.213 \pm 0.001$ & 0.169 & 0.329 \\
+SVR & $0.209 \pm 0.001$ & 0.165 & 0.353 \\
+Deep Neural Network & $0.208 \pm 0.003$ & 0.163 & 0.363 \\
+Random Forest & $0.203 \pm 0.001$ & 0.159 & 0.391 \\
+Extra Trees & $0.204 \pm 0.001$ & 0.160 & 0.384 \\
+XGBoost & $0.204 \pm 0.001$ & 0.160 & 0.386 \\
+XGBoost (QT target) & $0.204 \pm 0.001$ & 0.160 & 0.386 \\
+LightGBM & $\mathbf{0.199 \pm 0.001}$ & 0.156 & 0.412 \\
+LightGBM (QT target) & $0.199 \pm 0.001$ & 0.156 & 0.412 \\
+CatBoost & $0.200 \pm 0.001$ & 0.157 & 0.411 \\
+CatBoost (QT target) & $0.200 \pm 0.001$ & 0.156 & 0.408 \\
+Voting Regressor & $0.200 \pm 0.001$ & 0.157 & 0.410 \\
+\hline
+\end{tabular}
+\label{tab:cv_scores_full}
+\end{table*}
+
+
+We also considered target ([Fe/H]) transformation using a quantile normalization (QT), which maps the metallicity distribution onto a Gaussian form via its empirical cumulative distribution function, but it did not improve predictive accuracy. This is consistent with the approximately symmetric metallicity distribution and the robustness of tree-based ensemble methods to monotonic target transformations.
+
+For reference, the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex, corresponding to the RMSE of a trivial mean predictor. The fraction of explained variance can be expressed as $R^2 = 1 - \mathrm{RMSE}^2 / \sigma_{\rm [Fe/H]}^2$. Using the best-performing model (RMSE $\approx 0.199$ dex) yields $R^2 \approx 0.41$, indicating that approximately 40\% of the total metallicity variance is captured by the kinematic features.
+
+We further explored ensemble strategies. The voting regressor combines multiple base learners through a weighted average of their predictions,
+\begin{equation}
+\hat{y}_{\rm vote} = \sum_{m=1}^{M} w_m \hat{y}_m ,
+\end{equation}
+where $w_m$ are non-negative weights satisfying $\sum w_m = 1$. The ensemble included LightGBM, CatBoost, Extra Trees, XGBoost, and Random Forest, with weights assigned inversely proportional to their cross-validated RMSE.
+
+Stacking was implemented using the same set of base learners. To avoid information leakage, out-of-fold (OOF) predictions were generated for each base model using 5-fold cross-validation. These OOF predictions were used as input features to train a ridge regression meta-learner, yielding the final prediction
+\begin{equation}
+\hat{y}_{\rm stack} = f_{\rm meta}(\hat{y}_{\rm lgbr}^{\rm OOF},
+\hat{y}_{\rm catbr}^{\rm OOF},
+\hat{y}_{\rm extr}^{\rm OOF},
+\hat{y}_{\rm xgbr}^{\rm OOF},
+\hat{y}_{\rm rfr}^{\rm OOF}) .
+\end{equation}
+
+To assess ensemble diversity, we computed the Pearson correlation between the OOF predictions of the base models. The boosting models exhibit very high mutual correlations ($r \gtrsim 0.98$), while Extra Trees shows slightly lower correlation ($r \sim 0.95$). This strong similarity between base-model predictions explains the limited improvement obtained from voting and stacking.
+
 
 
 \end{appendix}

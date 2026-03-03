@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  27 FEB 2026 13:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  3 MAR 2026 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,7 +537,138 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-LaTeX Font Info:    Trying to load font information for T1+txr on input line 32
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count325
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count326
+)
+\@linkdim=\dimen183
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count329
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count330
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen184
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count331
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip126
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+LaTeX Font Info:    Trying to load font information for T1+txr on input line 41
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txr.fd
@@ -546,44 +677,48 @@ File: t1txr.fd 2000/12/15 v3.1
 (./adibekyan_abundances_ML.aux)
 \openout1 = `adibekyan_abundances_ML.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 32.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 41.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-32.
+41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 41.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-32.
+41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 41.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-32.
+41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 3
-2.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 41.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 4
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -620,16 +755,16 @@ LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen183
+\scratchcounter=\count337
+\scratchdimen=\dimen187
 \scratchbox=\box70
-\nofMPsegments=\count326
-\nofMParguments=\count327
+\nofMPsegments=\count338
+\nofMParguments=\count339
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen184
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
+\MPscratchCnt=\count340
+\MPscratchDim=\dimen188
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
 \everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -641,152 +776,171 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 7
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+Package hyperref Info: Link coloring ON on input line 41.
+
+(./adibekyan_abundances_ML.out) (./adibekyan_abundances_ML.out)
+\@outlinefile=\write3
+\openout3 = `adibekyan_abundances_ML.out'.
+
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 7
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 7
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 7
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 7
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 7
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for T1+txss on input line 7
+LaTeX Font Info:    Trying to load font information for T1+txss on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 79.
+(Font)              scaled to size 16.41594pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <17.28> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 79.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 16.41594pt on input line 79.
+(Font)              scaled to size 16.41594pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 79.
+(Font)              scaled to size 13.67995pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <14.4> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 79.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 13.67995pt on input line 79.
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 7
+(Font)              scaled to size 13.67995pt on input line 89.
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 8
 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 79.
+(Font)              scaled to size 8.54997pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <9> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 79.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 8.54997pt on input line 79.
+(Font)              scaled to size 8.54997pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <9> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 79.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 8.54997pt on input line 79.
+(Font)              scaled to size 8.54997pt on input line 89.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 84.
+(Font)              scaled to size 10.40245pt on input line 93.
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 84.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 10.40245pt on input line 84.
+(Font)              scaled to size 10.40245pt on input line 93.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 84.
+(Font)              scaled to size 6.64998pt on input line 93.
 
-Underfull \hbox (badness 1454) in paragraph at lines 95--96
+Underfull \hbox (badness 1454) in paragraph at lines 104--105
 \T1/txr/m/n/10 In this study, we em-ployed stel-lar data from the Apache
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 99--99
-[][]\T1/txr/m/n/9 The code is avail-able at $\T1/txtt/m/n/9 https : / / github 
-. com / vadibekyan /
+Underfull \hbox (badness 1742) in paragraph at lines 108--108
+[][][]\T1/txr/m/n/9 The code is avail-able at [][]$\T1/txtt/m/n/9 https : / / g
+ithub . com / vadibekyan /
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 108.
+               Default added (so using `tbp') on input line 117.
 
-<feh_distributions_apogee_harps.png, id=1, 433.62pt x 578.16pt>
+<feh_distributions_apogee_harps.png, id=88, 433.62pt x 578.16pt>
 File: feh_distributions_apogee_harps.png Graphic file (type png)
 <use feh_distributions_apogee_harps.png>
 Package pdftex.def Info: feh_distributions_apogee_harps.png  used on input line
- 110.
+ 119.
 (pdftex.def)             Requested size: 256.0748pt x 341.44667pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
 dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 6995) in paragraph at lines 144--146
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 146.
+LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 146.
+LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
+(Font)              scaled to size 9.49997pt on input line 146.
+ [2 <./feh_distributions_apogee_harps.png>]
+Underfull \hbox (badness 6995) in paragraph at lines 178--180
 \T1/txr/m/n/8 un-der the grants UIDB/04434/2020 (DOI: 10.54499/UIDB/04434/2020)
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 \T1/txr/m/n/8 and UIDP/04434/2020 (DOI: 10.54499/UIDP/04434/2020), as well as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 \T1/txr/m/n/8 u-lus pro-gram (ref-er-ence 2023.06055.CEECIND/CP2839/CT0005, DOI
 :
  []
 
-(./adibekyan_abundances_ML.bbl) [2 <./feh_distributions_apogee_harps.png>]
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 171.
-LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 171.
-LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 171.
+(./adibekyan_abundances_ML.bbl) [3
 
-Underfull \hbox (badness 2229) in paragraph at lines 173--174
+]
+Underfull \hbox (badness 2229) in paragraph at lines 207--208
 \T1/txr/m/n/10 For the APOGEE sam-ple, we per-formed a care-ful qual-
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 173--174
+Underfull \hbox (badness 2035) in paragraph at lines 207--208
 \T1/txr/m/n/10 ity se-lec-tion to en-sure re-li-able stel-lar pa-ram-e-ters and
  el-
  []
 
 
-Underfull \hbox (badness 2856) in paragraph at lines 173--174
+Underfull \hbox (badness 2856) in paragraph at lines 207--208
 \T1/txr/m/n/10 e-men-tal abun-dances. We ex-cluded stars with prob-lem-atic
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 177--179
+Underfull \hbox (badness 1067) in paragraph at lines 211--213
 []\T1/txr/m/n/10 To guar-an-tee ro-bust stel-lar pa-ram-e-ters, el-e-men-tal ab
 un-
  []
@@ -795,112 +949,119 @@ un-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 225--226
+Underfull \hbox (badness 1769) in paragraph at lines 259--260
 []\T1/txr/m/n/10 Although the ab-so-lute val-ues of the co-ef-fi-cients dif-fer
 
  []
 
-<correlations.png, id=24, 722.7pt x 361.35pt>
+<correlations.png, id=184, 722.7pt x 361.35pt>
 File: correlations.png Graphic file (type png)
 <use correlations.png>
-Package pdftex.def Info: correlations.png  used on input line 229.
+Package pdftex.def Info: correlations.png  used on input line 263.
 (pdftex.def)             Requested size: 523.5307pt x 261.76527pt.
-[3
+[4
 
 ]
-Underfull \hbox (badness 1009) in paragraph at lines 248--249
+Underfull \hbox (badness 1009) in paragraph at lines 282--283
 \T1/txr/m/n/10 por-tance in the MI anal-y-sis com-pared to its rank cor-re-la-
  []
 
-<MI.png, id=29, 722.7pt x 433.62pt>
+<MI.png, id=193, 722.7pt x 433.62pt>
 File: MI.png Graphic file (type png)
 <use MI.png>
-Package pdftex.def Info: MI.png  used on input line 252.
+Package pdftex.def Info: MI.png  used on input line 286.
 (pdftex.def)             Requested size: 523.5307pt x 314.11833pt.
-<VIF.png, id=30, 722.7pt x 433.62pt>
+<VIF.png, id=195, 722.7pt x 433.62pt>
 File: VIF.png Graphic file (type png)
 <use VIF.png>
-Package pdftex.def Info: VIF.png  used on input line 274.
+Package pdftex.def Info: VIF.png  used on input line 308.
 (pdftex.def)             Requested size: 523.5307pt x 314.11833pt.
-<figures/dist_V_lsr.png, id=31, 505.89pt x 578.16pt>
+<figures/dist_V_lsr.png, id=197, 505.89pt x 578.16pt>
 File: figures/dist_V_lsr.png Graphic file (type png)
 <use figures/dist_V_lsr.png>
-Package pdftex.def Info: figures/dist_V_lsr.png  used on input line 293.
+Package pdftex.def Info: figures/dist_V_lsr.png  used on input line 327.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_U_lsr.png, id=32, 505.89pt x 578.16pt>
+<figures/dist_U_lsr.png, id=198, 505.89pt x 578.16pt>
 File: figures/dist_U_lsr.png Graphic file (type png)
 <use figures/dist_U_lsr.png>
-Package pdftex.def Info: figures/dist_U_lsr.png  used on input line 298.
+Package pdftex.def Info: figures/dist_U_lsr.png  used on input line 332.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_W_lsr.png, id=33, 505.89pt x 578.16pt>
+<figures/dist_W_lsr.png, id=199, 505.89pt x 578.16pt>
 File: figures/dist_W_lsr.png Graphic file (type png)
 <use figures/dist_W_lsr.png>
-Package pdftex.def Info: figures/dist_W_lsr.png  used on input line 303.
+Package pdftex.def Info: figures/dist_W_lsr.png  used on input line 337.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_UVW_lsr.png, id=34, 505.89pt x 578.16pt>
+<figures/dist_UVW_lsr.png, id=200, 505.89pt x 578.16pt>
 File: figures/dist_UVW_lsr.png Graphic file (type png)
 <use figures/dist_UVW_lsr.png>
-Package pdftex.def Info: figures/dist_UVW_lsr.png  used on input line 310.
+Package pdftex.def Info: figures/dist_UVW_lsr.png  used on input line 344.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_rapo.png, id=35, 505.89pt x 578.16pt>
+<figures/dist_rapo.png, id=201, 505.89pt x 578.16pt>
 File: figures/dist_rapo.png Graphic file (type png)
 <use figures/dist_rapo.png>
-Package pdftex.def Info: figures/dist_rapo.png  used on input line 315.
+Package pdftex.def Info: figures/dist_rapo.png  used on input line 349.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_rperi.png, id=36, 505.89pt x 578.16pt>
+<figures/dist_rperi.png, id=202, 505.89pt x 578.16pt>
 File: figures/dist_rperi.png Graphic file (type png)
 <use figures/dist_rperi.png>
-Package pdftex.def Info: figures/dist_rperi.png  used on input line 320.
+Package pdftex.def Info: figures/dist_rperi.png  used on input line 354.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_eccentricity.png, id=37, 505.89pt x 578.16pt>
+<figures/dist_eccentricity.png, id=203, 505.89pt x 578.16pt>
 File: figures/dist_eccentricity.png Graphic file (type png)
 <use figures/dist_eccentricity.png>
-Package pdftex.def Info: figures/dist_eccentricity.png  used on input line 327.
+Package pdftex.def Info: figures/dist_eccentricity.png  used on input line 361.
 
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_zmax.png, id=38, 505.89pt x 578.16pt>
+<figures/dist_zmax.png, id=204, 505.89pt x 578.16pt>
 File: figures/dist_zmax.png Graphic file (type png)
 <use figures/dist_zmax.png>
-Package pdftex.def Info: figures/dist_zmax.png  used on input line 332.
+Package pdftex.def Info: figures/dist_zmax.png  used on input line 366.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_P_gal.png, id=39, 505.89pt x 578.16pt>
+<figures/dist_P_gal.png, id=205, 505.89pt x 578.16pt>
 File: figures/dist_P_gal.png Graphic file (type png)
 <use figures/dist_P_gal.png>
-Package pdftex.def Info: figures/dist_P_gal.png  used on input line 337.
+Package pdftex.def Info: figures/dist_P_gal.png  used on input line 371.
 (pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-[4 <./correlations.png>] [5 <./MI.png> <./VIF.png>] [6 <./figures/dist_V_lsr.pn
+[5 <./correlations.png>] [6 <./MI.png> <./VIF.png>] [7 <./figures/dist_V_lsr.pn
 g> <./figures/dist_U_lsr.png> <./figures/dist_W_lsr.png> <./figures/dist_UVW_ls
 r.png> <./figures/dist_rapo.png> <./figures/dist_rperi.png> <./figures/dist_ecc
-entricity.png> <./figures/dist_zmax.png> <./figures/dist_P_gal.png>]
-(./adibekyan_abundances_ML.aux)
+entricity.png> <./figures/dist_zmax.png> <./figures/dist_P_gal.png>] [8
+
+]
+[9] (./adibekyan_abundances_ML.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+Package rerunfilecheck Info: File `adibekyan_abundances_ML.out' has not changed
+.
+(rerunfilecheck)             Checksum: 9D8398E29DFA531DE0794AF1DC1C49EB;3498.
  ) 
 Here is how much of TeX's memory you used:
- 9649 strings out of 474222
- 155003 string characters out of 5748734
- 1957975 words of memory out of 5000000
- 31698 multiletter control sequences out of 15000+600000
- 650323 words of font info for 175 fonts, out of 8000000 for 9000
+ 16594 strings out of 474222
+ 262745 string characters out of 5748734
+ 1960975 words of memory out of 5000000
+ 38476 multiletter control sequences out of 15000+600000
+ 653440 words of font info for 180 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,11n,93p,2592b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,93p,2593b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
 ts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on adibekyan_abundances_ML.pdf (6 pages, 1982836 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on adibekyan_abundances_ML.pdf (9 pages, 2006242 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
