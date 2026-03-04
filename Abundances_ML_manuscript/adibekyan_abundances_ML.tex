@@ -143,7 +143,7 @@ As expected, several parameters exhibit large VIF values. Interestingly, the two
 Although substantial multicollinearity is present (VIF $>$ 10 is typically considered as substantial), particularly among the derived velocity quantities, we retained all features in the subsequent analysis, as tree-based ensemble models are largely insensitive to correlated predictors. 
 
 
-\subsection{Baseline regression models}
+\subsection{Regression models}
 
 We benchmarked a diverse set of regression algorithms to predict stellar metallicity from these parameters. The tested models include linear regression (LR), support vector regression (SVR; \citealt{cortes1995}), random forest (RF; \citealt{breiman2001}), extra trees (ET; \citealt{geurts2006}), gradient boosting methods including XGBoost \citep{chen2016}, LightGBM \citep{ke2017}, and CatBoost \citep{prokhorenkova2018}, as well as a feed-forward deep neural network (DL). All models were evaluated using identical $k$-fold cross-validation splits.
 
@@ -165,6 +165,79 @@ and the robustness of tree-based ensemble methods to monotonic target transforma
 
 Overall, the convergence of multiple algorithms, the absence of improvement from target transformation, and the limited gain from ensembling indicate that predictive performance is primarily limited by the information content of the kinematic features rather than by
 model architecture.
+
+
+\subsection{Hyperparameter optimization and final models}
+
+Given the strong performance of gradient boosting methods in the baseline benchmark, we performed hyperparameter optimization for LightGBM and XGBoost. LightGBM was selected as the reference model based on its slightly superior performance in the default configuration, while XGBoost was included as a widely used and well-established boosting framework for tabular data applications.
+
+The optimization was carried out using the Optuna framework \citep{Akiba-19}, which implements efficient Bayesian hyperparameter search. The tuning focused on the main parameters controlling model complexity and regularization. The objective was to minimize the cross-validated root mean squared error (RMSE) using the same five-fold splits adopted in the baseline analysis.
+
+After optimization, both LightGBM and XGBoost achieve nearly identical predictive performance, with RMSE $\approx 0.199$ dex. The improvement relative to the default configuration for LightGBM was marginal and occured only at the third decimal level. This convergence of independently optimized models further supports the conclusion that predictive accuracy is primarily constrained by the intrinsic information content of the kinematic features rather than by the specific boosting architecture.
+
+To assess the robustness and transferability of the trained models, we evaluated the optimized LightGBM and XGBoost models on the independent HARPS sample. The HARPS dataset has a metallicity dispersion of $\sigma_{\mathrm{[Fe/H]}} \approx 0.26$ dex, comparable to that of the APOGEE sample. Both models achieve an RMSE of approximately 0.224 dex on HARPS, corresponding to $R^2 \approx 0.26$, indicating that roughly one quarter of the metallicity variance in the HARPS sample is recovered from kinematic information alone.
+
+It is important to note again that, although the APOGEE and HARPS samples exhibit similar metallicity dispersions, they differ in several key aspects. The mean metallicity of HARPS stars is $\langle \mathrm{[Fe/H]} \rangle = -0.115$ dex, while the APOGEE sample has a lower mean value of $-0.239$ dex. Furthermore, the two samples have distinct distributions of orbital and kinematic parameters, reflecting their different stellar populations and selection functions.
+
+
+To further illustrate the performance of the LightGBM model, Fig.~\ref{fig:lgbm_apogee_harps} shows the predicted versus true metallicities and the corresponding residuals. For the APOGEE sample, the model was trained on a training subset (80\%) and evaluated on an independent test set. The upper panels of Fig.~\ref{fig:lgbm_apogee_harps} display the results for the test set. The performance of the model, trained on the full APOGEE dataset, when applied to the independent HARPS sample is shown in the lower panels of the figure.
+
+In both datasets, the predictions exhibit a significant regression toward the mean metallicity of the training data, with metal-poor stars predicted slightly too metal-rich and metal-rich stars slightly underestimated. This behaviour reflects the well-known phenomenon of regression toward the mean \citep{Galton-1886} and arises naturally when the predictors do not fully constrain the target variable. Under a squared-error loss function, the optimal prediction in the presence of incomplete information is biased toward the conditional mean of the target \citep{Hastie2009}. In this case, the limited information content of the kinematic features results in a reduced dynamic range of the predictions relative to the true metallicity distribution.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_apogee_lgbm_pred_resid_scatter.png}
+\vfill
+\includegraphics[width=\linewidth]{figures/fig_harps_lgbm_pred_resid_scatter.png}
+\caption{Performance of the tuned LightGBM model for metallicity prediction. Top panels: APOGEE test set results. Bottom panels: HARPS results. Left panels show predicted versus true metallicity with the one-to-one relation indicated by the dotted line. Right panels show residuals as a function of true metallicity.}
+\label{fig:lgbm_apogee_harps}
+\end{figure}
+
+
+\subsection{Feature importance analysis}
+
+To quantify the relative contribution of each kinematic parameter to the metallicity prediction, we performed a comprehensive feature importance analysis using four complementary approaches: built-in gain-based importance, permutation importance \citep{breiman2001}, single-feature predictive performance, and SHAP values \citep{Lundberg-17, Lundberg2020}. Figures are shown in Sect.~\ref{appendix:feature_importance_feh}.
+
+For LightGBM and XGBoost we first considered the built-in feature importance based on the total gain. In tree-based ensembles, the gain measures the total reduction in the loss function (in our case, squared error) produced by splits involving a given feature across all trees in the ensemble. Larger gain values therefore indicate that a feature contributes more strongly to improving model accuracy. Although gain importance is model-dependent and not directly comparable across algorithms, it provides an initial ranking of influential parameters.
+
+In both models, $Z_{\max}$ clearly dominates the ranking, followed by $R_{\mathrm{apo}}$, $R_{\mathrm{peri}}$, and the orbital eccentricity $e$. Galactic space velocity components ($U_{\mathrm{LSR}}$, $V_{\mathrm{LSR}}$, $W_{\mathrm{LSR}}$, and $UVW_{\mathrm{LSR}}$) and $P_{\mathrm{gal}}$ contribute substantially less to the predictive power.
+
+
+To obtain a model-agnostic estimate of feature relevance, we computed permutation importance. This method evaluates the increase in prediction error when the values of a single feature are randomly shuffled, thereby breaking its statistical relationship with the target variable. The importance is quantified as the change in cross-validated RMSE ($\Delta \mathrm{RMSE}$).
+
+Permutation importance confirms the dominance of $Z_{\max}$, which produces by far the largest degradation in performance when permuted. The next most important parameters are $R_{\mathrm{apo}}$ and $R_{\mathrm{peri}}$, followed by eccentricity.
+
+As an additional diagnostic, we trained each model using only one feature at a time and computed the cross-validated RMSE. This approach quantifies the intrinsic predictive power of each parameter in isolation. Using $Z_{\max}$ alone yields an RMSE of $\sim 0.22$ dex, significantly better than any other single parameter. All other features individually result in RMSE values above $0.24$ dex.
+
+To further investigate both global importance and the direction of feature effects, we computed SHAP (SHapley Additive exPlanations) values for the tuned models. SHAP values decompose each individual prediction into additive contributions from each feature, grounded in cooperative game theory. The global importance of a feature is quantified as the mean absolute SHAP value, $\langle |\mathrm{SHAP}| \rangle$.
+
+Across the two models, the SHAP rankings are remarkably consistent. $Z_{\max}$ exhibits the largest mean absolute contribution, followed by $R_{\mathrm{apo}}$ and $R_{\mathrm{peri}}$. Eccentricity contributes at an intermediate level, while the velocity components have substantially smaller SHAP amplitudes.
+
+All four importance diagnostics consistently identify the same ranking of parameters across LightGBM and XGBoost. The convergence of independent models and independent importance measures indicates that the result is robust and not an artifact of a specific boosting architecture.
+
+In summary, the metallicity–kinematics relation is primarily driven by vertical orbital structure ($Z_{\max}$), with additional contributions from radial orbital extent ($R_{\mathrm{apo}}$ and $R_{\mathrm{peri}}$) and eccentricity. Instantaneous velocity components and the thin-disk membership probability $P_{\rm gal}$ add comparatively little independent information once orbital parameters are included.
+
+\subsection{The $Z_{\max}$–metallicity relation}
+
+Given the dominant role of $Z_{\max}$ in all feature-importance diagnostics, we further examine its detailed relation with metallicity using SHAP dependence plots (Fig.~\ref{fig:shap_zmax_apogee_harps}). These plots show the SHAP contribution of $Z_{\max}$ to the predicted metallicity as a function of its physical value, with points color-coded by apocentric distance $R_{\mathrm{apo}}$ and thin-disk membership probability $P_{\rm gal}$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/LGBM_zmax_rapo_dependence_pretty.png}
+\vfill
+\includegraphics[width=\linewidth]{figures/LGBM_zmax_pgal_dependence_pretty.png}
+\caption{SHAP dependence of $Z_{\max}$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max}$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm{apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm gal}$ (bottom panel).}
+\label{fig:shap_zmax_apogee_harps}
+\end{figure}
+
+For the APOGEE sample, the SHAP dependence plot reveals a strong and monotonic decrease of the SHAP contribution of $Z_{\max}$ with increasing $Z_{\max}$. Since SHAP values quantify the shift of the prediction relative to the global mean metallicity of the training data, positive values indicate that $Z_{\max}$ increases the predicted metallicity, while negative values indicate that it decreases it. Stars confined close to the Galactic plane ($Z_{\max} \lesssim 1$ kpc) therefore tend to have their predicted metallicities shifted upward relative to the mean, whereas stars reaching large vertical distances shift the prediction downward.
+
+The relation steepens at small $Z_{\max}$ and gradually flattens beyond $\sim$3–4 kpc. Interestingly, the dispersion of SHAP values becomes minimal and approaches zero around $Z_{\max} \sim 1$–1.5 kpc. This indicates a regime in which the vertical orbital extent alone does not strongly bias the prediction relative to the mean metallicity, and where additional orbital parameters begin to modulate the metallicity more significantly. At larger $Z_{\max}$, the increasing dispersion reflects a broader range of metallicities among dynamically hotter populations, consistent with a transition from thin-disk dominated stars to thick-disk and kinematically heated components.
+
+The color-coding by $R_{\mathrm{apo}}$ suggests a secondary modulation by radial orbital extent. At small $Z_{\max}$, stars with larger apocentric distances tend to show slightly more negative SHAP contributions, indicating lower predicted metallicities. Beyond $Z_{\max} \sim 1$ kpc, this trend weakens and partially reverses, suggesting that the coupling between vertical and radial orbital properties changes across disk populations. This transition likely reflects the varying relative contributions of thin- and thick-disk stars in different $Z_{\max}$ regimes.???
+
+Overall, this analysis indicates that vertical orbital extent provides the primary dynamical imprint on metallicity, while radial orbital properties introduce a secondary, population-dependent modulation. Such behaviour is consistent with expectations from Galactic chemo-dynamical evolution, in which dynamically hotter and more radially extended stellar populations are typically older and more metal-poor.
+
 
 
 \section{Predicting individual abundances}
@@ -404,6 +477,7 @@ LightGBM (QT target) & $0.199 \pm 0.001$ & 0.156 & 0.412 \\
 CatBoost & $0.200 \pm 0.001$ & 0.157 & 0.411 \\
 CatBoost (QT target) & $0.200 \pm 0.001$ & 0.156 & 0.408 \\
 Voting Regressor & $0.200 \pm 0.001$ & 0.157 & 0.410 \\
+Stacking Regressor & $0.199 \pm 0.001$ & 0.156 & 0.413 \\
 \hline
 \end{tabular}
 \label{tab:cv_scores_full}
@@ -430,6 +504,115 @@ Stacking was implemented using the same set of base learners. To avoid informati
 \end{equation}
 
 To assess ensemble diversity, we computed the Pearson correlation between the OOF predictions of the base models. The boosting models exhibit very high mutual correlations ($r \gtrsim 0.98$), while Extra Trees shows slightly lower correlation ($r \sim 0.95$). This strong similarity between base-model predictions explains the limited improvement obtained from voting and stacking.
+
+
+\subsection*{Hyperparameter optimization of gradient boosting models}
+
+We performed hyperparameter optimization for two gradient boosting models: LightGBM, and XGBoost. Although XGBoost was not among the best-performing models in the default-configuration benchmark (Table~\ref{tab:cv_scores_full}), it was included in the tuning analysis because of its strong empirical performance in tabular-data machine learning tasks and its widespread use in competitive benchmarks (e.g., Kaggle competitions\footnote{https://www.kaggle.com/}).
+
+Hyperparameter optimization was carried out using the Optuna framework \citep{Akiba-19}, which implements efficient Bayesian optimization strategies for hyperparameter search. The objective was to minimize the RMSE using the same 5-fold splits adopted in the baseline experiments.
+
+The tuning focused on the most relevant hyperparameters controlling model complexity, regularization, and generalization performance. These include the number of boosting iterations, learning rate, tree depth (or number of leaves), subsampling fractions, and $L_1$/$L_2$ regularization terms. These parameters directly regulate the bias–variance trade-off and the effective model capacity.
+
+The best-performing configurations obtained with Optuna are summarized in Tables~\ref{tab:xgb_params} and \ref{tab:lgbm_params}.
+
+The resulting best cross-validated RMSE values are:
+
+\begin{itemize}
+\item LightGBM: RMSE = 0.1988 dex
+\item XGBoost: RMSE = 0.1987 dex
+\end{itemize}
+
+Compared to the default configurations reported in Table~\ref{tab:cv_scores_full}, the improvement is marginal for LightGBM and appears only at the third decimal level in RMSE. For XGBoost, hyperparameter optimization brings its performance to essentially the same precision level as the other two boosting methods. This behaviour further confirms that predictive performance is primarily constrained by the intrinsic information content of the kinematic features rather than by hyperparameter configuration or the specific boosting architecture.
+
+
+\begin{table}[h]
+\caption{Best hyperparameters obtained for XGBoost using Optuna optimization.}
+\label{tab:xgb_params}
+\centering
+\begin{tabular}{lc}
+\hline
+Parameter & Value \\
+\hline
+n\_estimators & 1335 \\
+learning\_rate & 0.0056 \\
+max\_depth & 9 \\
+min\_child\_weight & 1.66 \\
+subsample & 0.717 \\
+colsample\_bytree & 0.960 \\
+reg\_alpha & $7.98\times10^{-4}$ \\
+reg\_lambda & $3.15\times10^{-8}$ \\
+gamma & 0.260 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Best hyperparameters obtained for LightGBM using Optuna optimization.}
+\label{tab:lgbm_params}
+\centering
+\begin{tabular}{lc}
+\hline
+Parameter & Value \\
+\hline
+n\_estimators & 733 \\
+learning\_rate & 0.0115 \\
+num\_leaves & 29 \\
+max\_depth & 5 \\
+min\_child\_samples & 127 \\
+subsample & 0.798 \\
+colsample\_bytree & 0.626 \\
+reg\_alpha & $1.93\times10^{-6}$ \\
+reg\_lambda & 0.00315 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Feature importance analysis} \label{appendix:feature_importance_feh}
+
+
+This appendix presents the full set of feature-importance figures discussed in Sect.~X.X. For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for both LightGBM and XGBoost. These figures illustrate the consistency of the feature ranking across different importance metrics and model architectures.
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_builtin_gain.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/XGB_builtin_gain.png}
+\caption{Built-in gain feature importance for the tuned LightGBM (left) and XGBoost (right) models. The importance corresponds to the total reduction in squared error produced by splits involving each feature across all trees in the ensemble.}
+\label{fig:builtin_gain_comparison}
+\end{figure*}
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_permutation_dRMSE.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/XGB_permutation_dRMSE.png}
+\caption{Permutation feature importance for the tuned LightGBM (left) and XGBoost (right) models.
+The importance is quantified as the increase in cross-validated RMSE ($\Delta \mathrm{RMSE}$) when a given feature is randomly shuffled, thereby breaking its relationship with metallicity.}
+\label{fig:permutation_comparison}
+\end{figure*}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_single_feature_rmse.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/XGB_single_feature_rmse.png}
+\caption{Predictive performance obtained when training the model using only a single feature at a time. The bars show the cross-validated RMSE for LightGBM (left) and XGBoost (right).}
+\label{fig:single_feature_comparison}
+\end{figure*}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_shap_meanabs.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/XGB_shap_meanabs.png}
+\caption{Global SHAP feature importance for the tuned LightGBM (left) and XGBoost (right) models. The bars represent the mean absolute SHAP value, which quantifies the average magnitude of each feature’s contribution to the predicted metallicity.}
+\label{fig:shap_comparison}
+\end{figure*}
 
 
 

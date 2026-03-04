@@ -18,46 +18,51 @@ I was expecting a `,' or a `}'---line 315 of file references.bib
  :   doi = {10.1007/s10994-006-6226-1},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 395 of file references.bib
+ :   
+ :   doi = {https://doi.org/10.1007/978-0-387-84858-7}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 22 entries,
+You've used 27 entries,
             3039 wiz_defined-function locations,
-            831 strings with 21519 characters,
-and the built_in function-call counts, 38929 in all, are:
-= -- 2699
-> -- 6231
-< -- 12
-+ -- 2082
-- -- 2056
-* -- 3877
-:= -- 7384
-add.period$ -- 22
-call.type$ -- 22
-change.case$ -- 771
-chr.to.int$ -- 22
-cite$ -- 22
-duplicate$ -- 424
-empty$ -- 597
-format.name$ -- 2114
-if$ -- 7527
+            867 strings with 22626 characters,
+and the built_in function-call counts, 41849 in all, are:
+= -- 2948
+> -- 6438
+< -- 16
++ -- 2152
+- -- 2119
+* -- 4108
+:= -- 7874
+add.period$ -- 27
+call.type$ -- 27
+change.case$ -- 814
+chr.to.int$ -- 33
+cite$ -- 27
+duplicate$ -- 544
+empty$ -- 775
+format.name$ -- 2191
+if$ -- 8144
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 20
-newline$ -- 70
-num.names$ -- 89
-pop$ -- 776
+missing$ -- 24
+newline$ -- 85
+num.names$ -- 109
+pop$ -- 828
 preamble$ -- 1
-purify$ -- 771
+purify$ -- 812
 quote$ -- 0
-skip$ -- 375
+skip$ -- 502
 stack$ -- 0
-substring$ -- 436
-swap$ -- 19
+substring$ -- 585
+swap$ -- 44
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 240
 warning$ -- 0
-while$ -- 87
+while$ -- 107
 width$ -- 0
-write$ -- 222
-(There were 3 error messages)
+write$ -- 272
+(There were 4 error messages)

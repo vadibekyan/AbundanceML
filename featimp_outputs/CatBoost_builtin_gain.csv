@@ -1,0 +1,10 @@
+feature,pretty,value
+zmax,"$Z_{\max}\,[\mathrm{kpc}]$",44.32183165547681
+rapo,"$R_{\mathrm{apo}}\,[\mathrm{kpc}]$",17.8145354975903
+rperi,"$R_{\mathrm{peri}}\,[\mathrm{kpc}]$",13.65534113815876
+eccentricity,$e$,12.60384243059043
+V_lsr,"$V_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",2.979537664202518
+U_lsr,"$U_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",2.504333359268156
+UVW_lsr,"$UVW_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",2.1193899685359674
+P_gal,"$P_{\mathrm{gal}}\,[\%]$",2.0170095699655586
+W_lsr,"$W_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",1.984178716211485

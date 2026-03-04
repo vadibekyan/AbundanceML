@@ -1,0 +1,10 @@
+feature,pretty,value
+W_lsr,"$W_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",-0.00124861593090574
+P_gal,"$P_{\mathrm{gal}}\,[\%]$",-0.0013064912795735808
+U_lsr,"$U_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",-0.0015177530055847336
+UVW_lsr,"$UVW_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",-0.0017313150568979043
+V_lsr,"$V_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",-0.0017560505961903186
+eccentricity,$e$,-0.009095390867521284
+rperi,"$R_{\mathrm{peri}}\,[\mathrm{kpc}]$",-0.0126341758894466
+rapo,"$R_{\mathrm{apo}}\,[\mathrm{kpc}]$",-0.016601692094700086
+zmax,"$Z_{\max}\,[\mathrm{kpc}]$",-0.07337660767860285

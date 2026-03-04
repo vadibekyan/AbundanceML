@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{27}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Abdurro'uf} {et~al.}(2022){Abdurro'uf}, {Accetta}, {Aerts}, {Silva
@@ -41,6 +41,12 @@
   {Khachatryan}}]{Adibekyan-12}
 {Adibekyan}, V.~Z., {Sousa}, S.~G., {Santos}, N.~C., {et~al.} 2012, \aap, 545,
   A32
+
+\bibitem[{Akiba {et~al.}(2019)Akiba, Sano, Yanase, Ohta, \& Koyama}]{Akiba-19}
+Akiba, T., Sano, S., Yanase, T., Ohta, T., \& Koyama, M. 2019, in Proceedings
+  of the 25th ACM SIGKDD International Conference on Knowledge Discovery \&
+  Data Mining, KDD '19 (New York, NY, USA: Association for Computing
+  Machinery), 2623–2631
 
 \bibitem[{{Bovy}(2015)}]{Bovy-15}
 {Bovy}, J. 2015, \apjs, 216, 29
@@ -145,8 +151,16 @@ Farrar, D.~E. \& Glauber, R.~R. 1967, The Review of Economics and Statistics,
 {Gaia Collaboration}, {Vallenari}, A., {Brown}, A.~G.~A., {et~al.} 2023, \aap,
   674, A1
 
+\bibitem[{Galton(1886)}]{Galton-1886}
+Galton, F. 1886, The Journal of the Anthropological Institute of Great Britain
+  and Ireland, 15, 246
+
 \bibitem[{Geurts {et~al.}(2006)Geurts, Ernst, \& Wehenkel}]{geurts2006}
 Geurts, P., Ernst, D., \& Wehenkel, L. 2006, Machine Learning, 63, 3
+
+\bibitem[{Hastie {et~al.}(2009)Hastie, Tibshirani, \& Friedman}]{Hastie2009}
+Hastie, T., Tibshirani, R., \& Friedman, J. 2009, The Elements of Statistical
+  Learning, 2nd edn. (Springer)
 
 \bibitem[{{Johnson} \& {Soderblom}(1987)}]{Johnson-87}
 {Johnson}, D. R.~H. \& {Soderblom}, D.~R. 1987, \aj, 93, 864
@@ -160,6 +174,14 @@ Ke, G., Meng, Q., Finley, T., {et~al.} 2017, in Advances in Neural Information
 \bibitem[{Kraskov {et~al.}(2004)Kraskov, St\"ogbauer, \&
   Grassberger}]{kraskov2004}
 Kraskov, A., St\"ogbauer, H., \& Grassberger, P. 2004, Phys. Rev. E, 69, 066138
+
+\bibitem[{{Lundberg} \& {Lee}(2017)}]{Lundberg-17}
+{Lundberg}, S. \& {Lee}, S.-I. 2017, arXiv e-prints, arXiv:1705.07874
+
+\bibitem[{Lundberg {et~al.}(2020)Lundberg, Erion, Chen, DeGrave, Prutkin, Nair,
+  Katz, Himmelfarb, Bansal, \& Lee}]{Lundberg2020}
+Lundberg, S.~M., Erion, G., Chen, H., {et~al.} 2020, Nature Machine
+  Intelligence, 2, 56
 
 \bibitem[{{Mayor} {et~al.}(2003){Mayor}, {Pepe}, {Queloz}, {Bouchy},
   {Rupprecht}, {Lo Curto}, {Avila}, {Benz}, {Bertaux}, {Bonfils}, {Dall},
