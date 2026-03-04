@@ -24,45 +24,45 @@ I was expecting a `,' or a `}'---line 395 of file references.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 27 entries,
+You've used 29 entries,
             3039 wiz_defined-function locations,
-            867 strings with 22626 characters,
-and the built_in function-call counts, 41849 in all, are:
-= -- 2948
-> -- 6438
-< -- 16
-+ -- 2152
-- -- 2119
-* -- 4108
-:= -- 7874
-add.period$ -- 27
-call.type$ -- 27
-change.case$ -- 814
-chr.to.int$ -- 33
-cite$ -- 27
-duplicate$ -- 544
-empty$ -- 775
-format.name$ -- 2191
-if$ -- 8144
+            877 strings with 23041 characters,
+and the built_in function-call counts, 42814 in all, are:
+= -- 3025
+> -- 6525
+< -- 17
++ -- 2181
+- -- 2146
+* -- 4185
+:= -- 8054
+add.period$ -- 29
+call.type$ -- 29
+change.case$ -- 831
+chr.to.int$ -- 35
+cite$ -- 29
+duplicate$ -- 584
+empty$ -- 829
+format.name$ -- 2225
+if$ -- 8331
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 24
-newline$ -- 85
-num.names$ -- 109
-pop$ -- 828
+missing$ -- 25
+newline$ -- 91
+num.names$ -- 117
+pop$ -- 851
 preamble$ -- 1
-purify$ -- 812
+purify$ -- 829
 quote$ -- 0
-skip$ -- 502
+skip$ -- 530
 stack$ -- 0
-substring$ -- 585
+substring$ -- 607
 swap$ -- 44
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 240
+type$ -- 258
 warning$ -- 0
-while$ -- 107
+while$ -- 113
 width$ -- 0
-write$ -- 272
+write$ -- 290
 (There were 4 error messages)

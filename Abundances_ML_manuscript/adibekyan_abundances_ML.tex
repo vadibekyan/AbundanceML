@@ -159,12 +159,25 @@ We further explored ensemble strategies. A weighted voting regressor combining t
 This limited improvement reflects the high correlation between the predictions of the base models and indicates that performance is
 primarily constrained by the information content of the kinematic features rather than by algorithmic choice.
 
-
 We additionally explored a quantile-based transformation of the target variable, mapping [Fe/H] to a Gaussian distribution prior to training. While such transformations can stabilize variance and improve regression performance in skewed distributions, they did not yield any measurable improvement in our case. This result reflects both the approximately symmetric metallicity distribution
 and the robustness of tree-based ensemble methods to monotonic target transformations.
 
 Overall, the convergence of multiple algorithms, the absence of improvement from target transformation, and the limited gain from ensembling indicate that predictive performance is primarily limited by the information content of the kinematic features rather than by
 model architecture.
+
+\subsection{Exploring model architectures and feature engineering}
+
+We performed a series of additional experiments exploring alternative modeling strategies, automated ML frameworks, and extensive feature transformations with the aim of improving the predictive performance of our models.
+
+First, we employed two automated machine-learning frameworks, AutoGluon \citep{Erickson2020} and H2O AutoML \citep{LeDell2020}. AutoML systems automatically explore large spaces of ML pipelines by training and evaluating multiple algorithms, tuning hyperparameters, and constructing model ensembles. Such approaches are designed to approximate the best achievable performance on tabular datasets by systematically searching the model space and leveraging ensemble learning. We ran both AutoML frameworks for more than 200 hours each, allowing them to evaluate hundreds of candidate models and ensemble configurations.
+
+Second, we investigated whether additional nonlinear interactions between the input variables could improve the predictive power. Starting from the original set of parameters, we randomly generated 300 sets of interaction features using simple algebraic transformations (multiplication, subtraction, addition, and squared terms). These engineered features were appended to the base feature set and evaluated using the tuned LightGBM model.
+
+Third, to assess the potential impact of feature selection, we constructed 2000 random feature subsets containing between 3 and 20 parameters drawn from the expanded pool of original and engineered features. Each subset was used to train and evaluate the model in order to probe whether particular combinations of features could capture additional predictive information.
+
+Finally, we tested whether performance could be improved by modifying the sampling of the target variable. Since extreme metallicity values are relatively underrepresented, we attempted to balance the metallicity distribution using two approaches: (i) binning the metallicity distribution and sampling more uniformly across bins, and (ii) applying sample weights to emphasize underrepresented metallicity ranges during training.
+
+Despite these extensive experiments, all models and configurations yielded predictive performances comparable to our baseline models, with RMSE values consistently remaining above $\sim$0.198 dex. None of the explored architectures, feature transformations, feature subsets, or sampling strategies produced a measurable improvement beyond this level. This convergence strongly suggests that the achievable predictive accuracy is primarily constrained by the intrinsic information contained in the kinematic features themselves rather than by limitations of the machine-learning methodology.
 
 
 \subsection{Hyperparameter optimization and final models}

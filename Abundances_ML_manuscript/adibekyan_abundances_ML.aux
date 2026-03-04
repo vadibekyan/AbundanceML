@@ -172,6 +172,8 @@
 \@LN{140}{1}
 \@LN{141}{1}
 \@LN{142}{1}
+\citation{Erickson2020}
+\citation{LeDell2020}
 \citation{Akiba-19}
 \citation{Galton-1886}
 \citation{Hastie2009}
@@ -179,7 +181,7 @@
 \citation{Lundberg-17,Lundberg2020}
 \@LN@col{1}
 \@LN{143}{2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Hyperparameter optimization and final models}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Exploring model architectures and feature engineering}{3}{subsection.3.2}\protected@file@percent }
 \@LN{144}{2}
 \@LN{145}{2}
 \@LN{146}{2}
@@ -227,6 +229,7 @@
 \@LN{188}{2}
 \@LN{189}{2}
 \@LN{190}{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Hyperparameter optimization and final models}{3}{subsection.3.3}\protected@file@percent }
 \@LN{191}{2}
 \@LN{192}{2}
 \@LN{193}{2}
@@ -240,10 +243,7 @@
 \@LN{201}{2}
 \@LN{202}{2}
 \@LN@col{2}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Performance of the tuned LightGBM model for metallicity prediction. Top panels: APOGEE test set results. Bottom panels: HARPS results. Left panels show predicted versus true metallicity with the one-to-one relation indicated by the dotted line. Right panels show residuals as a function of true metallicity.}}{3}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:lgbm_apogee_harps}{{2}{3}{Performance of the tuned LightGBM model for metallicity prediction. Top panels: APOGEE test set results. Bottom panels: HARPS results. Left panels show predicted versus true metallicity with the one-to-one relation indicated by the dotted line. Right panels show residuals as a function of true metallicity}{figure.caption.2}{}}
 \@LN{203}{2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Feature importance analysis}{3}{subsection.3.3}\protected@file@percent }
 \@LN{204}{2}
 \@LN{205}{2}
 \@LN{206}{2}
@@ -277,38 +277,38 @@
 \@LN{234}{2}
 \@LN{235}{2}
 \@LN{236}{2}
-\bibstyle{aa}
-\bibdata{references}
+\@LN{237}{2}
+\@LN{238}{2}
+\@LN{239}{2}
+\@LN{240}{2}
+\@LN{241}{2}
+\@LN{242}{2}
+\@LN{243}{2}
+\@LN{244}{2}
+\@LN{245}{2}
+\@LN{246}{2}
+\@LN{247}{2}
+\@LN{248}{2}
+\@LN{249}{2}
+\@LN{250}{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Feature importance analysis}{3}{subsection.3.4}\protected@file@percent }
+\@LN{251}{2}
+\@LN{252}{2}
+\@LN{253}{2}
+\@LN{254}{2}
+\@LN{255}{2}
+\@LN{256}{2}
+\@LN{257}{2}
+\@LN{258}{2}
+\@LN{259}{2}
+\@LN{260}{2}
+\@LN{261}{2}
+\@LN{262}{2}
+\@LN{263}{2}
+\@LN{264}{2}
 \@LN@col{1}
-\@LN{237}{3}
-\@LN{238}{3}
-\@LN{239}{3}
-\@LN{240}{3}
-\@LN{241}{3}
-\@LN{242}{3}
-\@LN{243}{3}
-\@LN{244}{3}
-\@LN{245}{3}
-\@LN{246}{3}
-\@LN{247}{3}
-\@LN{248}{3}
-\@LN{249}{3}
-\@LN{250}{3}
-\@LN{251}{3}
-\@LN{252}{3}
-\@LN{253}{3}
-\@LN{254}{3}
-\@LN{255}{3}
-\@LN{256}{3}
-\@LN{257}{3}
-\@LN{258}{3}
-\@LN{259}{3}
-\@LN{260}{3}
-\@LN{261}{3}
-\@LN{262}{3}
-\@LN{263}{3}
-\@LN{264}{3}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}The $Z_{\max }$–metallicity relation}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Performance of the tuned LightGBM model for metallicity prediction. Top panels: APOGEE test set results. Bottom panels: HARPS results. Left panels show predicted versus true metallicity with the one-to-one relation indicated by the dotted line. Right panels show residuals as a function of true metallicity.}}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:lgbm_apogee_harps}{{2}{4}{Performance of the tuned LightGBM model for metallicity prediction. Top panels: APOGEE test set results. Bottom panels: HARPS results. Left panels show predicted versus true metallicity with the one-to-one relation indicated by the dotted line. Right panels show residuals as a function of true metallicity}{figure.caption.2}{}}
 \@LN{265}{3}
 \@LN{266}{3}
 \@LN{267}{3}
@@ -343,10 +343,8 @@
 \@LN{296}{3}
 \@LN{297}{3}
 \@LN{298}{3}
-\@LN@col{2}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SHAP dependence of $Z_{\max }$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max }$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm  {apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm  gal}$ (bottom panel).}}{4}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:shap_zmax_apogee_harps}{{3}{4}{SHAP dependence of $Z_{\max }$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max }$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm {apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm gal}$ (bottom panel)}{figure.caption.3}{}}
 \@LN{299}{3}
+\@LN@col{2}
 \@LN{300}{3}
 \@LN{301}{3}
 \@LN{302}{3}
@@ -356,19 +354,24 @@
 \@LN{306}{3}
 \@LN{307}{3}
 \@LN{308}{3}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Predicting individual abundances}{4}{section.4}\protected@file@percent }
 \@LN{309}{3}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Abundance ratios relevant for exoplanet research}{4}{section.5}\protected@file@percent }
 \@LN{310}{3}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and summary}{4}{section.6}\protected@file@percent }
 \@LN{311}{3}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}The $Z_{\max }$–metallicity relation}{4}{subsection.3.5}\protected@file@percent }
 \@LN{312}{3}
 \@LN{313}{3}
 \@LN{314}{3}
 \@LN{315}{3}
 \@LN{316}{3}
 \@LN{317}{3}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SHAP dependence of $Z_{\max }$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max }$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm  {apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm  gal}$ (bottom panel).}}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:shap_zmax_apogee_harps}{{3}{4}{SHAP dependence of $Z_{\max }$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max }$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm {apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm gal}$ (bottom panel)}{figure.caption.3}{}}
 \@LN{318}{3}
+\@LN{319}{3}
+\@LN{320}{3}
+\@LN{321}{3}
+\bibstyle{aa}
+\bibdata{references}
 \bibcite{Abdurrouf-22}{{1}{2022}{{{Abdurro'uf} {et~al.}}}{{{Abdurro'uf}, {Accetta}, {Aerts}, {Silva Aguirre}, {Ahumada}, {Ajgaonkar}, {Filiz Ak}, {Alam}, {Allende Prieto}, {Almeida}, {Anders}, {Anderson}, {Andrews}, {Anguiano}, {Aquino-Ort{\'\i }z}, {Arag{\'o}n-Salamanca}, {Argudo-Fern{\'a}ndez}, {Ata}, {Aubert}, {Avila-Reese}, {Badenes}, {Barb{\'a}}, {Barger}, {Barrera-Ballesteros}, {Beaton}, {Beers}, {Belfiore}, {Bender}, {Bernardi}, {Bershady}, {Beutler}, {Bidin}, {Bird}, {Bizyaev}, {Blanc}, {Blanton}, {Boardman}, {Bolton}, {Boquien}, {Borissova}, {Bovy}, {Brandt}, {Brown}, {Brownstein}, {Brusa}, {Buchner}, {Bundy}, {Burchett}, {Bureau}, {Burgasser}, {Cabang}, {Campbell}, {Cappellari}, {Carlberg}, {Wanderley}, {Carrera}, {Cash}, {Chen}, {Chen}, {Cherinka}, {Chiappini}, {Choi}, {Chojnowski}, {Chung}, {Clerc}, {Cohen}, {Comerford}, {Comparat}, {da Costa}, {Covey}, {Crane}, {Cruz-Gonzalez}, {Culhane}, {Cunha}, {Dai}, {Damke}, {Darling}, {Davidson}, {Davies}, {Dawson}, {De Lee}, {Diamond-Stanic}, {Cano-D{\'\i }az}, {S{\'a}nchez}, {Donor}, {Duckworth}, {Dwelly}, {Eisenstein}, {Elsworth}, {Emsellem}, {Eracleous}, {Escoffier}, {Fan}, {Farr}, {Feng}, {Fern{\'a}ndez-Trincado}, {Feuillet}, {Filipp}, {Fillingham}, {Frinchaboy}, {Fromenteau}, {Galbany}, {Garc{\'\i }a}, {Garc{\'\i }a-Hern{\'a}ndez}, {Ge}, {Geisler}, {Gelfand}, {G{\'e}ron}, {Gibson}, {Goddy}, {Godoy-Rivera}, {Grabowski}, {Green}, {Greener}, {Grier}, {Griffith}, {Guo}, {Guy}, {Hadjara}, {Harding}, {Hasselquist}, {Hayes}, {Hearty}, {Hern{\'a}ndez}, {Hill}, {Hogg}, {Holtzman}, {Horta}, {Hsieh}, {Hsu}, {Hsu}, {Huber}, {Huertas-Company}, {Hutchinson}, {Hwang}, {Ibarra-Medel}, {Chitham}, {Ilha}, {Imig}, {Jaekle}, {Jayasinghe}, {Ji}, {Johnson}, {Jones}, {J{\"o}nsson}, {Katkov}, {Khalatyan}, {Kinemuchi}, {Kisku}, {Knapen}, {Kneib}, {Kollmeier}, {Kong}, {Kounkel}, {Kreckel}, {Krishnarao}, {Lacerna}, {Lane}, {Langgin}, {Lavender}, {Law}, {Lazarz}, {Leung}, {Leung}, {Lewis}, {Li}, {Li}, {Lian}, {Liang}, {Lin}, {Lin}, {Lin}, {Lintott}, {Long}, {Longa-Pe{\~n}a}, {L{\'o}pez-Cob{\'a}}, {Lu}, {Lundgren}, {Luo}, {Mackereth}, {de la Macorra}, {Mahadevan}, {Majewski}, {Manchado}, {Mandeville}, {Maraston}, {Margalef-Bentabol}, {Masseron}, {Masters}, {Mathur}, {McDermid}, {Mckay}, {Merloni}, {Merrifield}, {Meszaros}, {Miglio}, {Di Mille}, {Minniti}, {Minsley}, \& {Monachesi}}}}
 \bibcite{Adibekyan-12}{{2}{2012}{{{Adibekyan} {et~al.}}}{{{Adibekyan}, {Sousa}, {Santos}, {Delgado Mena}, {Gonz{\'a}lez Hern{\'a}ndez}, {Israelian}, {Mayor}, \& {Khachatryan}}}}
 \bibcite{Akiba-19}{{3}{2019}{{Akiba {et~al.}}}{{Akiba, Sano, Yanase, Ohta, \& Koyama}}}
@@ -377,29 +380,28 @@
 \bibcite{chen2016}{{6}{2016}{{Chen \& Guestrin}}{{}}}
 \bibcite{cortes1995}{{7}{1995}{{Cortes \& Vapnik}}{{}}}
 \bibcite{DelgadoMena-21}{{8}{2021}{{{Delgado Mena} {et~al.}}}{{{Delgado Mena}, {Adibekyan}, {Santos}, {Tsantaki}, {Gonz{\'a}lez Hern{\'a}ndez}, {Sousa}, \& {Bertr{\'a}n de Lis}}}}
-\bibcite{farrar1967}{{9}{1967}{{Farrar \& Glauber}}{{}}}
-\bibcite{Feltzing-23}{{10}{2023}{{{Feltzing} \& {Feuillet}}}{{}}}
-\bibcite{Gaia-21}{{11}{2021}{{{Gaia Collaboration} {et~al.}}}{{{Gaia Collaboration}, {Brown}, {Vallenari}, {Prusti}, {de Bruijne}, {Babusiaux}, {Biermann}, {Creevey}, {Evans}, {Eyer}, {Hutton}, {Jansen}, {Jordi}, {Klioner}, {Lammers}, {Lindegren}, {Luri}, {Mignard}, {Panem}, {Pourbaix}, {Randich}, {Sartoretti}, {Soubiran}, {Walton}, {Arenou}, {Bailer-Jones}, {Bastian}, {Cropper}, {Drimmel}, {Katz}, {Lattanzi}, {van Leeuwen}, {Bakker}, {Cacciari}, {Casta{\~n}eda}, {De Angeli}, {Ducourant}, {Fabricius}, {Fouesneau}, {Fr{\'e}mat}, {Guerra}, {Guerrier}, {Guiraud}, {Jean-Antoine Piccolo}, {Masana}, {Messineo}, {Mowlavi}, {Nicolas}, {Nienartowicz}, {Pailler}, {Panuzzo}, {Riclet}, {Roux}, {Seabroke}, {Sordo}, {Tanga}, {Th{\'e}venin}, {Gracia-Abril}, {Portell}, {Teyssier}, {Altmann}, {Andrae}, {Bellas-Velidis}, {Benson}, {Berthier}, {Blomme}, {Brugaletta}, {Burgess}, {Busso}, {Carry}, {Cellino}, {Cheek}, {Clementini}, {Damerdji}, {Davidson}, {Delchambre}, {Dell'Oro}, {Fern{\'a}ndez-Hern{\'a}ndez}, {Galluccio}, {Garc{\'\i }a-Lario}, {Garcia-Reinaldos}, {Gonz{\'a}lez-N{\'u}{\~n}ez}, {Gosset}, {Haigron}, {Halbwachs}, {Hambly}, {Harrison}, {Hatzidimitriou}, {Heiter}, {Hern{\'a}ndez}, {Hestroffer}, {Hodgkin}, {Holl}, {Jan{\ss }en}, {Jevardat de Fombelle}, {Jordan}, {Krone-Martins}, {Lanzafame}, {L{\"o}ffler}, {Lorca}, {Manteiga}, {Marchal}, {Marrese}, {Moitinho}, {Mora}, {Muinonen}, {Osborne}, {Pancino}, {Pauwels}, {Petit}, {Recio-Blanco}, {Richards}, {Riello}, {Rimoldini}, {Robin}, {Roegiers}, {Rybizki}, {Sarro}, {Siopis}, {Smith}, {Sozzetti}, {Ulla}, {Utrilla}, {van Leeuwen}, {van Reeven}, {Abbas}, {Abreu Aramburu}, {Accart}, {Aerts}, {Aguado}, {Ajaj}, {Altavilla}, {{\'A}lvarez}, {{\'A}lvarez Cid-Fuentes}, {Alves}, {Anderson}, {Anglada Varela}, {Antoja}, {Audard}, {Baines}, {Baker}, {Balaguer-N{\'u}{\~n}ez}, {Balbinot}, {Balog}, {Barache}, {Barbato}, {Barros}, {Barstow}, {Bartolom{\'e}}, {Bassilana}, {Bauchet}, {Baudesson-Stella}, {Becciani}, {Bellazzini}, {Bernet}, {Bertone}, {Bianchi}, {Blanco-Cuaresma}, {Boch}, {Bombrun}, {Bossini}, {Bouquillon}, {Bragaglia}, {Bramante}, {Breedt}, {Bressan}, {Brouillet}, {Bucciarelli}, {Burlacu}, {Busonero}, {Butkevich}, {Buzzi}, {Caffau}, {Cancelliere}, {C{\'a}novas}, {Cantat-Gaudin}, {Carballo}, {Carlucci}, {Carnerero}, {Carrasco}, {Casamiquela}, {Castellani}, {Castro-Ginard}, {Castro Sampol}, {Chaoul}, {Charlot}, {Chemin}, {Chiavassa}, {Cioni}, {Comoretto}, {Cooper}, {Cornez}, {Cowell}, {Crifo}, {Crosta}, {Crowley}, {Dafonte}, {Dapergolas}, {David}, \& {David}}}}
-\bibcite{Gaia-23}{{12}{2023}{{{Gaia Collaboration} {et~al.}}}{{{Gaia Collaboration}, {Vallenari}, {Brown}, {Prusti}, {de Bruijne}, {Arenou}, {Babusiaux}, {Biermann}, {Creevey}, {Ducourant}, {Evans}, {Eyer}, {Guerra}, {Hutton}, {Jordi}, {Klioner}, {Lammers}, {Lindegren}, {Luri}, {Mignard}, {Panem}, {Pourbaix}, {Randich}, {Sartoretti}, {Soubiran}, {Tanga}, {Walton}, {Bailer-Jones}, {Bastian}, {Drimmel}, {Jansen}, {Katz}, {Lattanzi}, {van Leeuwen}, {Bakker}, {Cacciari}, {Casta{\~n}eda}, {De Angeli}, {Fabricius}, {Fouesneau}, {Fr{\'e}mat}, {Galluccio}, {Guerrier}, {Heiter}, {Masana}, {Messineo}, {Mowlavi}, {Nicolas}, {Nienartowicz}, {Pailler}, {Panuzzo}, {Riclet}, {Roux}, {Seabroke}, {Sordo}, {Th{\'e}venin}, {Gracia-Abril}, {Portell}, {Teyssier}, {Altmann}, {Andrae}, {Audard}, {Bellas-Velidis}, {Benson}, {Berthier}, {Blomme}, {Burgess}, {Busonero}, {Busso}, {C{\'a}novas}, {Carry}, {Cellino}, {Cheek}, {Clementini}, {Damerdji}, {Davidson}, {de Teodoro}, {Nu{\~n}ez Campos}, {Delchambre}, {Dell'Oro}, {Esquej}, {Fern{\'a}ndez-Hern{\'a}ndez}, {Fraile}, {Garabato}, {Garc{\'\i }a-Lario}, {Gosset}, {Haigron}, {Halbwachs}, {Hambly}, {Harrison}, {Hern{\'a}ndez}, {Hestroffer}, {Hodgkin}, {Holl}, {Jan{\ss }en}, {Jevardat de Fombelle}, {Jordan}, {Krone-Martins}, {Lanzafame}, {L{\"o}ffler}, {Marchal}, {Marrese}, {Moitinho}, {Muinonen}, {Osborne}, {Pancino}, {Pauwels}, {Recio-Blanco}, {Reyl{\'e}}, {Riello}, {Rimoldini}, {Roegiers}, {Rybizki}, {Sarro}, {Siopis}, {Smith}, {Sozzetti}, {Utrilla}, {van Leeuwen}, {Abbas}, {{\'A}brah{\'a}m}, {Abreu Aramburu}, {Aerts}, {Aguado}, {Ajaj}, {Aldea-Montero}, {Altavilla}, {{\'A}lvarez}, {Alves}, {Anders}, {Anderson}, {Anglada Varela}, {Antoja}, {Baines}, {Baker}, {Balaguer-N{\'u}{\~n}ez}, {Balbinot}, {Balog}, {Barache}, {Barbato}, {Barros}, {Barstow}, {Bartolom{\'e}}, {Bassilana}, {Bauchet}, {Becciani}, {Bellazzini}, {Berihuete}, {Bernet}, {Bertone}, {Bianchi}, {Binnenfeld}, {Blanco-Cuaresma}, {Blazere}, {Boch}, {Bombrun}, {Bossini}, {Bouquillon}, {Bragaglia}, {Bramante}, {Breedt}, {Bressan}, {Brouillet}, {Brugaletta}, {Bucciarelli}, {Burlacu}, {Butkevich}, {Buzzi}, {Caffau}, {Cancelliere}, {Cantat-Gaudin}, {Carballo}, {Carlucci}, {Carnerero}, {Carrasco}, {Casamiquela}, {Castellani}, {Castro-Ginard}, {Chaoul}, {Charlot}, {Chemin}, {Chiaramida}, {Chiavassa}, {Chornay}, {Comoretto}, {Contursi}, {Cooper}, {Cornez}, {Cowell}, {Crifo}, {Cropper}, {Crosta}, {Crowley}, {Dafonte}, {Dapergolas}, {David}, {David}, {de Laverny}, {De Luise}, \& {De March}}}}
-\bibcite{Galton-1886}{{13}{1886}{{Galton}}{{}}}
-\bibcite{geurts2006}{{14}{2006}{{Geurts {et~al.}}}{{Geurts, Ernst, \& Wehenkel}}}
-\bibcite{Hastie2009}{{15}{2009}{{Hastie {et~al.}}}{{Hastie, Tibshirani, \& Friedman}}}
-\bibcite{Johnson-87}{{16}{1987}{{{Johnson} \& {Soderblom}}}{{}}}
-\bibcite{ke2017}{{17}{2017}{{Ke {et~al.}}}{{Ke, Meng, Finley, Wang, Chen, Ma, Ye, \& Liu}}}
-\bibcite{kraskov2004}{{18}{2004}{{Kraskov {et~al.}}}{{Kraskov, St\"ogbauer, \& Grassberger}}}
-\bibcite{Lundberg-17}{{19}{2017}{{{Lundberg} \& {Lee}}}{{}}}
-\bibcite{Lundberg2020}{{20}{2020}{{Lundberg {et~al.}}}{{Lundberg, Erion, Chen, DeGrave, Prutkin, Nair, Katz, Himmelfarb, Bansal, \& Lee}}}
-\bibcite{Mayor-03}{{21}{2003}{{{Mayor} {et~al.}}}{{{Mayor}, {Pepe}, {Queloz}, {Bouchy}, {Rupprecht}, {Lo Curto}, {Avila}, {Benz}, {Bertaux}, {Bonfils}, {Dall}, {Dekker}, {Delabre}, {Eckert}, {Fleury}, {Gilliotte}, {Gojak}, {Guzman}, {Kohler}, {Lizon}, {Longinotti}, {Lovis}, {Megevand}, {Pasquini}, {Reyes}, {Sivan}, {Sosnowska}, {Soto}, {Udry}, {van Kesteren}, {Weber}, \& {Weilenmann}}}}
-\bibcite{prokhorenkova2018}{{22}{2018}{{Prokhorenkova}}{{}}}
-\bibcite{Reddy-06}{{23}{2006}{{{Reddy} {et~al.}}}{{{Reddy}, {Lambert}, \& {Allende Prieto}}}}
-\bibcite{Schonrich-10}{{24}{2010}{{{Sch{\"o}nrich} {et~al.}}}{{{Sch{\"o}nrich}, {Binney}, \& {Dehnen}}}}
-\bibcite{Schwarzschild-1907}{{25}{1907}{{Schwarzschild}}{{}}}
-\bibcite{shannon1948}{{26}{1948}{{Shannon}}{{}}}
-\bibcite{spearman1904}{{27}{1904}{{Spearman}}{{}}}
+\bibcite{Erickson2020}{{9}{2020}{{Erickson {et~al.}}}{{Erickson, Mueller, Shirkov, Zhang, Larroy, Li, \& Smola}}}
+\bibcite{farrar1967}{{10}{1967}{{Farrar \& Glauber}}{{}}}
+\bibcite{Feltzing-23}{{11}{2023}{{{Feltzing} \& {Feuillet}}}{{}}}
+\bibcite{Gaia-21}{{12}{2021}{{{Gaia Collaboration} {et~al.}}}{{{Gaia Collaboration}, {Brown}, {Vallenari}, {Prusti}, {de Bruijne}, {Babusiaux}, {Biermann}, {Creevey}, {Evans}, {Eyer}, {Hutton}, {Jansen}, {Jordi}, {Klioner}, {Lammers}, {Lindegren}, {Luri}, {Mignard}, {Panem}, {Pourbaix}, {Randich}, {Sartoretti}, {Soubiran}, {Walton}, {Arenou}, {Bailer-Jones}, {Bastian}, {Cropper}, {Drimmel}, {Katz}, {Lattanzi}, {van Leeuwen}, {Bakker}, {Cacciari}, {Casta{\~n}eda}, {De Angeli}, {Ducourant}, {Fabricius}, {Fouesneau}, {Fr{\'e}mat}, {Guerra}, {Guerrier}, {Guiraud}, {Jean-Antoine Piccolo}, {Masana}, {Messineo}, {Mowlavi}, {Nicolas}, {Nienartowicz}, {Pailler}, {Panuzzo}, {Riclet}, {Roux}, {Seabroke}, {Sordo}, {Tanga}, {Th{\'e}venin}, {Gracia-Abril}, {Portell}, {Teyssier}, {Altmann}, {Andrae}, {Bellas-Velidis}, {Benson}, {Berthier}, {Blomme}, {Brugaletta}, {Burgess}, {Busso}, {Carry}, {Cellino}, {Cheek}, {Clementini}, {Damerdji}, {Davidson}, {Delchambre}, {Dell'Oro}, {Fern{\'a}ndez-Hern{\'a}ndez}, {Galluccio}, {Garc{\'\i }a-Lario}, {Garcia-Reinaldos}, {Gonz{\'a}lez-N{\'u}{\~n}ez}, {Gosset}, {Haigron}, {Halbwachs}, {Hambly}, {Harrison}, {Hatzidimitriou}, {Heiter}, {Hern{\'a}ndez}, {Hestroffer}, {Hodgkin}, {Holl}, {Jan{\ss }en}, {Jevardat de Fombelle}, {Jordan}, {Krone-Martins}, {Lanzafame}, {L{\"o}ffler}, {Lorca}, {Manteiga}, {Marchal}, {Marrese}, {Moitinho}, {Mora}, {Muinonen}, {Osborne}, {Pancino}, {Pauwels}, {Petit}, {Recio-Blanco}, {Richards}, {Riello}, {Rimoldini}, {Robin}, {Roegiers}, {Rybizki}, {Sarro}, {Siopis}, {Smith}, {Sozzetti}, {Ulla}, {Utrilla}, {van Leeuwen}, {van Reeven}, {Abbas}, {Abreu Aramburu}, {Accart}, {Aerts}, {Aguado}, {Ajaj}, {Altavilla}, {{\'A}lvarez}, {{\'A}lvarez Cid-Fuentes}, {Alves}, {Anderson}, {Anglada Varela}, {Antoja}, {Audard}, {Baines}, {Baker}, {Balaguer-N{\'u}{\~n}ez}, {Balbinot}, {Balog}, {Barache}, {Barbato}, {Barros}, {Barstow}, {Bartolom{\'e}}, {Bassilana}, {Bauchet}, {Baudesson-Stella}, {Becciani}, {Bellazzini}, {Bernet}, {Bertone}, {Bianchi}, {Blanco-Cuaresma}, {Boch}, {Bombrun}, {Bossini}, {Bouquillon}, {Bragaglia}, {Bramante}, {Breedt}, {Bressan}, {Brouillet}, {Bucciarelli}, {Burlacu}, {Busonero}, {Butkevich}, {Buzzi}, {Caffau}, {Cancelliere}, {C{\'a}novas}, {Cantat-Gaudin}, {Carballo}, {Carlucci}, {Carnerero}, {Carrasco}, {Casamiquela}, {Castellani}, {Castro-Ginard}, {Castro Sampol}, {Chaoul}, {Charlot}, {Chemin}, {Chiavassa}, {Cioni}, {Comoretto}, {Cooper}, {Cornez}, {Cowell}, {Crifo}, {Crosta}, {Crowley}, {Dafonte}, {Dapergolas}, {David}, \& {David}}}}
+\bibcite{Gaia-23}{{13}{2023}{{{Gaia Collaboration} {et~al.}}}{{{Gaia Collaboration}, {Vallenari}, {Brown}, {Prusti}, {de Bruijne}, {Arenou}, {Babusiaux}, {Biermann}, {Creevey}, {Ducourant}, {Evans}, {Eyer}, {Guerra}, {Hutton}, {Jordi}, {Klioner}, {Lammers}, {Lindegren}, {Luri}, {Mignard}, {Panem}, {Pourbaix}, {Randich}, {Sartoretti}, {Soubiran}, {Tanga}, {Walton}, {Bailer-Jones}, {Bastian}, {Drimmel}, {Jansen}, {Katz}, {Lattanzi}, {van Leeuwen}, {Bakker}, {Cacciari}, {Casta{\~n}eda}, {De Angeli}, {Fabricius}, {Fouesneau}, {Fr{\'e}mat}, {Galluccio}, {Guerrier}, {Heiter}, {Masana}, {Messineo}, {Mowlavi}, {Nicolas}, {Nienartowicz}, {Pailler}, {Panuzzo}, {Riclet}, {Roux}, {Seabroke}, {Sordo}, {Th{\'e}venin}, {Gracia-Abril}, {Portell}, {Teyssier}, {Altmann}, {Andrae}, {Audard}, {Bellas-Velidis}, {Benson}, {Berthier}, {Blomme}, {Burgess}, {Busonero}, {Busso}, {C{\'a}novas}, {Carry}, {Cellino}, {Cheek}, {Clementini}, {Damerdji}, {Davidson}, {de Teodoro}, {Nu{\~n}ez Campos}, {Delchambre}, {Dell'Oro}, {Esquej}, {Fern{\'a}ndez-Hern{\'a}ndez}, {Fraile}, {Garabato}, {Garc{\'\i }a-Lario}, {Gosset}, {Haigron}, {Halbwachs}, {Hambly}, {Harrison}, {Hern{\'a}ndez}, {Hestroffer}, {Hodgkin}, {Holl}, {Jan{\ss }en}, {Jevardat de Fombelle}, {Jordan}, {Krone-Martins}, {Lanzafame}, {L{\"o}ffler}, {Marchal}, {Marrese}, {Moitinho}, {Muinonen}, {Osborne}, {Pancino}, {Pauwels}, {Recio-Blanco}, {Reyl{\'e}}, {Riello}, {Rimoldini}, {Roegiers}, {Rybizki}, {Sarro}, {Siopis}, {Smith}, {Sozzetti}, {Utrilla}, {van Leeuwen}, {Abbas}, {{\'A}brah{\'a}m}, {Abreu Aramburu}, {Aerts}, {Aguado}, {Ajaj}, {Aldea-Montero}, {Altavilla}, {{\'A}lvarez}, {Alves}, {Anders}, {Anderson}, {Anglada Varela}, {Antoja}, {Baines}, {Baker}, {Balaguer-N{\'u}{\~n}ez}, {Balbinot}, {Balog}, {Barache}, {Barbato}, {Barros}, {Barstow}, {Bartolom{\'e}}, {Bassilana}, {Bauchet}, {Becciani}, {Bellazzini}, {Berihuete}, {Bernet}, {Bertone}, {Bianchi}, {Binnenfeld}, {Blanco-Cuaresma}, {Blazere}, {Boch}, {Bombrun}, {Bossini}, {Bouquillon}, {Bragaglia}, {Bramante}, {Breedt}, {Bressan}, {Brouillet}, {Brugaletta}, {Bucciarelli}, {Burlacu}, {Butkevich}, {Buzzi}, {Caffau}, {Cancelliere}, {Cantat-Gaudin}, {Carballo}, {Carlucci}, {Carnerero}, {Carrasco}, {Casamiquela}, {Castellani}, {Castro-Ginard}, {Chaoul}, {Charlot}, {Chemin}, {Chiaramida}, {Chiavassa}, {Chornay}, {Comoretto}, {Contursi}, {Cooper}, {Cornez}, {Cowell}, {Crifo}, {Cropper}, {Crosta}, {Crowley}, {Dafonte}, {Dapergolas}, {David}, {David}, {de Laverny}, {De Luise}, \& {De March}}}}
+\bibcite{Galton-1886}{{14}{1886}{{Galton}}{{}}}
+\bibcite{geurts2006}{{15}{2006}{{Geurts {et~al.}}}{{Geurts, Ernst, \& Wehenkel}}}
+\bibcite{Hastie2009}{{16}{2009}{{Hastie {et~al.}}}{{Hastie, Tibshirani, \& Friedman}}}
+\bibcite{Johnson-87}{{17}{1987}{{{Johnson} \& {Soderblom}}}{{}}}
+\bibcite{ke2017}{{18}{2017}{{Ke {et~al.}}}{{Ke, Meng, Finley, Wang, Chen, Ma, Ye, \& Liu}}}
+\bibcite{kraskov2004}{{19}{2004}{{Kraskov {et~al.}}}{{Kraskov, St\"ogbauer, \& Grassberger}}}
+\bibcite{LeDell2020}{{20}{2020}{{LeDell \& Poirier}}{{}}}
+\bibcite{Lundberg-17}{{21}{2017}{{{Lundberg} \& {Lee}}}{{}}}
+\bibcite{Lundberg2020}{{22}{2020}{{Lundberg {et~al.}}}{{Lundberg, Erion, Chen, DeGrave, Prutkin, Nair, Katz, Himmelfarb, Bansal, \& Lee}}}
+\bibcite{Mayor-03}{{23}{2003}{{{Mayor} {et~al.}}}{{{Mayor}, {Pepe}, {Queloz}, {Bouchy}, {Rupprecht}, {Lo Curto}, {Avila}, {Benz}, {Bertaux}, {Bonfils}, {Dall}, {Dekker}, {Delabre}, {Eckert}, {Fleury}, {Gilliotte}, {Gojak}, {Guzman}, {Kohler}, {Lizon}, {Longinotti}, {Lovis}, {Megevand}, {Pasquini}, {Reyes}, {Sivan}, {Sosnowska}, {Soto}, {Udry}, {van Kesteren}, {Weber}, \& {Weilenmann}}}}
+\bibcite{prokhorenkova2018}{{24}{2018}{{Prokhorenkova}}{{}}}
+\bibcite{Reddy-06}{{25}{2006}{{{Reddy} {et~al.}}}{{{Reddy}, {Lambert}, \& {Allende Prieto}}}}
+\bibcite{Schonrich-10}{{26}{2010}{{{Sch{\"o}nrich} {et~al.}}}{{{Sch{\"o}nrich}, {Binney}, \& {Dehnen}}}}
+\bibcite{Schwarzschild-1907}{{27}{1907}{{Schwarzschild}}{{}}}
+\bibcite{shannon1948}{{28}{1948}{{Shannon}}{{}}}
+\bibcite{spearman1904}{{29}{1904}{{Spearman}}{{}}}
 \@LN@col{1}
-\@LN{319}{4}
-\@LN{320}{4}
-\@LN{321}{4}
 \@LN{322}{4}
 \@LN{323}{4}
 \@LN{324}{4}
@@ -434,10 +436,63 @@
 \@LN{353}{4}
 \@LN{354}{4}
 \@LN{355}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Predicting individual abundances}{5}{section.4}\protected@file@percent }
 \@LN{356}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Abundance ratios relevant for exoplanet research}{5}{section.5}\protected@file@percent }
 \@LN{357}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and summary}{5}{section.6}\protected@file@percent }
 \@LN{358}{4}
+\@LN{359}{4}
+\@LN{360}{4}
+\@LN{361}{4}
+\@LN{362}{4}
+\@LN{363}{4}
+\@LN{364}{4}
+\@LN{365}{4}
+\@LN{366}{4}
+\@LN{367}{4}
+\@LN{368}{4}
+\@LN{369}{4}
+\@LN{370}{4}
+\@LN{371}{4}
+\@LN{372}{4}
+\@LN{373}{4}
+\@LN{374}{4}
+\@LN{375}{4}
+\@LN{376}{4}
+\@LN{377}{4}
+\@LN{378}{4}
+\@LN{379}{4}
+\@LN{380}{4}
+\@LN{381}{4}
+\@LN{382}{4}
+\@LN{383}{4}
 \@LN@col{2}
+\@LN{384}{4}
+\@LN{385}{4}
+\@LN{386}{4}
+\@LN{387}{4}
+\@LN{388}{4}
+\@LN{389}{4}
+\@LN{390}{4}
+\@LN{391}{4}
+\@LN{392}{4}
+\@LN{393}{4}
+\@LN{394}{4}
+\@LN{395}{4}
+\@LN{396}{4}
+\@LN{397}{4}
+\@LN{398}{4}
+\@LN{399}{4}
+\@LN{400}{4}
+\@LN{401}{4}
+\@LN{402}{4}
+\@LN{403}{4}
+\@LN{404}{4}
+\@LN{405}{4}
+\@LN{406}{4}
+\@LN{407}{4}
+\@LN{408}{4}
 \citation{Feltzing-23}
 \citation{Adibekyan-12,DelgadoMena-21}
 \citation{Johnson-87}
@@ -448,68 +503,15 @@
 \citation{Adibekyan-12}
 \citation{kraskov2004}
 \@LN@col{1}
-\@LN{359}{5}
+\@LN{409}{5}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Construction of the samples}{6}{appendix.A}\protected@file@percent }
 \newlabel{target_selection}{{A}{6}{Construction of the samples}{appendix.A}{}}
-\@LN{360}{5}
-\@LN{361}{5}
-\@LN{362}{5}
-\@LN{363}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}APOGEE DR17}{6}{subsection.A.1}\protected@file@percent }
-\@LN{364}{5}
-\@LN{365}{5}
-\@LN{366}{5}
-\@LN{367}{5}
-\@LN{368}{5}
-\@LN{369}{5}
-\@LN{370}{5}
-\@LN{371}{5}
-\@LN{372}{5}
-\@LN{373}{5}
-\@LN{374}{5}
-\@LN{375}{5}
-\@LN{376}{5}
-\@LN{377}{5}
-\@LN{378}{5}
-\@LN{379}{5}
-\@LN{380}{5}
-\@LN{381}{5}
-\@LN{382}{5}
-\@LN{383}{5}
-\@LN{384}{5}
-\@LN{385}{5}
-\@LN{386}{5}
-\@LN{387}{5}
-\@LN{388}{5}
-\@LN{389}{5}
-\@LN{390}{5}
-\@LN{391}{5}
-\@LN{392}{5}
-\@LN{393}{5}
-\@LN{394}{5}
-\@LN{395}{5}
-\@LN{396}{5}
-\@LN{397}{5}
-\@LN{398}{5}
-\@LN{399}{5}
-\@LN{400}{5}
-\@LN{401}{5}
-\@LN{402}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}HARPS}{6}{subsection.A.2}\protected@file@percent }
-\@LN{403}{5}
-\@LN{404}{5}
-\@LN{405}{5}
-\@LN{406}{5}
-\@LN{407}{5}
-\@LN{408}{5}
-\@LN{409}{5}
 \@LN{410}{5}
 \@LN{411}{5}
 \@LN{412}{5}
 \@LN{413}{5}
-\@LN@col{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}APOGEE DR17}{6}{subsection.A.1}\protected@file@percent }
 \@LN{414}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Kinematics and dynamics of the stars}{6}{subsection.A.3}\protected@file@percent }
 \@LN{415}{5}
 \@LN{416}{5}
 \@LN{417}{5}
@@ -537,19 +539,18 @@
 \@LN{439}{5}
 \@LN{440}{5}
 \@LN{441}{5}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Exploratory data analysis for metallicity determination}{6}{appendix.B}\protected@file@percent }
 \@LN{442}{5}
 \@LN{443}{5}
 \@LN{444}{5}
 \@LN{445}{5}
 \@LN{446}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Spearman rank correlation analysis}{6}{subsection.B.1}\protected@file@percent }
 \@LN{447}{5}
 \@LN{448}{5}
 \@LN{449}{5}
 \@LN{450}{5}
 \@LN{451}{5}
 \@LN{452}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}HARPS}{6}{subsection.A.2}\protected@file@percent }
 \@LN{453}{5}
 \@LN{454}{5}
 \@LN{455}{5}
@@ -558,73 +559,74 @@
 \@LN{458}{5}
 \@LN{459}{5}
 \@LN{460}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Mutual information analysis}{6}{subsection.B.2}\protected@file@percent }
 \@LN{461}{5}
 \@LN{462}{5}
 \@LN{463}{5}
+\@LN@col{2}
 \@LN{464}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Kinematics and dynamics of the stars}{6}{subsection.A.3}\protected@file@percent }
 \@LN{465}{5}
 \@LN{466}{5}
 \@LN{467}{5}
 \@LN{468}{5}
 \@LN{469}{5}
 \@LN{470}{5}
+\@LN{471}{5}
+\@LN{472}{5}
+\@LN{473}{5}
+\@LN{474}{5}
+\@LN{475}{5}
+\@LN{476}{5}
+\@LN{477}{5}
+\@LN{478}{5}
+\@LN{479}{5}
+\@LN{480}{5}
+\@LN{481}{5}
+\@LN{482}{5}
+\@LN{483}{5}
+\@LN{484}{5}
+\@LN{485}{5}
+\@LN{486}{5}
+\@LN{487}{5}
+\@LN{488}{5}
+\@LN{489}{5}
+\@LN{490}{5}
+\@LN{491}{5}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Exploratory data analysis for metallicity determination}{6}{appendix.B}\protected@file@percent }
+\@LN{492}{5}
+\@LN{493}{5}
+\@LN{494}{5}
+\@LN{495}{5}
+\@LN{496}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Spearman rank correlation analysis}{6}{subsection.B.1}\protected@file@percent }
+\@LN{497}{5}
+\@LN{498}{5}
+\@LN{499}{5}
+\@LN{500}{5}
+\@LN{501}{5}
+\@LN{502}{5}
+\@LN{503}{5}
+\@LN{504}{5}
+\@LN{505}{5}
+\@LN{506}{5}
+\@LN{507}{5}
+\@LN{508}{5}
+\@LN{509}{5}
+\@LN{510}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Mutual information analysis}{6}{subsection.B.2}\protected@file@percent }
+\@LN{511}{5}
+\@LN{512}{5}
+\@LN{513}{5}
+\@LN{514}{5}
+\@LN{515}{5}
+\@LN{516}{5}
+\@LN{517}{5}
+\@LN{518}{5}
+\@LN{519}{5}
+\@LN{520}{5}
 \@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Spearman rank correlation coefficients between the parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples.}}{7}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:spearman_appendix}{{B.1}{7}{Spearman rank correlation coefficients between the parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples}{figure.caption.5}{}}
 \@LN@col{1}
-\@LN{471}{6}
-\@LN{472}{6}
-\@LN{473}{6}
-\@LN{474}{6}
-\@LN{475}{6}
-\@LN{476}{6}
-\@LN{477}{6}
-\@LN{478}{6}
-\@LN{479}{6}
-\@LN{480}{6}
-\@LN{481}{6}
-\@LN{482}{6}
-\@LN{483}{6}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}Multicollinearity diagnostics}{7}{subsection.B.3}\protected@file@percent }
-\@LN{484}{6}
-\@LN{485}{6}
-\@LN{486}{6}
-\@LN{487}{6}
-\@LN{488}{6}
-\@LN{489}{6}
-\@LN{490}{6}
-\@LN{491}{6}
-\@LN{492}{6}
-\@LN{493}{6}
-\@LN{494}{6}
-\@LN{495}{6}
-\@LN{496}{6}
-\@LN{497}{6}
-\@LN{498}{6}
-\@LN{499}{6}
-\@LN@col{2}
-\@LN{500}{6}
-\@LN{501}{6}
-\@LN{502}{6}
-\@LN{503}{6}
-\@LN{504}{6}
-\@LN{505}{6}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}Comparison of parameter distributions}{7}{subsection.B.4}\protected@file@percent }
-\@LN{506}{6}
-\@LN{507}{6}
-\@LN{508}{6}
-\@LN{509}{6}
-\@LN{510}{6}
-\@LN{511}{6}
-\@LN{512}{6}
-\@LN{513}{6}
-\@LN{514}{6}
-\@LN{515}{6}
-\@LN{516}{6}
-\@LN{517}{6}
-\@LN{518}{6}
-\@LN{519}{6}
-\@LN{520}{6}
 \@LN{521}{6}
 \@LN{522}{6}
 \@LN{523}{6}
@@ -632,10 +634,63 @@
 \@LN{525}{6}
 \@LN{526}{6}
 \@LN{527}{6}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Regression benchmarks and ensemble models for [Fe/H]}{7}{appendix.C}\protected@file@percent }
 \@LN{528}{6}
 \@LN{529}{6}
 \@LN{530}{6}
+\@LN{531}{6}
+\@LN{532}{6}
+\@LN{533}{6}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}Multicollinearity diagnostics}{7}{subsection.B.3}\protected@file@percent }
+\@LN{534}{6}
+\@LN{535}{6}
+\@LN{536}{6}
+\@LN{537}{6}
+\@LN{538}{6}
+\@LN{539}{6}
+\@LN{540}{6}
+\@LN{541}{6}
+\@LN{542}{6}
+\@LN{543}{6}
+\@LN{544}{6}
+\@LN{545}{6}
+\@LN{546}{6}
+\@LN{547}{6}
+\@LN{548}{6}
+\@LN{549}{6}
+\@LN@col{2}
+\@LN{550}{6}
+\@LN{551}{6}
+\@LN{552}{6}
+\@LN{553}{6}
+\@LN{554}{6}
+\@LN{555}{6}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}Comparison of parameter distributions}{7}{subsection.B.4}\protected@file@percent }
+\@LN{556}{6}
+\@LN{557}{6}
+\@LN{558}{6}
+\@LN{559}{6}
+\@LN{560}{6}
+\@LN{561}{6}
+\@LN{562}{6}
+\@LN{563}{6}
+\@LN{564}{6}
+\@LN{565}{6}
+\@LN{566}{6}
+\@LN{567}{6}
+\@LN{568}{6}
+\@LN{569}{6}
+\@LN{570}{6}
+\@LN{571}{6}
+\@LN{572}{6}
+\@LN{573}{6}
+\@LN{574}{6}
+\@LN{575}{6}
+\@LN{576}{6}
+\@LN{577}{6}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Regression benchmarks and ensemble models for [Fe/H]}{7}{appendix.C}\protected@file@percent }
+\@LN{578}{6}
+\@LN{579}{6}
+\@LN{580}{6}
 \@writefile{lof}{\contentsline {figure}{\numberline {B.2}{\ignorespaces Mutual information between kinematic parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples.}}{8}{figure.caption.6}\protected@file@percent }
 \newlabel{fig:mi_appendix}{{B.2}{8}{Mutual information between kinematic parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples}{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {B.3}{\ignorespaces Variance inflation factors (VIF) for the kinematic parameters in the APOGEE (left) and HARPS (right) samples.}}{8}{figure.caption.7}\protected@file@percent }
@@ -644,61 +699,10 @@
 \newlabel{fig:feature_distributions}{{B.4}{9}{Comparison of kinematic and orbital parameters distributions between the APOGEE and HARPS samples. Upper panels show probability-normalized histograms; lower panels show boxplots}{figure.caption.8}{}}
 \citation{Akiba-19}
 \@LN@col{1}
-\@LN{531}{9}
-\@LN{532}{9}
-\@LN{533}{9}
-\@LN{534}{9}
-\@LN{535}{9}
-\@LN{536}{9}
-\@LN{537}{9}
-\@LN{538}{9}
-\@LN{539}{9}
-\@LN{540}{9}
-\@LN{541}{9}
-\@LN{542}{9}
-\@LN{543}{9}
-\@LN{544}{9}
-\@LN{545}{9}
-\@LN{546}{9}
-\@LN{547}{9}
-\@LN{548}{9}
-\@LN{549}{9}
-\@LN{550}{9}
-\@LN{551}{9}
-\@LN{552}{9}
-\@LN{553}{9}
-\@LN{554}{9}
-\@LN{555}{9}
-\@LN{556}{9}
-\@LN{557}{9}
-\@LN{558}{9}
-\@LN{559}{9}
-\@LN{560}{9}
-\@LN{561}{9}
-\@LN{562}{9}
-\@LN{563}{9}
-\@LN{564}{9}
-\@LN{565}{9}
-\@LN{566}{9}
-\@LN{567}{9}
-\@LN{568}{9}
-\@LN{569}{9}
-\@LN{570}{9}
-\@LN{571}{9}
-\@LN{572}{9}
-\@LN{573}{9}
-\@LN{574}{9}
-\@LN{575}{9}
-\@LN{576}{9}
-\@LN{577}{9}
-\@LN{578}{9}
-\@LN{579}{9}
-\@LN{580}{9}
 \@LN{581}{9}
 \@LN{582}{9}
 \@LN{583}{9}
 \@LN{584}{9}
-\@LN@col{2}
 \@LN{585}{9}
 \@LN{586}{9}
 \@LN{587}{9}
@@ -726,8 +730,6 @@
 \@LN{609}{9}
 \@LN{610}{9}
 \@LN{611}{9}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Feature importance analysis}{10}{subsection.C.1}\protected@file@percent }
-\newlabel{appendix:feature_importance_feh}{{C.1}{10}{Feature importance analysis}{subsection.C.1}{}}
 \@LN{612}{9}
 \@LN{613}{9}
 \@LN{614}{9}
@@ -735,6 +737,59 @@
 \@LN{616}{9}
 \@LN{617}{9}
 \@LN{618}{9}
+\@LN{619}{9}
+\@LN{620}{9}
+\@LN{621}{9}
+\@LN{622}{9}
+\@LN{623}{9}
+\@LN{624}{9}
+\@LN{625}{9}
+\@LN{626}{9}
+\@LN{627}{9}
+\@LN{628}{9}
+\@LN{629}{9}
+\@LN{630}{9}
+\@LN{631}{9}
+\@LN{632}{9}
+\@LN{633}{9}
+\@LN{634}{9}
+\@LN@col{2}
+\@LN{635}{9}
+\@LN{636}{9}
+\@LN{637}{9}
+\@LN{638}{9}
+\@LN{639}{9}
+\@LN{640}{9}
+\@LN{641}{9}
+\@LN{642}{9}
+\@LN{643}{9}
+\@LN{644}{9}
+\@LN{645}{9}
+\@LN{646}{9}
+\@LN{647}{9}
+\@LN{648}{9}
+\@LN{649}{9}
+\@LN{650}{9}
+\@LN{651}{9}
+\@LN{652}{9}
+\@LN{653}{9}
+\@LN{654}{9}
+\@LN{655}{9}
+\@LN{656}{9}
+\@LN{657}{9}
+\@LN{658}{9}
+\@LN{659}{9}
+\@LN{660}{9}
+\@LN{661}{9}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Feature importance analysis}{10}{subsection.C.1}\protected@file@percent }
+\newlabel{appendix:feature_importance_feh}{{C.1}{10}{Feature importance analysis}{subsection.C.1}{}}
+\@LN{662}{9}
+\@LN{663}{9}
+\@LN{664}{9}
+\@LN{665}{9}
+\@LN{666}{9}
+\@LN{667}{9}
+\@LN{668}{9}
 \@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Performance of regression models evaluated using 5-fold cross-validation. Reported values correspond to the mean across folds, with RMSE uncertainties indicating the standard deviation.}}{11}{table.caption.9}\protected@file@percent }
 \newlabel{tab:cv_scores_full}{{C.1}{11}{Performance of regression models evaluated using 5-fold cross-validation. Reported values correspond to the mean across folds, with RMSE uncertainties indicating the standard deviation}{table.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces Built-in gain feature importance for the tuned LightGBM (left) and XGBoost (right) models. The importance corresponds to the total reduction in squared error produced by splits involving each feature across all trees in the ensemble.}}{11}{figure.caption.13}\protected@file@percent }

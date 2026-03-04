@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Abdurro'uf} {et~al.}(2022){Abdurro'uf}, {Accetta}, {Aerts}, {Silva
@@ -67,6 +67,11 @@ Cortes, C. \& Vapnik, V. 1995, Machine Learning, 20, 273
   Lis}}]{DelgadoMena-21}
 {Delgado Mena}, E., {Adibekyan}, V., {Santos}, N.~C., {et~al.} 2021, \aap, 655,
   A99
+
+\bibitem[{Erickson {et~al.}(2020)Erickson, Mueller, Shirkov, Zhang, Larroy, Li,
+  \& Smola}]{Erickson2020}
+Erickson, N., Mueller, J., Shirkov, A., {et~al.} 2020, in Proceedings of the
+  AAAI Conference on Artificial Intelligence Workshops
 
 \bibitem[{Farrar \& Glauber(1967)}]{farrar1967}
 Farrar, D.~E. \& Glauber, R.~R. 1967, The Review of Economics and Statistics,
@@ -174,6 +179,9 @@ Ke, G., Meng, Q., Finley, T., {et~al.} 2017, in Advances in Neural Information
 \bibitem[{Kraskov {et~al.}(2004)Kraskov, St\"ogbauer, \&
   Grassberger}]{kraskov2004}
 Kraskov, A., St\"ogbauer, H., \& Grassberger, P. 2004, Phys. Rev. E, 69, 066138
+
+\bibitem[{LeDell \& Poirier(2020)}]{LeDell2020}
+LeDell, E. \& Poirier, S. 2020, Proceedings of the AutoML Workshop at ICML
 
 \bibitem[{{Lundberg} \& {Lee}(2017)}]{Lundberg-17}
 {Lundberg}, S. \& {Lee}, S.-I. 2017, arXiv e-prints, arXiv:1705.07874
