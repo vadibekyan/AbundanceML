@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  4 MAR 2026 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  12 MAR 2026 10:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1093,10 +1093,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package lineno Warning: Linenumber reference failed, 
-(lineno)                rerun to get it right.
-
 <figures/LGBM_builtin_gain.png, id=310, 578.16pt x 433.62pt>
 File: figures/LGBM_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_builtin_gain.png>
@@ -1177,7 +1173,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on adibekyan_abundances_ML.pdf (12 pages, 4183175 bytes).
+Output written on adibekyan_abundances_ML.pdf (12 pages, 4183099 bytes).
 PDF statistics:
  436 PDF objects out of 1000 (max. 8388607)
  338 compressed objects within 4 object streams
