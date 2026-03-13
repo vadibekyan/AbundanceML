@@ -1,0 +1,27 @@
+{
+    "element": "c_h",
+    "features": [
+        "U_lsr",
+        "V_lsr",
+        "W_lsr",
+        "P_gal",
+        "rapo",
+        "rperi",
+        "eccentricity",
+        "zmax",
+        "fe_h"
+    ],
+    "best_rmse_cv": 0.07878688448478949,
+    "best_params": {
+        "n_estimators": 592,
+        "learning_rate": 0.01526622582332209,
+        "num_leaves": 19,
+        "max_depth": 6,
+        "min_child_samples": 162,
+        "subsample": 0.8232697470897357,
+        "colsample_bytree": 0.878293650638956,
+        "reg_alpha": 4.325173979143627e-05,
+        "reg_lambda": 0.8766226998887924
+    },
+    "random_state": 42
+}
