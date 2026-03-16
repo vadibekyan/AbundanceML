@@ -1,0 +1,21 @@
+{
+  "target": "o_h",
+  "feature_tag": "fe_mg_si",
+  "features": [
+    "fe_h",
+    "mg_h",
+    "si_h"
+  ],
+  "best_value": 0.03635141718408901,
+  "best_params": {
+    "n_estimators": 908,
+    "learning_rate": 0.017855116242705964,
+    "num_leaves": 226,
+    "max_depth": 7,
+    "min_child_samples": 105,
+    "subsample": 0.5471532033148403,
+    "colsample_bytree": 0.9574042705280703,
+    "reg_alpha": 1.4365870871670857e-06,
+    "reg_lambda": 9.758642840014666e-06
+  }
+}
