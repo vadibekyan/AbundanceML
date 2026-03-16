@@ -1,0 +1,17 @@
+Element: o_h
+APOGEE size: 45727
+HARPS size: 232
+APOGEE internal RMSE: 0.05405
+HARPS external RMSE: 0.09833
+Best params:
+{
+  "n_estimators": 994,
+  "learning_rate": 0.012560998556912097,
+  "num_leaves": 17,
+  "max_depth": 16,
+  "min_child_samples": 151,
+  "subsample": 0.9953508651353966,
+  "colsample_bytree": 0.9875201238299287,
+  "reg_alpha": 1.0145635375381467e-08,
+  "reg_lambda": 4.828514170432767
+}

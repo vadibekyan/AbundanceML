@@ -1,0 +1,10 @@
+feature,feature_pretty,value
+fe_h,$[\mathrm{Fe/H}]$,0.15314858228380215
+rperi,"$R_{\mathrm{peri}}\,[\mathrm{kpc}]$",0.03221653796997903
+zmax,"$Z_{\max}\,[\mathrm{kpc}]$",0.016789605471334984
+rapo,"$R_{\mathrm{apo}}\,[\mathrm{kpc}]$",0.0066246454319462775
+P_gal,"$P_{\mathrm{gal}}\,[\%]$",0.0026031245395236146
+eccentricity,$e$,0.002436554423533106
+V_lsr,"$V_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",0.0015655232687844262
+U_lsr,"$U_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",0.0014531849043680437
+W_lsr,"$W_{\mathrm{LSR}}\,[\mathrm{km\,s^{-1}}]$",0.0012357098684642955

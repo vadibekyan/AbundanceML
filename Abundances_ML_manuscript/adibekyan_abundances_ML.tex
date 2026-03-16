@@ -124,7 +124,7 @@ The distributions of stellar metallicities ([Fe/H]) for the two samples are disp
 \end{figure}
 
 
-\section{Predicting metallicity from kinematics}
+\section{Predicting metallicity from kinematics} \label{feh_from_kinematics}
 
 
 To predict stellar metallicity, [Fe/H], we initially considered 9 kinematic and orbital parameters. These include the Galactic velocity components  ($\mathrm{U_{LSR}}$, $\mathrm{V_{LSR}}$, and $\mathrm{W_{LSR}}$) and the total space velocity ($\mathrm{UVW_{LSR}} = \sqrt{U_{\rm LSR}^2 + V_{\rm LSR}^2 + W_{\rm LSR}^2}$
@@ -207,7 +207,7 @@ In both datasets, the predictions exhibit a significant regression toward the me
 \end{figure}
 
 
-\subsection{Feature importance analysis}
+\subsection{Feature importance analysis} \label{main_feat_imp_feh}
 
 To quantify the relative contribution of each kinematic parameter to the metallicity prediction, we performed a comprehensive feature importance analysis using four complementary approaches: built-in gain-based importance, permutation importance \citep{breiman2001}, single-feature predictive performance, and SHAP values \citep{Lundberg-17, Lundberg2020}. Figures are shown in Sect.~\ref{appendix:feature_importance_feh}.
 
@@ -269,8 +269,6 @@ Following the same approach adopted in the previous section, we explored the sam
 
 Overall, the behaviour of the different algorithms is very similar to that found for the metallicity prediction task. Among the considered models, gradient boosting methods consistently provide the best performance without requiring hyperparameter tuning. In particular, the LightGBM and CatBoost regressors achieve the lowest prediction errors for all elements. Given its consistently high predictive performance across all considered elements and its computational efficiency, we adopt the LightGBM regressor as the primary model for the subsequent analysis.
 
-
-
 We optimised hyperparameters of LightGBM using Optuna. For each elemental abundance ([C/H], [O/H], [Mg/H], and [Si/H]) the hyperparameters of the LightGBM model were optimised using the APOGEE training sample. The tuned models show only modest improvements relative to the models trained with default parameters. After determining the optimal hyperparameters, the final models were trained using the full APOGEE dataset and subsequently applied to the independent HARPS sample.
 
 Table~\ref{tab:abundance_predictions} summarises the prediction accuracy for both the APOGEE holdout sample and the HARPS dataset. For comparison, we also report the RMSE obtained with a simple baseline predictor assuming that the abundance of a given element is equal to the stellar metallicity (i.e. $\mathrm{[X/H]} = \mathrm{[Fe/H]}$). This baseline model represents the scenario in which no additional information beyond metallicity is used. The results demonstrate that incorporating kinematic information significantly improves the prediction accuracy for all elements relative to this simple approximation.
@@ -321,6 +319,42 @@ For each element the left panels show the predicted abundance ratios as a functi
 Because the training sample contains relatively few stars at the extremes of the metallicity distribution, the predictions become less reliable for $\mathrm{[Fe/H]} < -0.8$ dex and $\mathrm{[Fe/H]} > 0.35$ dex. For this reason, the residual panels are restricted to stars within the metallicity interval $-0.8 < \mathrm{[Fe/H]} < 0.35$ dex. Overall, the models reproduce the main Galactic chemical evolution trends well, although small systematic trends remain visible in the residuals.
 }
 \label{fig:abundance_predictions}
+\end{figure*}
+
+
+\subsection{Feature importance analysis} \label{main_feat_imp_abund_feh}
+
+
+\subsection{Feature importance analysis}
+\label{main_feat_imp_abund_feh}
+
+In analogy with the metallicity prediction analysis presented in Sect.\ref{feh_from_kinematics}, we examined the relative importance of the input parameters when predicting the abundances of individual elements from stellar metallicity and kinematic properties. The feature-importance diagnostics were computed using the same four complementary approaches as before: built-in gain importance from the LightGBM model, permutation importance, predictive performance using single-feature models, and global SHAP importance. The full set of figures for all elements is presented in Appendix~\ref{appendix:feature_importance_abundances_feh}.
+
+As expected, stellar metallicity [Fe/H] emerges as the dominant predictor for all considered elements. This reflects the strong chemical coupling between the abundances of C, O, Mg, and Si and the overall metallicity driven by Galactic chemical evolution. Across all importance diagnostics, [Fe/H] consistently exhibits the largest contribution to the model predictions.
+
+Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{peri}}$ typically provides the next most significant contribution, while  $Z_{\max}$ has a smaller but still measurable impact. The remaining kinematic parameters contribute only marginally once metallicity and the main orbital parameters are included.
+
+
+To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~X). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
+
+The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At a fixed metallicity, stars with larger $R_{\mathrm{peri}}$ tend to have slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. Although this effect is modest compared to the dominant metallicity dependence, it suggests that orbital properties introduce subtle population-dependent abundance variations beyond the information already encoded in [Fe/H].
+
+The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is subtle compared to the dominant metallicity dependence, it suggests that orbital properties encode additional information that modulates the abundance patterns beyond what is captured by [Fe/H] alone.
+
+We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, but no clear dependence of the SHAP values on $Z_{\max}$ was visually apparent in the corresponding dependence plots.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_dependence_fe_h_by_rperi.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_dependence_fe_h_by_rperi.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_dependence_fe_h_by_rperi.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_dependence_fe_h_by_rperi.png}
+
+\caption{SHAP dependence plots showing the contribution of stellar metallicity [Fe/H] to the predicted abundances of individual elements using the tuned LightGBM models. From top left to bottom right the panels correspond to [C/H], [O/H], [Mg/H], and [Si/H]. The vertical axis shows the SHAP value associated with [Fe/H], while the horizontal axis shows the stellar metallicity itself. Points are colour-coded by  $R_{\mathrm{peri}}$.}
+\label{fig:shap_dependence_abundances_feh}
 \end{figure*}
 
 \section{Predicting C and O abundances from Mg, Si, and Fe}
@@ -664,7 +698,7 @@ reg\_lambda & 0.00315 \\
 \subsubsection{Feature importance analysis} \label{appendix:feature_importance_feh}
 
 
-This appendix presents the full set of feature-importance figures discussed in Sect.~X.X. For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for both LightGBM and XGBoost. These figures illustrate the consistency of the feature ranking across different importance metrics and model architectures.
+This appendix presents the full set of feature-importance figures discussed in Sect.\ref{main_feat_imp_feh}. For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for both LightGBM and XGBoost. These figures illustrate the consistency of the feature ranking across different importance metrics and model architectures.
 
 
 \begin{figure*}[ht]
@@ -826,6 +860,66 @@ Element & Model & RMSE (dex) & MAE (dex) & $R^2$ \\
 \label{tab:abundance_cv_scores}
 \end{table*}
 
+
+\subsubsection{Feature importance analysis} \label{appendix:feature_importance_abundances_feh}
+
+
+This appendix presents the full set of feature-importance figures discussed in Sect.\ref{main_feat_imp_abund_feh} For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for the LightGBM model.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_builtin_gain.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_permutation_dRMSE.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_shap_meanabs.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_single_feature_rmse.png}
+\caption{
+Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{[C/H]}$. Built-in gain feature importance derived from the gradient boosting trees (top left). Permutation feature importance, measured as the increase in prediction error ($\Delta$RMSE) after randomly shuffling each feature (top right). Global SHAP importance, showing the mean absolute SHAP value for each feature (bottom left). Predictive performance (RMSE from cross-validation) obtained when training the model using only a single feature at a time (bottom right).}
+\label{fig:feature_importance_ch}
+\end{figure*}
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_builtin_gain.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_permutation_dRMSE.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_shap_meanabs.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_single_feature_rmse.png}
+\caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[O/H]}$}
+\label{fig:feature_importance_oh}
+\end{figure*}
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_builtin_gain.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_permutation_dRMSE.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_shap_meanabs.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_single_feature_rmse.png}
+\caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Mg/H]}$}
+\label{fig:feature_importance_mgh}
+\end{figure*}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_builtin_gain.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_permutation_dRMSE.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_shap_meanabs.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_single_feature_rmse.png}
+\caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Si/H]}$}
+\label{fig:feature_importance_sih}
+\end{figure*}
 
 \end{appendix}
 \end{document}
