@@ -300,6 +300,8 @@ However, it is also evident that the predictions become less reliable at the ext
 
 Overall, the models reproduce the main Galactic chemical evolution trends remarkably well for all elements considered. Nevertheless, the residual panels reveal small systematic trends, indicating that the models do not fully capture the detailed abundance behaviour across the entire metallicity range. These residual structures likely reflect both the intrinsic complexity of Galactic chemical evolution and the limited information contained in the kinematic features used as predictors.
 
+When applying the trained models to the HARPS dataset, we observe a systematic offset between the predicted and true [C/H] abundances. This discrepancy reflects intrinsic differences between the APOGEE and HARPS samples. In particular, at a given metallicity, APOGEE stars exhibit [C/Fe] abundances that are lower by approximately 0.1 dex compared to those in the HARPS sample. After accounting for this offset by applying a constant correction to the predicted values, the RMSE of the [C/H] predictions decreases significantly, reaching $\sim$0.08 dex. This result indicates that the dominant source of the discrepancy is not a limitation of the model itself, but rather a systematic difference in the abundance scales between the two datasets.
+
 \begin{figure*}
 \centering
 \includegraphics[width=0.48\textwidth]{figures/c_h_apogee_holdout.png}
@@ -340,18 +342,50 @@ We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, 
 \begin{figure*}[ht]
 \centering
 \includegraphics[width=0.4\textwidth]{figures/LGBM_c_h_dependence_fe_h_by_rperi.png}
-\hfill
 \includegraphics[width=0.4\textwidth]{figures/LGBM_o_h_dependence_fe_h_by_rperi.png}
 \vspace{0.4cm}
 \includegraphics[width=0.4\textwidth]{figures/LGBM_mg_h_dependence_fe_h_by_rperi.png}
-\hfill
 \includegraphics[width=0.4\textwidth]{figures/LGBM_si_h_dependence_fe_h_by_rperi.png}
 
 \caption{SHAP dependence plots showing the contribution of stellar metallicity [Fe/H] to the predicted abundances of individual elements using the tuned LightGBM models. From top left to bottom right the panels correspond to [C/H], [O/H], [Mg/H], and [Si/H]. The vertical axis shows the SHAP value associated with [Fe/H], while the horizontal axis shows the stellar metallicity itself. Points are colour-coded by  $R_{\mathrm{peri}}$.}
 \label{fig:shap_dependence_abundances_feh}
 \end{figure*}
 
+
 \section{Predicting C and O abundances from Mg, Si, and Fe}
+\label{main_CO_from_MgSiFe}
+
+In this section, we predict the abundances of carbon and oxygen from the abundances of Mg, Si, and [Fe/H], optionally complemented by kinematic and orbital parameters. This is particularly relevant for relatively cool stars, for which the determination of C and O abundances is challenging.
+
+Following the same methodology adopted in the previous sections, we benchmarked a range of regression algorithms. Consistent with the previous results, LightGBM yields the lowest RMSE and is therefore adopted as the reference model.
+
+Baseline models trained using only Mg, Si, and [Fe/H] already achieve strong predictive performance. The inclusion of additional kinematic and orbital parameters does not lead to a measurable improvement in RMSE, indicating that most of the predictive information is already encoded in the elemental abundances themselves.
+
+We also explored a range of feature-engineering strategies aimed at capturing nonlinear interactions between the input abundances. These included combinations such as the mean abundance of Mg and Si, as well as pairwise differences (e.g., Mg$-$Si, Mg$-$Fe, Si$-$Fe) and simple algebraic transformations. However, none of these engineered features produced a measurable improvement in predictive accuracy.
+
+For both C and O abundance predictions, we find that Mg abundance carries the dominant predictive power. In fact, models trained using only Mg abundance achieve RMSE values comparable to those obtained when including Si and [Fe/H]. This result indicates a strong coupling between Mg and the C and O abundances, reflecting their common nucleosynthetic origin. The feature-importance analysis is presented in Appendix~\ref{appendix:CO_from_MgSiFe}, where we show the results of gain-based importance, permutation importance, SHAP values, and single-feature predictive performance.
+
+Figure~\ref{fig:CO_predictions} illustrates the performance of the tuned LightGBM models for predicting [O/H] and [C/H] using the APOGEE holdout sample and the independent HARPS dataset. The left panels show the predicted abundance ratios as a function of metallicity, while the right panels display the residuals as a function of the true abundance.
+
+For the APOGEE sample, the model reproduces the global abundance trends remarkably well, capturing both the overall slope and the intrinsic scatter of the [O/Fe]--[Fe/H] relation. The predicted values closely follow the true abundances across the full metallicity range, although a mild compression of the dynamic range is visible. This behaviour is consistent with the regression-to-the-mean effect, arising from incomplete information in the input features. The residuals exhibit a clear heteroscedastic pattern, with slightly larger scatter at lower abundances and a gradual tightening toward higher metallicities.
+
+When applied to the independent HARPS sample, the model performance degrades. In particular, the [O/Fe] ratio at low metallicities is systematically underestimated relative to the HARPS values. Nevertheless, the achieved RMSE remains lower than that obtained from a simple baseline assuming [O/H] = [Mg/H], indicating that the model retains predictive power beyond this approximation.
+
+The situation is less favourable for carbon. A clear offset is observed between the predicted and HARPS [C/H] abundances, with the model systematically underestimating the HARPS values. In fact, assuming [C/H] = [Mg/H] yields a lower RMSE than the direct model predictions. However, this discrepancy is largely driven by a systematic offset between the APOGEE and HARPS abundance scales. After applying a constant correction of $\sim$0.1 dex to the predicted values, the RMSE decreases significantly to $\sim$0.07 dex. This indicates that the dominant source of the discrepancy is not the model itself, but rather a systematic difference between the two datasets.
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/prediction_panels_harps_fe_mg_si_o_h.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/prediction_panels_harps_fe_mg_si_c_h.png}
+\caption{Same as Fig.~\ref{fig:abundance_predictions}, but for the prediction of C and O abundances from Mg, Si, and [Fe/H].}
+\label{fig:CO_predictions}
+\end{figure*}
 
 
 
@@ -911,8 +945,39 @@ Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{
 \includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_shap_meanabs.png}
 \hfill
 \includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_single_feature_rmse.png}
-\caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Si/H]}$}
+\caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Si/H]}$.}
 \label{fig:feature_importance_sih}
+\end{figure*}
+
+\section{Predicting C and O abundances from Mg, Si and Fe}
+\label{appendix:CO_from_MgSiFe}
+
+This appendix presents the full set of feature-importance figures discussed in Sect.\ref{main_CO_from_MgSiFe} For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for the LightGBM model.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/builtin_gain_fe_mg_si_c_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/permutation_drmse_fe_mg_si_c_h.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/shap_mean_abs_fe_mg_si_c_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_c_h.png}
+\caption{Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{[C/H]}$ using Mg, Si, and Fe abundances. Built-in gain feature importance derived from the gradient boosting trees (top left). Permutation feature importance, measured as the increase in prediction error ($\Delta$RMSE) after randomly shuffling each feature (top right). Global SHAP importance, showing the mean absolute SHAP value for each feature (bottom left). Predictive performance (RMSE from cross-validation) obtained when training the model using only a single feature at a time (bottom right).}
+\label{fig:feature_importance_ch_frommgsife}
+\end{figure*}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/builtin_gain_fe_mg_si_o_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/permutation_drmse_fe_mg_si_o_h.png}
+\vspace{0.4cm}
+\includegraphics[width=0.48\textwidth]{figures/shap_mean_abs_fe_mg_si_o_h.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_o_h.png}
+\caption{Same as Fig.\ref{fig:feature_importance_ch_frommgsife} but for $\mathrm{[Si/H]}$.}
+\label{fig:feature_importance_oh_frommgsife}
 \end{figure*}
 
 \end{appendix}
