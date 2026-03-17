@@ -333,7 +333,7 @@ As expected, stellar metallicity [Fe/H] emerges as the dominant predictor for al
 Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{peri}}$ typically provides the next most significant contribution, while  $Z_{\max}$ has a smaller but still measurable impact. The remaining kinematic parameters contribute only marginally once metallicity and the main orbital parameters are included.
 
 
-To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~X). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
+To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~\ref{fig:shap_dependence_abundances_feh}). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
 
 The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is subtle compared to the dominant metallicity dependence, it suggests that orbital properties encode additional information that modulates the abundance patterns beyond what is captured by [Fe/H] alone. WHY???
 
@@ -346,7 +346,6 @@ We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, 
 \vspace{0.4cm}
 \includegraphics[width=0.4\textwidth]{figures/LGBM_mg_h_dependence_fe_h_by_rperi.png}
 \includegraphics[width=0.4\textwidth]{figures/LGBM_si_h_dependence_fe_h_by_rperi.png}
-
 \caption{SHAP dependence plots showing the contribution of stellar metallicity [Fe/H] to the predicted abundances of individual elements using the tuned LightGBM models. From top left to bottom right the panels correspond to [C/H], [O/H], [Mg/H], and [Si/H]. The vertical axis shows the SHAP value associated with [Fe/H], while the horizontal axis shows the stellar metallicity itself. Points are colour-coded by  $R_{\mathrm{peri}}$.}
 \label{fig:shap_dependence_abundances_feh}
 \end{figure*}

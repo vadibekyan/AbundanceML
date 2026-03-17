@@ -6,16 +6,16 @@
     "mg_h",
     "si_h"
   ],
-  "best_value": 0.03635141718408901,
+  "best_value": 0.03650271167822487,
   "best_params": {
-    "n_estimators": 908,
-    "learning_rate": 0.017855116242705964,
-    "num_leaves": 226,
-    "max_depth": 7,
-    "min_child_samples": 105,
-    "subsample": 0.5471532033148403,
-    "colsample_bytree": 0.9574042705280703,
-    "reg_alpha": 1.4365870871670857e-06,
-    "reg_lambda": 9.758642840014666e-06
+    "n_estimators": 468,
+    "learning_rate": 0.04674615891923399,
+    "num_leaves": 80,
+    "max_depth": 13,
+    "min_child_samples": 122,
+    "subsample": 0.8120397241218519,
+    "colsample_bytree": 0.9020815514240887,
+    "reg_alpha": 0.0165579806373722,
+    "reg_lambda": 3.6686728884833596e-07
   }
 }
