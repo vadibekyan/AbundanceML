@@ -315,14 +315,10 @@ Overall, the models reproduce the main Galactic chemical evolution trends remark
 \includegraphics[width=0.48\textwidth]{figures/si_h_harps.png}
 \caption{
 Predictions of elemental abundances using the tuned LightGBM models.
-For each element the left panels show the predicted abundance ratios as a function of metallicity for the APOGEE holdout sample, while the right panels correspond to predictions for the independent HARPS dataset. Grey points indicate the true stellar abundances and coloured points show the model predictions. The accompanying panels display the residuals between true and predicted abundances as a function of the true abundance.
-Because the training sample contains relatively few stars at the extremes of the metallicity distribution, the predictions become less reliable for $\mathrm{[Fe/H]} < -0.8$ dex and $\mathrm{[Fe/H]} > 0.35$ dex. For this reason, the residual panels are restricted to stars within the metallicity interval $-0.8 < \mathrm{[Fe/H]} < 0.35$ dex. Overall, the models reproduce the main Galactic chemical evolution trends well, although small systematic trends remain visible in the residuals.
-}
+For each element the left panels show the predicted abundance ratios as a function of metallicity for the APOGEE holdout sample, while the right panels correspond to predictions for the independent HARPS dataset. Grey points indicate the true stellar abundances and coloured points show the model predictions. The accompanying panels display the residuals between true and predicted abundances as a function of the true abundance.}
 \label{fig:abundance_predictions}
 \end{figure*}
 
-
-\subsection{Feature importance analysis} \label{main_feat_imp_abund_feh}
 
 
 \subsection{Feature importance analysis}
@@ -337,21 +333,19 @@ Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{per
 
 To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~X). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
 
-The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At a fixed metallicity, stars with larger $R_{\mathrm{peri}}$ tend to have slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. Although this effect is modest compared to the dominant metallicity dependence, it suggests that orbital properties introduce subtle population-dependent abundance variations beyond the information already encoded in [Fe/H].
-
-The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is subtle compared to the dominant metallicity dependence, it suggests that orbital properties encode additional information that modulates the abundance patterns beyond what is captured by [Fe/H] alone.
+The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is subtle compared to the dominant metallicity dependence, it suggests that orbital properties encode additional information that modulates the abundance patterns beyond what is captured by [Fe/H] alone. WHY???
 
 We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, but no clear dependence of the SHAP values on $Z_{\max}$ was visually apparent in the corresponding dependence plots.
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_dependence_fe_h_by_rperi.png}
+\includegraphics[width=0.4\textwidth]{figures/LGBM_c_h_dependence_fe_h_by_rperi.png}
 \hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_dependence_fe_h_by_rperi.png}
+\includegraphics[width=0.4\textwidth]{figures/LGBM_o_h_dependence_fe_h_by_rperi.png}
 \vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_dependence_fe_h_by_rperi.png}
+\includegraphics[width=0.4\textwidth]{figures/LGBM_mg_h_dependence_fe_h_by_rperi.png}
 \hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_dependence_fe_h_by_rperi.png}
+\includegraphics[width=0.4\textwidth]{figures/LGBM_si_h_dependence_fe_h_by_rperi.png}
 
 \caption{SHAP dependence plots showing the contribution of stellar metallicity [Fe/H] to the predicted abundances of individual elements using the tuned LightGBM models. From top left to bottom right the panels correspond to [C/H], [O/H], [Mg/H], and [Si/H]. The vertical axis shows the SHAP value associated with [Fe/H], while the horizontal axis shows the stellar metallicity itself. Points are colour-coded by  $R_{\mathrm{peri}}$.}
 \label{fig:shap_dependence_abundances_feh}
