@@ -72,15 +72,15 @@
   \abstract
   % context heading (optional)
   % {} leave it empty if necessary  
-   {Elemental abundances of FGK stars are routinely derived from high-resolution spectroscopy, but for cooler stars such as M dwarfs the determination of detailed abundance patterns remains challenging. Machine-learning approaches offer a possible route to infer these quantities indirectly from more accessible stellar properties.}
+   {Elemental abundances of FGK stars can be measured routinely from high-resolution spectra, but this remains considerably more difficult for cooler stars, especially M dwarfs, whose spectra are strongly affected by blends and molecular features. Yet the chemical composition of planet-host stars is central to studies of planet formation and bulk composition. Machine-learning methods offer a practical route to infer otherwise inaccessible abundances from more widely available stellar information.}
   % aims heading (mandatory)
-   {We investigate how well stellar metallicity and individual elemental abundances can be inferred from kinematic and orbital information, and we assess whether these relations can be used to predict the abundances most relevant for exoplanet-host characterization.} 
+   {We investigate how well stellar metallicity and individual elemental abundances can be inferred from kinematic and orbital information, and whether these empirical relations can be used to estimate the abundances and abundance ratios most relevant for the characterization of exoplanet-host stars.} 
   % methods heading (mandatory)
-   {We use a large APOGEE DR17 sample of red giant stars and an independent HARPS sample of nearby FGK dwarfs. From astrometry and radial velocities we derive Galactic velocities, orbital parameters, and population-membership probabilities. We benchmark a range of machine-learning regressors, optimize the strongest models, and analyse feature importance using gain-based metrics, permutation importance, single-feature models, and SHAP values.}
+   {We use a large APOGEE DR17 sample of red giant stars as the main training set and an independent HARPS sample of nearby FGK dwarfs for external validation. From astrometry and radial velocities we derive Galactic velocities, orbital parameters, and population-membership probabilities. We benchmark several machine-learning regressors, optimize the strongest models, and analyse feature importance using gain-based metrics, permutation importance, single-feature models, and SHAP values. We also derive simple linear relations between abundance ratios and metallicity and apply the trained models to planet-host stars from SWEET-Cat.}
   % results heading (mandatory)
-   {Kinematic information alone recovers a substantial fraction of the variance in stellar metallicity, with tuned gradient-boosting models reaching an RMSE of about 0.199 dex on APOGEE and 0.224 dex on the independent HARPS sample. The dominant predictor is the maximum vertical excursion $Z_{\max}$, followed by radial orbital parameters. When [Fe/H] is combined with kinematics, the abundances of C, O, Mg, and Si are predicted with much higher precision than a baseline assumption $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. For predicting C and O from Mg, Si, and [Fe/H], Mg carries most of the predictive power and additional kinematic information provides little improvement.}
+   {Kinematic information alone recovers a substantial fraction of the variance in stellar metallicity, with tuned gradient-boosting models reaching an RMSE of about 0.199 dex on APOGEE and 0.224 dex on the independent HARPS sample. The dominant predictor is the maximum vertical excursion $Z_{\max}$, followed by radial orbital parameters. When [Fe/H] is combined with kinematics, the abundances of C, O, Mg, and Si are predicted much more accurately than with the baseline approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. For predicting C and O from Mg, Si, and [Fe/H], Mg carries most of the predictive power and additional kinematic information provides little improvement. The resulting models can then be used to estimate abundance patterns and chemically relevant ratios for planet-host stars lacking direct determinations.}
   % conclusions heading (optional), leave it empty if necessary
-   {The achievable accuracy is limited mainly by the information content of the predictors rather than by model choice. Orbital structure, especially $Z_{\max}$, contains robust information on stellar metallicity, while metallicity remains the dominant predictor of individual elemental abundances. These empirical relations provide a practical framework for estimating abundance patterns in stars for which direct spectroscopic determinations are difficult.}
+   {The achievable accuracy is limited mainly by the information content of the predictors rather than by model choice. Orbital structure, especially $Z_{\max}$, contains robust information on stellar metallicity, while metallicity remains the dominant predictor of individual elemental abundances. These empirical relations provide a practical framework for estimating abundance patterns and composition-sensitive abundance ratios in stars for which direct spectroscopic determinations are difficult.}
 
    \keywords{stars: abundances -- stars: kinematics and dynamics -- methods: data analysis -- methods: statistical -- planetary systems}
 
@@ -91,13 +91,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Detailed chemical abundances are key to studies of stellar populations, Galactic evolution, and planet formation. In exoplanet science, abundance ratios such as C/O and Mg/Si are particularly relevant because they influence the mineralogy and internal structure expected for rocky planets. For FGK stars, these quantities can be measured from high-resolution spectra with high precision, but the problem becomes much more difficult for cooler stars, especially M dwarfs, whose spectra are dominated by complex molecular features.
+Detailed chemical abundances are central to studies of stellar populations, Galactic evolution, and planet formation. In exoplanet science, abundance ratios such as C/O, Mg/Si, and Fe/Si are especially important because they influence the chemistry, mineralogy, and interior structure expected for planets formed in a given protoplanetary environment. For solar-type FGK stars, these quantities can often be measured from high-resolution spectra with high precision. The situation is considerably more difficult for cooler stars, however. In K dwarfs at the cool end of the FGK regime, and especially in M dwarfs, line blending and strong molecular absorption complicate both continuum placement and the measurement of individual elemental abundances.
 
-This observational limitation motivates the search for indirect approaches. If abundance patterns are linked to global stellar properties that are easier to measure, then machine-learning methods may provide a practical way to estimate otherwise inaccessible chemical information. In the Galactic context, stellar kinematics and orbital properties are especially interesting because they encode population membership, dynamical heating, and, indirectly, age and chemical evolution.
+This observational difficulty motivates the search for indirect approaches. If abundance patterns are linked to stellar properties that are easier to obtain than detailed spectroscopy, then machine-learning methods may provide a practical route to estimating otherwise inaccessible chemical information. Among the most promising candidates are stellar kinematics and orbital properties. These quantities encode information about population membership and the dynamical history of stars, and they are therefore indirectly connected to Galactic chemical evolution.
 
-The relation between chemistry and dynamics is well established at the population level: stars on dynamically hotter orbits and with larger vertical excursions from the Galactic plane tend, on average, to be older and more metal-poor than stars confined to the thin disk. The question addressed here is how much predictive information these dynamical quantities contain at the level of individual stars, and whether that information can be combined with metallicity or other elemental abundances to estimate chemically relevant quantities for exoplanet-host characterization.
+At the population level, the link between chemistry and dynamics is well established. Stars on dynamically hotter orbits and with larger excursions from the Galactic plane tend, on average, to be older and more metal-poor than stars confined to the thin disk. Radial orbital structure also traces population mixing across the Galaxy. These trends suggest that kinematic information may contain predictive power not only for metallicity, but also for abundance patterns that correlate with metallicity and Galactic origin. The key question is how much of that information can be recovered at the level of individual stars.
 
-In this work, we use a large APOGEE sample as the main training set and an independent HARPS sample as an external validation set. We first examine how well [Fe/H] can be inferred from kinematic and orbital parameters alone. We then test whether [Fe/H] together with kinematics can recover the abundances of C, O, Mg, and Si, and finally assess the extent to which C and O can be predicted directly from Mg, Si, and [Fe/H]. Throughout the paper, we emphasize not only predictive accuracy but also interpretability and consistency across models.
+In this work we explore that question using machine learning. We use a large APOGEE sample as the main training set and an independent HARPS sample as an external validation set. We first examine how well [Fe/H] can be inferred from kinematic and orbital parameters alone. We then test whether [Fe/H] together with kinematics can recover the abundances of C, O, Mg, and Si, and finally assess the extent to which C and O can be predicted directly from Mg, Si, and [Fe/H]. We also derive simple metallicity-based relations for abundance ratios relevant to exoplanet studies and apply the trained models to planet-host stars from SWEET-Cat. Throughout the paper, we focus not only on predictive performance, but also on interpretability and on the extent to which the inferred relations transfer to an independent dataset.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,12 +146,12 @@ Although substantial multicollinearity is present (VIF $>$ 10 is typically consi
 
 \subsection{Regression models}
 
-We benchmarked a diverse set of regression algorithms to predict stellar metallicity from these parameters. The tested models include linear regression (LR), support vector regression (SVR; \citealt{cortes1995}), random forest (RF; \citealt{breiman2001}), extra trees (ET; \citealt{geurts2006}), gradient boosting methods including XGBoost \citep{chen2016}, LightGBM \citep{ke2017}, and CatBoost \citep{prokhorenkova2018}, as well as a feed-forward deep neural network (DL). All models were evaluated using identical $k$-fold cross-validation splits.
+We benchmarked a diverse set of regression algorithms to predict stellar metallicity from these parameters. The tested models include linear regression (LR), random forest (RF; \citealt{breiman2001}), extra trees (ET; \citealt{geurts2006}), gradient boosting methods including XGBoost \citep{chen2016}, LightGBM \citep{ke2017}, and CatBoost \citep{prokhorenkova2018}. All models were evaluated using identical $k$-fold cross-validation splits.
 
 To provide a consistent baseline comparison, we adopted standard implementations of each algorithm with default hyperparameters and did not perform hyperparameter tuning. The goal of this experiment was to assess the intrinsic predictive power of the kinematic features
 rather than to optimize individual models.
 
-Linear regression, DL, and SVR yield RMSE values of approximately 0.21 dex. Given that the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex (corresponding to the RMSE of a trivial mean predictor), these models explain roughly 30\% of the total variance in [Fe/H]. This indicates that the metallicity–kinematics relation is intrinsically nonlinear. Tree-based ensemble models significantly outperform these approaches, with LightGBM achieving the lowest RMSE of $0.199 \pm 0.001$ dex ($R^2 \approx 0.41$). CatBoost and XGBoost produce nearly identical performance, while random forest and extra trees are slightly less accurate.
+Linear regression yield RMSE values of approximately 0.21 dex. Given that the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex (corresponding to the RMSE of a trivial mean predictor), these models explain roughly 30\% of the total variance in [Fe/H]. This indicates that the metallicity–kinematics relation is intrinsically nonlinear. Tree-based ensemble models significantly outperform these approaches, with LightGBM achieving the lowest RMSE of $0.199 \pm 0.001$ dex ($R^2 \approx 0.41$). CatBoost and XGBoost produce nearly identical performance, while random forest and extra trees are slightly less accurate.
 
 We further explored ensemble strategies. A weighted voting regressor combining the strongest tree-based models did not yield a measurable improvement over the best individual learner. A stacked ensemble based on out-of-fold predictions and a ridge meta-learner provided a marginal gain, reducing the RMSE only at the fourth decimal level.
 
@@ -386,25 +386,11 @@ The situation is less favourable for carbon. A clear offset is observed between 
 \end{figure*}
 
 
-\subsection{Metallicity trends of abundance ratios} \label{sec:ratio_metallicity_trends}
+\section{Abundance ratios relevant for exoplanet research} \label{sec:ratio_metallicity_trends}
 
-In addition to the machine-learning experiments described above, we explored the empirical behaviour of several abundance ratios that are particularly relevant for exoplanet composition studies. Using the APOGEE and HARPS samples separately, we examined the linear abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O as a function of metallicity, [Fe/H]. For each ratio we fitted a simple linear relation of the form
-\begin{equation}
-y = a + b \,[\mathrm{Fe/H}],
-\end{equation}
-where $y$ denotes the corresponding linear abundance ratio.
+In addition to the machine-learning experiments described above, we explored the empirical behaviour of several abundance ratios that are particularly relevant for exoplanet composition studies. The purpose of this exercise is to provide a quick and simple way of obtaining these ratios just from metallicity. Using the APOGEE and HARPS samples separately, we examined the linear abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O as a function of metallicity, [Fe/H]. The uncertainties on the fitted parameters were estimated by bootstrap resampling. In addition to the slope and intercept uncertainties (which were very small) we also computed the rms scatter around each best-fit relation over the full metallicity range considered.
 
-The purpose of this exercise was not predictive optimisation, but rather to quantify and compare the mean metallicity dependence of these ratios in the two samples. The APOGEE and HARPS relations were fitted independently, and the uncertainties on the fitted parameters were estimated by bootstrap resampling. In addition to the slope uncertainties, we also computed a single root-mean-square (rms) scatter around each best-fit relation over the full metallicity range considered.
-
-The resulting trends are shown in Fig.~\ref{fig:ratio_fits_feh}, while the fitted slopes and rms scatter values are listed in Table~\ref{tab:ratio_slopes_rms}. Several systematic differences are evident between the two samples. Fe/Si and Fe/O increase with metallicity in both APOGEE and HARPS, whereas Mg/Si decreases with increasing [Fe/H]. The C/O ratio also increases with metallicity in both datasets. Although the qualitative behaviour is similar, the fitted slopes are not identical, indicating differences in the detailed metallicity dependence of the abundance ratios between the two surveys.
-
-To quantify these differences more directly, we evaluated the fitted APOGEE and HARPS relations at representative metallicities of [Fe/H] $=-1.0$, $0.0$, and $+0.5$ dex. The resulting values are compared in Table~\ref{tab:ratio_comparison_feh}. In that table we report the relative difference, defined as
-\begin{equation}
-\Delta_{\rm rel} = \frac{y_{\rm APOGEE} - y_{\rm HARPS}}{(y_{\rm APOGEE} + y_{\rm HARPS})/2}.
-\end{equation}
-This metric provides a simple measure of the fractional offset between the two empirical relations at fixed metallicity.
-
-The comparison shows that the agreement between APOGEE and HARPS depends on both the ratio considered and the metallicity regime. For Fe/Si the two relations are nearly identical around solar metallicity, but differ more substantially toward lower metallicity. Mg/Si shows the largest offset at supersolar metallicity, where the APOGEE relation predicts systematically higher values than HARPS. The C/O relations also diverge toward higher metallicity, while Fe/O exhibits small absolute offsets overall, although the relative difference becomes large at low metallicity because the mean Fe/O value is itself very small in that regime.
+The resulting trends are shown in Fig.~\ref{fig:ratio_fits_feh}, while the fitted slopes and rms scatter values are listed in Table~\ref{tab:ratio_slopes_rms}.  While some differences are observed between the two samples. Fe/Si and Fe/O increase with metallicity in both APOGEE and HARPS, whereas Mg/Si decreases with increasing [Fe/H]. The C/O ratio also increases with metallicity in both datasets. The qualitative behaviour of the fits for the two samples is similar, although the fitted slopes are not identical. However, the differences are within the rms scatter of the samples. In particular, the largest fractional offset between the two empirical relations at the whole range of metallicity is less than 20\%.
 
 
 \begin{figure*}[ht]
@@ -435,48 +421,49 @@ The comparison shows that the agreement between APOGEE and HARPS depends on both
 \end{figure*}
 
 
-\begin{table}[ht]
-\caption{Best-fit slopes and rms scatter for the linear abundance-ratio relations.}
+
+\begin{table*}
+\caption{Linear fits of abundance ratios as a function of metallicity for the APOGEE and HARPS samples.}
 \label{tab:ratio_slopes_rms}
 \centering
-\begin{tabular}{lccc}
+\small
+\begin{tabular}{lllc}
 \hline\hline
-Survey & Ratio & Slope $b$ & rms \\
+Survey & Ratio & Equation & RMS scatter \\
 \hline
-APOGEE & Fe/Si & $0.3622 \pm 0.0014$ & 0.0903 \\
-HARPS  & Fe/Si & $0.2593 \pm 0.0132$ & 0.0791 \\
-APOGEE & Mg/Si & $-0.1733 \pm 0.0019$ & 0.1091 \\
-HARPS  & Mg/Si & $-0.2486 \pm 0.0183$ & 0.1511 \\
-APOGEE & C/O   & $0.1422 \pm 0.0016$ & 0.0727 \\
-HARPS  & C/O   & $0.2405 \pm 0.0225$ & 0.0657 \\
-APOGEE & Fe/O  & $0.0290 \pm 0.0001$ & 0.0072 \\
-HARPS  & Fe/O  & $0.0475 \pm 0.0027$ & 0.0095 \\
+APOGEE & Fe/Si & $y = (0.8319 \pm 0.0005) + (0.3622 \pm 0.0014)\,[\mathrm{Fe/H}]$ & 0.09 \\
+HARPS & Fe/Si & $y = (0.8343 \pm 0.0027) + (0.2593 \pm 0.0132)\,[\mathrm{Fe/H}]$ & 0.08 \\
+APOGEE & Mg/Si & $y = (1.1931 \pm 0.0006) + (-0.1733 \pm 0.0019)\,[\mathrm{Fe/H}]$ & 0.11 \\
+HARPS & Mg/Si & $y = (1.0645 \pm 0.0059) + (-0.2486 \pm 0.0183)\,[\mathrm{Fe/H}]$ & 0.15 \\
+APOGEE & C/O & $y = (0.4367 \pm 0.0004) + (0.1422 \pm 0.0016)\,[\mathrm{Fe/H}]$ & 0.07 \\
+HARPS & C/O & $y = (0.4941 \pm 0.0046) + (0.2405 \pm 0.0225)\,[\mathrm{Fe/H}]$ & 0.06 \\
+APOGEE & Fe/O & $y = (0.0500 \pm 0.0000) + (0.0290 \pm 0.0001)\,[\mathrm{Fe/H}]$ & 0.007 \\
+HARPS & Fe/O & $y = (0.0541 \pm 0.0006) + (0.0475 \pm 0.0027)\,[\mathrm{Fe/H}]$ & 0.009 \\
 \hline
 \end{tabular}
-\end{table}
+\end{table*}
 
+\section{Predicted abundances of planet host stars}
 
+As a practical application of the developed framework, we applied the trained models to planet-host stars from SWEET-Cat, one of the largest catalogues of stars with homogeneous atmospheric parameters in exoplanet systems. For these stars we combined the published SWEET-Cat metallicities with \textit{Gaia} DR3 astrometry and radial velocities to derive Galactic velocities and orbital parameters in the same way as for the training samples.
 
+Using these inputs, we predicted the abundances of C, O, Mg, and Si for SWEET-Cat stars lacking homogeneous determinations of these quantities. From the predicted abundances we further derived the abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O, which are particularly relevant for interpreting the bulk composition and mineralogy of exoplanets. In parallel, we evaluated the simple linear abundance-ratio relations derived from APOGEE and HARPS as a function of [Fe/H], providing an alternative low-dimensional approximation when only metallicity is available.
 
-\section{Abundance ratios relevant for exoplanet research}
-
-The results presented above are particularly relevant for abundance ratios commonly used in exoplanet studies. Ratios such as C/O and Mg/Si are often discussed as tracers of the chemical environment in which planets form, because they influence the relative fractions of major condensates and therefore the expected mineralogy of planetary interiors.
-
-Our experiments indicate that not all ratios are equally accessible from indirect predictors. Metallicities and individual refractory abundances such as Mg and Si can be recovered with comparatively high precision once [Fe/H] and kinematics are available. In contrast, the prediction of C, and to a lesser extent O, is more sensitive to survey-to-survey abundance-scale differences. This is especially evident in the offset between APOGEE- and HARPS-based [C/H] values.
-
-For practical applications, this means that machine-learning estimates of abundance ratios may be most useful when they are calibrated within a homogeneous abundance scale. In that regime, the inferred abundances can provide informative priors for stars lacking direct measurements, including cool exoplanet hosts. When combining training and application samples from different surveys, however, cross-calibration of the abundance scales becomes essential before physically interpreting small differences in derived ratios such as C/O or Mg/Si.
+This application illustrates the main practical value of our approach. Even when direct abundance measurements are unavailable or difficult to obtain, one can combine metallicity with kinematic information to estimate chemically informative quantities for planet-host stars and to place them in the broader context of Galactic chemical evolution.
 
 \section{Conclusion and summary}
 
-We have explored how far stellar metallicity and individual abundance patterns can be inferred from kinematics, orbital properties, and a limited set of elemental abundances. The main results can be summarized as follows.
+We have investigated how far stellar metallicity and individual abundances can be inferred from kinematics, orbital properties, and a limited set of elemental abundances. APOGEE was used as the main training set, while HARPS provided an external and chemically precise validation sample. Our main conclusions are as follows.
 
-First, kinematic information alone contains substantial predictive power for stellar metallicity. Gradient-boosting models achieve an RMSE of about 0.199 dex on APOGEE and about 0.224 dex on the independent HARPS sample. The strong and consistent role of $Z_{\max}$ across all feature-importance diagnostics shows that the vertical structure of stellar orbits is the single most informative dynamical tracer of metallicity in our analysis.
+Kinematic information alone contains significant, although limited, predictive power for stellar metallicity. Gradient-boosting models reach an RMSE of about 0.20 dex on APOGEE and about 0.22 dex on the independent HARPS sample. Across all feature-importance diagnostics, $Z_{\max}$ emerges as the dominant predictor, showing that the vertical extent of stellar orbits carries the strongest dynamical imprint of metallicity in our analysis.
 
-Second, once [Fe/H] is included, the abundances of C, O, Mg, and Si can be predicted much more accurately than with the simple approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. In these models, metallicity is by far the dominant predictor, while orbital parameters such as $R_{\mathrm{peri}}$ and $Z_{\max}$ add secondary but measurable information.
+When [Fe/H] is included among the predictors, the abundances of C, O, Mg, and Si can be estimated much more accurately than with the simple approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. In these models, metallicity is by far the main driver of the predictions, while orbital properties such as $R_{\mathrm{peri}}$ and $Z_{\max}$ provide secondary but measurable additional information. The gain relative to the baseline demonstrates that kinematics can refine abundance estimates even when metallicity is already known.
 
-Third, C and O can be inferred from Mg, Si, and [Fe/H] with useful precision, but the additional inclusion of kinematic parameters does not materially improve the predictions. This indicates that, for these targets, most of the relevant information is already encoded in the abundances themselves, especially Mg. The main limitation in transfer to external datasets is not model flexibility but systematic abundance-scale differences, most clearly seen for carbon.
+C and O can also be inferred from Mg, Si, and [Fe/H] with useful precision. In this case, adding kinematic information does not materially improve the predictions, implying that most of the relevant information is already encoded in the elemental abundances themselves, especially Mg. The main limitation when transferring the models to an external sample is not model flexibility, but systematic differences between abundance scales, most clearly seen for carbon.
 
-Overall, the results suggest that machine-learning models can provide a practical route to estimating chemically informative quantities for stars whose detailed abundances are difficult to measure directly. At the same time, the performance ceiling reached by a wide range of methods indicates that future improvements will depend more on the quality, homogeneity, and physical informativeness of the input data than on further increases in model complexity.
+In addition to the machine-learning models, we derived simple linear relations between the abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O and stellar metallicity for both APOGEE and HARPS. These relations do not replace the full predictive models, but they provide a compact and practical approximation for applications in which only [Fe/H] is available.
+
+Overall, our results show that machine-learning models trained on spectroscopic surveys can provide a practical route to estimating chemically informative quantities for stars whose detailed abundances are difficult to measure directly, including many exoplanet hosts. At the same time, the limited gains obtained from trying a wide range of algorithms and feature-engineering strategies indicate that future progress will depend primarily on the quality, homogeneity, and physical informativeness of the available input data rather than on further increases in model complexity.
 
 %comparison between the surveys https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.107H/abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -571,7 +558,7 @@ Although the absolute values of the coefficients differ slightly between APOGEE 
 
 \begin{figure*}
     \centering
-    \includegraphics[width=1\textwidth]{correlations.png}
+    \includegraphics[width=0.8\textwidth]{correlations.png}
     \caption{Spearman rank correlation coefficients between the parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples.}
     \label{fig:spearman_appendix}
 \end{figure*}
@@ -586,16 +573,10 @@ Mutual information measures the general statistical dependence between two varia
 An MI value of zero indicates statistical independence, while larger values imply stronger dependence. In this work, MI was estimated using a non-parametric k-nearest-neighbour approach (with $k$ = 3), which is well suited for continuous variables \citep{kraskov2004}.
 
 
-The MI values for both samples are shown in Figure~\ref{fig:mi_appendix}. Consistent with the correlation analysis, $Z_{\max}$ and $P_{\rm gal}$ (also eccentricity) contain the largest amount of predictive information.
+The MI values for both samples are shown in Figure~\ref{fig:mi_vif_appendix}. Consistent with the correlation analysis, $Z_{\max}$ and $P_{\rm gal}$ (also eccentricity) contain the largest amount of predictive information.
 
 In addition, parameters such as $R_{\rm peri}$ show enhanced importance in the MI analysis compared to its rank correlation, suggesting the presence of nonlinear contributions to the metallicity-kinematics relation.
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=1\textwidth]{MI.png}
-    \caption{Mutual information between kinematic parameters and [Fe/H] for the APOGEE (left) and HARPS (right) samples.}
-    \label{fig:mi_appendix}
-\end{figure*}
 
 
 \subsubsection{Multicollinearity diagnostics}
@@ -610,14 +591,16 @@ A VIF value of 1 indicates no multicollinearity, values between 1 and 5 are gene
 
 High multicollinearity can lead to unstable coefficient estimates and inflated variance in linear models. However, its impact depends on the nature of the predictive algorithm. Tree-based ensemble methods, which perform recursive partitioning rather than coefficient estimation, are generally more robust to correlated predictors.
 
-The resulting VIF values are shown in Figure~\ref{fig:vif_appendix}. As expected, several parameters exhibit large VIF values due to their deterministic dependence on the other parameters. $Z_{\max}$ and $P_{\rm gal}$ display comparatively lower VIF values, indicating that they are not strongly linearly redundant with the remaining parameters.
+The resulting VIF values are shown in Figure~\ref{fig:mi_vif_appendix}. As expected, several parameters exhibit large VIF values due to their deterministic dependence on the other parameters. $Z_{\max}$ and $P_{\rm gal}$ display comparatively lower VIF values, indicating that they are not strongly linearly redundant with the remaining parameters.
 
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{VIF.png}
-    \caption{Variance inflation factors (VIF) for the kinematic parameters in the APOGEE (left) and HARPS (right) samples.}
-    \label{fig:vif_appendix}
-\end{figure*}
+    \includegraphics[width=0.49\textwidth]{MI.png}
+    \vspace{0.4cm}
+    \includegraphics[width=0.49\textwidth]{VIF.png}
+    \caption{Mutual information between kinematic parameters and [Fe/H] (top), and Variance inflation factors (VIF) for the kinematic parameters (bottom) in the APOGEE and HARPS samples.}
+    \label{fig:mi_vif_appendix}
+\end{figure}
 
 
 
@@ -632,51 +615,45 @@ Despite these differences in dispersion, the APOGEE sample largely encompasses t
 
 \begin{figure*}
 \centering
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_V_lsr.png}
     \caption{$V_{\mathrm{LSR}}\, [km/s]$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_U_lsr.png}
     \caption{$U_{\mathrm{LSR}}\, [km/s]$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_W_lsr.png}
     \caption{$W_{\mathrm{LSR}}\, [km/s]$}
 \end{subfigure}
 
 \vspace{0.4cm}
 
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_UVW_lsr.png}
     \caption{$UVW_{\mathrm{LSR}}\, [km/s]$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_rapo.png}
     \caption{$R_{\mathrm{apo}}\, [Kpc]$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_rperi.png}
     \caption{$R_{\mathrm{peri}}\, [Kpc]$}
 \end{subfigure}
 
 \vspace{0.4cm}
 
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_eccentricity.png}
     \caption{$e$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_zmax.png}
     \caption{$Z_{\max}\, [Kpc]$}
 \end{subfigure}
-\hfill
-\begin{subfigure}{0.32\textwidth}
+\begin{subfigure}{0.25\textwidth}
     \includegraphics[width=\linewidth]{figures/dist_P_gal.png}
     \caption{$P_{\mathrm{gal}}\, [\%]$}
 \end{subfigure}
@@ -692,7 +669,7 @@ This section provides the detailed benchmarking results for the regression model
 
 All models were evaluated using 5-fold cross-validation with identical data splits. Performance was quantified using the root mean squared error (RMSE), mean absolute error (MAE), and coefficient of determination ($R^2$). Table~\ref{tab:cv_scores_full} summarizes the mean performance across folds, with the quoted RMSE uncertainties corresponding to the standard deviation over folds. The small standard deviations of the RMSE across folds indicate stable model performance.
 
-\begin{table*}
+\begin{table}
 \caption{Performance of regression models evaluated using 5-fold cross-validation.
 Reported values correspond to the mean across folds, with RMSE uncertainties
 indicating the standard deviation.}
@@ -702,22 +679,20 @@ indicating the standard deviation.}
 Model & RMSE (dex) & MAE (dex) & $R^2$ \\
 \hline
 Linear Regression & $0.213 \pm 0.001$ & 0.169 & 0.329 \\
-SVR & $0.209 \pm 0.001$ & 0.165 & 0.353 \\
-Deep Neural Network & $0.208 \pm 0.003$ & 0.163 & 0.363 \\
 Random Forest & $0.203 \pm 0.001$ & 0.159 & 0.391 \\
 Extra Trees & $0.204 \pm 0.001$ & 0.160 & 0.384 \\
 XGBoost & $0.204 \pm 0.001$ & 0.160 & 0.386 \\
-XGBoost (QT target) & $0.204 \pm 0.001$ & 0.160 & 0.386 \\
+XGBoost (QT) & $0.204 \pm 0.001$ & 0.160 & 0.386 \\
 LightGBM & $\mathbf{0.199 \pm 0.001}$ & 0.156 & 0.412 \\
-LightGBM (QT target) & $0.199 \pm 0.001$ & 0.156 & 0.412 \\
+LightGBM (QT) & $0.199 \pm 0.001$ & 0.156 & 0.412 \\
 CatBoost & $0.200 \pm 0.001$ & 0.157 & 0.411 \\
-CatBoost (QT target) & $0.200 \pm 0.001$ & 0.156 & 0.408 \\
+CatBoost (QT) & $0.200 \pm 0.001$ & 0.156 & 0.408 \\
 Voting Regressor & $0.200 \pm 0.001$ & 0.157 & 0.410 \\
 Stacking Regressor & $0.199 \pm 0.001$ & 0.156 & 0.413 \\
 \hline
 \end{tabular}
 \label{tab:cv_scores_full}
-\end{table*}
+\end{table}
 
 
 We also considered target ([Fe/H]) transformation using a quantile normalization (QT), which maps the metallicity distribution onto a Gaussian form via its empirical cumulative distribution function, but it did not improve predictive accuracy. This is consistent with the approximately symmetric metallicity distribution and the robustness of tree-based ensemble methods to monotonic target transformations.
@@ -750,7 +725,6 @@ Hyperparameter optimization was carried out using the Optuna framework \citep{Ak
 
 The tuning focused on the most relevant hyperparameters controlling model complexity, regularization, and generalization performance. These include the number of boosting iterations, learning rate, tree depth (or number of leaves), subsampling fractions, and $L_1$/$L_2$ regularization terms. These parameters directly regulate the bias–variance trade-off and the effective model capacity.
 
-The best-performing configurations obtained with Optuna are summarized in Tables~\ref{tab:xgb_params} and \ref{tab:lgbm_params}.
 
 The resulting best cross-validated RMSE values are:
 
@@ -762,49 +736,6 @@ The resulting best cross-validated RMSE values are:
 Compared to the default configurations reported in Table~\ref{tab:cv_scores_full}, the improvement is marginal for LightGBM and appears only at the third decimal level in RMSE. For XGBoost, hyperparameter optimization brings its performance to essentially the same precision level as the other two boosting methods. This behaviour further confirms that predictive performance is primarily constrained by the intrinsic information content of the kinematic features rather than by hyperparameter configuration or the specific boosting architecture.
 
 
-\begin{table}[h]
-\caption{Best hyperparameters obtained for XGBoost using Optuna optimization.}
-\label{tab:xgb_params}
-\centering
-\begin{tabular}{lc}
-\hline
-Parameter & Value \\
-\hline
-n\_estimators & 1335 \\
-learning\_rate & 0.0056 \\
-max\_depth & 9 \\
-min\_child\_weight & 1.66 \\
-subsample & 0.717 \\
-colsample\_bytree & 0.960 \\
-reg\_alpha & $7.98\times10^{-4}$ \\
-reg\_lambda & $3.15\times10^{-8}$ \\
-gamma & 0.260 \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-\caption{Best hyperparameters obtained for LightGBM using Optuna optimization.}
-\label{tab:lgbm_params}
-\centering
-\begin{tabular}{lc}
-\hline
-Parameter & Value \\
-\hline
-n\_estimators & 733 \\
-learning\_rate & 0.0115 \\
-num\_leaves & 29 \\
-max\_depth & 5 \\
-min\_child\_samples & 127 \\
-subsample & 0.798 \\
-colsample\_bytree & 0.626 \\
-reg\_alpha & $1.93\times10^{-6}$ \\
-reg\_lambda & 0.00315 \\
-\hline
-\end{tabular}
-\end{table}
-
-
 
 \subsubsection{Feature importance analysis} \label{appendix:feature_importance_feh}
 
@@ -812,43 +743,24 @@ reg\_lambda & 0.00315 \\
 This appendix presents the full set of feature-importance figures discussed in Sect.\ref{main_feat_imp_feh}. For completeness, we show the results of the built-in gain importance, permutation importance, SHAP global importance, and single-feature predictive performance for both LightGBM and XGBoost. These figures illustrate the consistency of the feature ranking across different importance metrics and model architectures.
 
 
-\begin{figure*}[ht]
+\begin{figure}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_builtin_gain.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/XGB_builtin_gain.png}
-\caption{Built-in gain feature importance for the tuned LightGBM (left) and XGBoost (right) models. The importance corresponds to the total reduction in squared error produced by splits involving each feature across all trees in the ensemble.}
-\label{fig:builtin_gain_comparison}
-\end{figure*}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_builtin_gain.png}
+\includegraphics[width=0.24\textwidth]{figures/XGB_builtin_gain.png}
+\vspace{0.4cm}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_permutation_dRMSE.png}
+\includegraphics[width=0.24\textwidth]{figures/XGB_permutation_dRMSE.png}
+\vspace{0.4cm}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_single_feature_rmse.png}
+\includegraphics[width=0.24\textwidth]{figures/XGB_single_feature_rmse.png}
+\vspace{0.4cm}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_shap_meanabs.png}
+\includegraphics[width=0.24\textwidth]{figures/XGB_shap_meanabs.png}
+\caption{Feature-importance diagnostics for the tuned LightGBM and XGBoost models predicting [Fe/H]. Built-in gain feature importance derived from the gradient boosting trees (top). Permutation feature importance, measured as the increase in prediction error ($\Delta$RMSE) after randomly shuffling each feature (second to top).  Predictive performance (RMSE from cross-validation) obtained when training the model using only a single feature at a time (second to bottom). Global SHAP importance, showing the mean absolute SHAP value for each feature (bottom).}
+\label{fig:feature_importance_feh}
+\end{figure}
 
 
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_permutation_dRMSE.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/XGB_permutation_dRMSE.png}
-\caption{Permutation feature importance for the tuned LightGBM (left) and XGBoost (right) models.
-The importance is quantified as the increase in cross-validated RMSE ($\Delta \mathrm{RMSE}$) when a given feature is randomly shuffled, thereby breaking its relationship with metallicity.}
-\label{fig:permutation_comparison}
-\end{figure*}
-
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_single_feature_rmse.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/XGB_single_feature_rmse.png}
-\caption{Predictive performance obtained when training the model using only a single feature at a time. The bars show the cross-validated RMSE for LightGBM (left) and XGBoost (right).}
-\label{fig:single_feature_comparison}
-\end{figure*}
-
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_shap_meanabs.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/XGB_shap_meanabs.png}
-\caption{Global SHAP feature importance for the tuned LightGBM (left) and XGBoost (right) models. The bars represent the mean absolute SHAP value, which quantifies the average magnitude of each feature’s contribution to the predicted metallicity.}
-\label{fig:shap_comparison}
-\end{figure*}
 
 
 \section{Predicting individual abundances from metallicity and kinematics}
@@ -862,18 +774,18 @@ This appendix provides additional material related to the prediction of individu
 
 This appendix presents the full set of Spearman rank correlation and mutual information diagrams between the elemental abundances and the input features used in this work. The figures are shown separately for the APOGEE and HARPS samples.
 
-\begin{figure*}[ht]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.48\textwidth]{figures/correlations_c_h.png}
-\hfill
+\vspace{0.4cm}
 \includegraphics[width=0.48\textwidth]{figures/correlations_o_h.png}
 \vspace{0.4cm}
 \includegraphics[width=0.48\textwidth]{figures/correlations_mg_h.png}
-\hfill
+\vspace{0.4cm}
 \includegraphics[width=0.48\textwidth]{figures/correlations_si_h.png}
 \caption{Spearman rank correlation coefficients between the input features and the abundances of elements for the APOGEE (left) and HARPS (right) samples.}
 \label{fig:cor_abund_fe}
-\end{figure*}
+\end{figure}
 
 
 \begin{figure*}[ht]
@@ -892,84 +804,78 @@ This appendix presents the full set of Spearman rank correlation and mutual info
 
 
 
-\begin{table*}
+\begin{table}
 \caption{Performance of regression models for predicting elemental abundances
 from [Fe/H] and kinematics using five-fold cross-validation on the APOGEE
 training sample. Reported values correspond to the mean across folds, with RMSE
 uncertainties indicating the standard deviation.}
 \centering
-\begin{tabular}{llccc}
+\begin{tabular}{lccc}
 \hline
-Element & Model & RMSE (dex) & MAE (dex) & $R^2$ \\
-\hline
-
-\multicolumn{5}{l}{\textbf{[O/H]}} \\
-\hline
- & Linear Regression & $0.061 \pm 0.000$ & 0.046 & 0.901 \\
- & SVR & $0.122 \pm 0.001$ & 0.096 & 0.602 \\
- & Deep Neural Network & $0.065 \pm 0.003$ & 0.050 & 0.886 \\
- & Random Forest & $0.056 \pm 0.000$ & 0.040 & 0.916 \\
- & Extra Trees & $0.057 \pm 0.000$ & 0.041 & 0.914 \\
- & XGBoost & $0.056 \pm 0.000$ & 0.040 & 0.915 \\
- & XGBoost (QT target) & $0.057 \pm 0.001$ & 0.040 & 0.914 \\
- & LightGBM & $\mathbf{0.055 \pm 0.000}$ & 0.039 & 0.920 \\
- & LightGBM (QT target) & $0.055 \pm 0.000$ & 0.039 & 0.919 \\
- & CatBoost & $0.055 \pm 0.001$ & 0.039 & 0.920 \\
- & CatBoost (QT target) & $0.055 \pm 0.001$ & 0.039 & 0.919 \\
- & Voting Regressor & $0.055 \pm 0.000$ & 0.039 & 0.920 \\
+Model & RMSE (dex) & MAE (dex) & $R^2$ \\
 \hline
 
-\multicolumn{5}{l}{\textbf{[Mg/H]}} \\
+\multicolumn{4}{l}{\textbf{[O/H]}} \\
 \hline
- & Linear Regression & $0.057 \pm 0.000$ & 0.044 & 0.920 \\
- & SVR & $0.126 \pm 0.001$ & 0.099 & 0.612 \\
- & Deep Neural Network & $0.066 \pm 0.007$ & 0.050 & 0.893 \\
- & Random Forest & $0.051 \pm 0.000$ & 0.037 & 0.937 \\
- & Extra Trees & $0.051 \pm 0.000$ & 0.037 & 0.937 \\
- & XGBoost & $0.051 \pm 0.000$ & 0.036 & 0.938 \\
- & XGBoost (QT target) & $0.051 \pm 0.000$ & 0.036 & 0.937 \\
- & LightGBM & $\mathbf{0.049 \pm 0.001}$ & 0.035 & 0.941 \\
- & LightGBM (QT target) & $0.049 \pm 0.001$ & 0.035 & 0.941 \\
- & CatBoost & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
- & CatBoost (QT target) & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
- & Voting Regressor & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
+Linear Regression & $0.061 \pm 0.000$ & 0.046 & 0.901 \\
+Random Forest & $0.056 \pm 0.000$ & 0.040 & 0.916 \\
+Extra Trees & $0.057 \pm 0.000$ & 0.041 & 0.914 \\
+XGBoost & $0.056 \pm 0.000$ & 0.040 & 0.915 \\
+XGBoost (QT) & $0.057 \pm 0.001$ & 0.040 & 0.914 \\
+LightGBM & $\mathbf{0.055 \pm 0.000}$ & 0.039 & 0.920 \\
+LightGBM (QT) & $0.055 \pm 0.000$ & 0.039 & 0.919 \\
+CatBoost & $0.055 \pm 0.001$ & 0.039 & 0.920 \\
+CatBoost (QT) & $0.055 \pm 0.001$ & 0.039 & 0.919 \\
+Voting Regressor & $0.055 \pm 0.000$ & 0.039 & 0.920 \\
 \hline
 
-\multicolumn{5}{l}{\textbf{[Si/H]}} \\
+
+\multicolumn{4}{l}{\textbf{[Mg/H]}} \\
 \hline
- & Linear Regression & $0.041 \pm 0.000$ & 0.032 & 0.961 \\
- & SVR & $0.125 \pm 0.001$ & 0.098 & 0.642 \\
- & Deep Neural Network & $0.054 \pm 0.003$ & 0.042 & 0.932 \\
- & Random Forest & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
- & Extra Trees & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
- & XGBoost & $0.038 \pm 0.000$ & 0.028 & 0.968 \\
- & XGBoost (QT target) & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
- & LightGBM & $\mathbf{0.037 \pm 0.000}$ & 0.027 & 0.969 \\
- & LightGBM (QT target) & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
- & CatBoost & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
- & CatBoost (QT target) & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
- & Voting Regressor & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
+Linear Regression & $0.057 \pm 0.000$ & 0.044 & 0.920 \\
+Random Forest & $0.051 \pm 0.000$ & 0.037 & 0.937 \\
+Extra Trees & $0.051 \pm 0.000$ & 0.037 & 0.937 \\
+XGBoost & $0.051 \pm 0.000$ & 0.036 & 0.938 \\
+XGBoost (QT) & $0.051 \pm 0.000$ & 0.036 & 0.937 \\
+LightGBM & $\mathbf{0.049 \pm 0.001}$ & 0.035 & 0.941 \\
+LightGBM (QT) & $0.049 \pm 0.001$ & 0.035 & 0.941 \\
+CatBoost & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
+CatBoost (QT) & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
+Voting Regressor & $0.049 \pm 0.000$ & 0.035 & 0.941 \\
 \hline
 
-\multicolumn{5}{l}{\textbf{[C/H]}} \\
+\multicolumn{4}{l}{\textbf{[Si/H]}} \\
 \hline
- & Linear Regression & $0.086 \pm 0.000$ & 0.065 & 0.872 \\
- & SVR & $0.158 \pm 0.001$ & 0.123 & 0.571 \\
- & Deep Neural Network & $0.089 \pm 0.003$ & 0.068 & 0.862 \\
- & Random Forest & $0.081 \pm 0.001$ & 0.060 & 0.887 \\
- & Extra Trees & $0.082 \pm 0.000$ & 0.061 & 0.885 \\
- & XGBoost & $0.081 \pm 0.001$ & 0.060 & 0.888 \\
- & XGBoost (QT target) & $0.081 \pm 0.001$ & 0.060 & 0.886 \\
- & LightGBM & $\mathbf{0.079 \pm 0.001}$ & 0.058 & 0.893 \\
- & LightGBM (QT target) & $0.079 \pm 0.001$ & 0.058 & 0.893 \\
- & CatBoost & $0.079 \pm 0.001$ & 0.058 & 0.893 \\
- & CatBoost (QT target) & $0.079 \pm 0.001$ & 0.059 & 0.892 \\
- & Voting Regressor & $0.079 \pm 0.001$ & 0.059 & 0.892 \\
+Linear Regression & $0.041 \pm 0.000$ & 0.032 & 0.961 \\
+Random Forest & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
+Extra Trees & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
+XGBoost & $0.038 \pm 0.000$ & 0.028 & 0.968 \\
+XGBoost (QT) & $0.038 \pm 0.000$ & 0.028 & 0.967 \\
+LightGBM & $\mathbf{0.037 \pm 0.000}$ & 0.027 & 0.969 \\
+LightGBM (QT) & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
+CatBoost & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
+CatBoost (QT) & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
+Voting Regressor & $0.037 \pm 0.000$ & 0.027 & 0.969 \\
 \hline
+
+\multicolumn{4}{l}{\textbf{[C/H]}} \\
+\hline
+Linear Regression & $0.086 \pm 0.000$ & 0.065 & 0.872 \\
+Random Forest & $0.081 \pm 0.001$ & 0.060 & 0.887 \\
+Extra Trees & $0.082 \pm 0.000$ & 0.061 & 0.885 \\
+XGBoost & $0.081 \pm 0.001$ & 0.060 & 0.888 \\
+XGBoost (QT) & $0.081 \pm 0.001$ & 0.060 & 0.886 \\
+LightGBM & $\mathbf{0.079 \pm 0.001}$ & 0.058 & 0.893 \\
+LightGBM (QT) & $0.079 \pm 0.001$ & 0.058 & 0.893 \\
+CatBoost & $0.079 \pm 0.001$ & 0.058 & 0.893 \\
+CatBoost (QT) & $0.079 \pm 0.001$ & 0.059 & 0.892 \\
+Voting Regressor & $0.079 \pm 0.001$ & 0.059 & 0.892 \\
+\hline
+
 
 \end{tabular}
 \label{tab:abundance_cv_scores}
-\end{table*}
+\end{table}
 
 
 \subsubsection{Feature importance analysis} \label{appendix:feature_importance_abundances_feh}
@@ -979,13 +885,10 @@ This appendix presents the full set of feature-importance figures discussed in S
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_builtin_gain.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_permutation_dRMSE.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_shap_meanabs.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_c_h_single_feature_rmse.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_c_h_builtin_gain.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_c_h_permutation_dRMSE.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_c_h_shap_meanabs.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_c_h_single_feature_rmse.png}
 \caption{
 Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{[C/H]}$. Built-in gain feature importance derived from the gradient boosting trees (top left). Permutation feature importance, measured as the increase in prediction error ($\Delta$RMSE) after randomly shuffling each feature (top right). Global SHAP importance, showing the mean absolute SHAP value for each feature (bottom left). Predictive performance (RMSE from cross-validation) obtained when training the model using only a single feature at a time (bottom right).}
 \label{fig:feature_importance_ch}
@@ -994,13 +897,10 @@ Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_builtin_gain.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_permutation_dRMSE.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_shap_meanabs.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_o_h_single_feature_rmse.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_o_h_builtin_gain.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_o_h_permutation_dRMSE.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_o_h_shap_meanabs.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_o_h_single_feature_rmse.png}
 \caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[O/H]}$}
 \label{fig:feature_importance_oh}
 \end{figure*}
@@ -1008,26 +908,20 @@ Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_builtin_gain.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_permutation_dRMSE.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_shap_meanabs.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_mg_h_single_feature_rmse.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_mg_h_builtin_gain.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_mg_h_permutation_dRMSE.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_mg_h_shap_meanabs.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_mg_h_single_feature_rmse.png}
 \caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Mg/H]}$}
 \label{fig:feature_importance_mgh}
 \end{figure*}
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_builtin_gain.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_permutation_dRMSE.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_shap_meanabs.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/LGBM_si_h_single_feature_rmse.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_si_h_builtin_gain.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_si_h_permutation_dRMSE.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_si_h_shap_meanabs.png}
+\includegraphics[width=0.24\textwidth]{figures/LGBM_si_h_single_feature_rmse.png}
 \caption{Same as Fig.\ref{fig:feature_importance_ch} but for $\mathrm{[Si/H]}$.}
 \label{fig:feature_importance_sih}
 \end{figure*}
@@ -1039,26 +933,20 @@ This appendix presents the full set of feature-importance figures discussed in S
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/builtin_gain_fe_mg_si_c_h.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/permutation_drmse_fe_mg_si_c_h.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/shap_mean_abs_fe_mg_si_c_h.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_c_h.png}
+\includegraphics[width=0.24\textwidth]{figures/builtin_gain_fe_mg_si_c_h.png}
+\includegraphics[width=0.24\textwidth]{figures/permutation_drmse_fe_mg_si_c_h.png}
+\includegraphics[width=0.24\textwidth]{figures/shap_mean_abs_fe_mg_si_c_h.png}
+\includegraphics[width=0.24\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_c_h.png}
 \caption{Feature-importance diagnostics for the tuned LightGBM model predicting $\mathrm{[C/H]}$ using Mg, Si, and Fe abundances. Built-in gain feature importance derived from the gradient boosting trees (top left). Permutation feature importance, measured as the increase in prediction error ($\Delta$RMSE) after randomly shuffling each feature (top right). Global SHAP importance, showing the mean absolute SHAP value for each feature (bottom left). Predictive performance (RMSE from cross-validation) obtained when training the model using only a single feature at a time (bottom right).}
 \label{fig:feature_importance_ch_frommgsife}
 \end{figure*}
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/builtin_gain_fe_mg_si_o_h.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/permutation_drmse_fe_mg_si_o_h.png}
-\vspace{0.4cm}
-\includegraphics[width=0.48\textwidth]{figures/shap_mean_abs_fe_mg_si_o_h.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_o_h.png}
+\includegraphics[width=0.24\textwidth]{figures/builtin_gain_fe_mg_si_o_h.png}
+\includegraphics[width=0.24\textwidth]{figures/permutation_drmse_fe_mg_si_o_h.png}
+\includegraphics[width=0.24\textwidth]{figures/shap_mean_abs_fe_mg_si_o_h.png}
+\includegraphics[width=0.24\textwidth]{figures/single_feature_cv_rmse_fe_mg_si_o_h.png}
 \caption{Same as Fig.~\ref{fig:feature_importance_ch_frommgsife}, but for $\mathrm{[O/H]}$.}
 \label{fig:feature_importance_oh_frommgsife}
 \end{figure*}

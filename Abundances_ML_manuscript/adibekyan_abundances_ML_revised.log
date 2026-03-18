@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  17 MAR 2026 16:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  18 MAR 2026 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,33 +872,30 @@ LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 6.64998pt on input line 92.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4378) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf
 -dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 1308) in paragraph at lines 108--109
+Underfull \hbox (badness 1308) in paragraph at lines 111--112
 \T1/txr/m/n/10 In this study, we use stel-lar data from the Apache Point
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 \T1/txr/m/n/10 Ob-ser-va-tory Galac-tic Evo-lu-tion Ex-per-i-ment (APOGEE;
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 112--112
+Underfull \hbox (badness 1742) in paragraph at lines 115--115
 [][][]\T1/txr/m/n/9 The code is avail-able at [][]$\T1/txtt/m/n/9 https : / / g
 ithub . com / vadibekyan /
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 112--113
+Underfull \hbox (badness 1303) in paragraph at lines 115--116
 \T1/txr/m/n/10 puted Galac-tic space ve-loc-i-ties and population-membership
  []
 
@@ -906,139 +903,134 @@ Underfull \hbox (badness 1303) in paragraph at lines 112--113
 File: feh_distributions_apogee_harps.png Graphic file (type png)
 <use feh_distributions_apogee_harps.png>
 Package pdftex.def Info: feh_distributions_apogee_harps.png  used on input line
- 121.
+ 124.
 (pdftex.def)             Requested size: 256.0748pt x 341.44667pt.
+[2 <./feh_distributions_apogee_harps.png>]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 147.
+(Font)              scaled to size 9.49997pt on input line 150.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 147.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 150.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 147.
-[2 <./feh_distributions_apogee_harps.png>] [3]
-Underfull \hbox (badness 1092) in paragraph at lines 195--196
+(Font)              scaled to size 9.49997pt on input line 150.
+ [3]
+Underfull \hbox (badness 1092) in paragraph at lines 198--199
 []\T1/txr/m/n/10 To fur-ther il-lus-trate the per-for-mance of the Light-GBM
  []
 
-<figures/fig_apogee_lgbm_pred_resid_scatter.png, id=231, 514.0806pt x 225.0006p
+<figures/fig_apogee_lgbm_pred_resid_scatter.png, id=228, 514.0806pt x 225.0006p
 t>
 File: figures/fig_apogee_lgbm_pred_resid_scatter.png Graphic file (type png)
 <use figures/fig_apogee_lgbm_pred_resid_scatter.png>
 Package pdftex.def Info: figures/fig_apogee_lgbm_pred_resid_scatter.png  used o
-n input line 201.
+n input line 204.
 (pdftex.def)             Requested size: 256.0748pt x 112.08115pt.
-<figures/fig_harps_lgbm_pred_resid_scatter.png, id=232, 514.0806pt x 225.0006pt
+<figures/fig_harps_lgbm_pred_resid_scatter.png, id=229, 514.0806pt x 225.0006pt
 >
 File: figures/fig_harps_lgbm_pred_resid_scatter.png Graphic file (type png)
 <use figures/fig_harps_lgbm_pred_resid_scatter.png>
 Package pdftex.def Info: figures/fig_harps_lgbm_pred_resid_scatter.png  used on
- input line 203.
+ input line 206.
 (pdftex.def)             Requested size: 256.0748pt x 112.08115pt.
-
-Underfull \vbox (badness 1776) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2326) has occurred while \output is active []
-
- [4 <./figures/fig_apogee_lgbm_pred_resid_scatter.png> <./figures/fig_harps_lgb
-m_pred_resid_scatter.png>]
-<figures/LGBM_zmax_rapo_dependence_pretty.png, id=252, 542.025pt x 361.35pt>
+[4 <./figures/fig_apogee_lgbm_pred_resid_scatter.png> <./figures/fig_harps_lgbm
+_pred_resid_scatter.png>]
+<figures/LGBM_zmax_rapo_dependence_pretty.png, id=249, 542.025pt x 361.35pt>
 File: figures/LGBM_zmax_rapo_dependence_pretty.png Graphic file (type png)
 <use figures/LGBM_zmax_rapo_dependence_pretty.png>
 Package pdftex.def Info: figures/LGBM_zmax_rapo_dependence_pretty.png  used on 
-input line 238.
+input line 241.
 (pdftex.def)             Requested size: 256.0748pt x 170.72223pt.
-<figures/LGBM_zmax_pgal_dependence_pretty.png, id=253, 542.025pt x 361.35pt>
+<figures/LGBM_zmax_pgal_dependence_pretty.png, id=250, 542.025pt x 361.35pt>
 File: figures/LGBM_zmax_pgal_dependence_pretty.png Graphic file (type png)
 <use figures/LGBM_zmax_pgal_dependence_pretty.png>
 Package pdftex.def Info: figures/LGBM_zmax_pgal_dependence_pretty.png  used on 
-input line 240.
+input line 243.
 (pdftex.def)             Requested size: 256.0748pt x 170.72223pt.
 
-Underfull \hbox (badness 1360) in paragraph at lines 251--252
+Underfull \hbox (badness 1360) in paragraph at lines 254--255
 \T1/txr/m/n/10 ra-dial or-bital prop-er-ties in-tro-duce a sec-ondary, populati
 on-
  []
 
 [5 <./figures/LGBM_zmax_rapo_dependence_pretty.png> <./figures/LGBM_zmax_pgal_d
 ependence_pretty.png>]
-Overfull \hbox (2.61826pt too wide) in paragraph at lines 282--294
+Overfull \hbox (2.61826pt too wide) in paragraph at lines 285--297
  [][] 
  []
 
-<figures/c_h_apogee_holdout.png, id=266, 875.4306pt x 369.5406pt>
+<figures/c_h_apogee_holdout.png, id=263, 875.4306pt x 369.5406pt>
 File: figures/c_h_apogee_holdout.png Graphic file (type png)
 <use figures/c_h_apogee_holdout.png>
-Package pdftex.def Info: figures/c_h_apogee_holdout.png  used on input line 306
+Package pdftex.def Info: figures/c_h_apogee_holdout.png  used on input line 309
 .
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/c_h_harps.png, id=267, 875.4306pt x 369.5406pt>
+<figures/c_h_harps.png, id=264, 875.4306pt x 369.5406pt>
 File: figures/c_h_harps.png Graphic file (type png)
 <use figures/c_h_harps.png>
-Package pdftex.def Info: figures/c_h_harps.png  used on input line 307.
+Package pdftex.def Info: figures/c_h_harps.png  used on input line 310.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/o_h_apogee_holdout.png, id=268, 875.4306pt x 369.5406pt>
+<figures/o_h_apogee_holdout.png, id=265, 875.4306pt x 369.5406pt>
 File: figures/o_h_apogee_holdout.png Graphic file (type png)
 <use figures/o_h_apogee_holdout.png>
-Package pdftex.def Info: figures/o_h_apogee_holdout.png  used on input line 309
+Package pdftex.def Info: figures/o_h_apogee_holdout.png  used on input line 312
 .
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/o_h_harps.png, id=269, 875.4306pt x 369.5406pt>
+<figures/o_h_harps.png, id=266, 875.4306pt x 369.5406pt>
 File: figures/o_h_harps.png Graphic file (type png)
 <use figures/o_h_harps.png>
-Package pdftex.def Info: figures/o_h_harps.png  used on input line 310.
+Package pdftex.def Info: figures/o_h_harps.png  used on input line 313.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/mg_h_apogee_holdout.png, id=270, 875.4306pt x 369.5406pt>
+<figures/mg_h_apogee_holdout.png, id=267, 875.4306pt x 369.5406pt>
 File: figures/mg_h_apogee_holdout.png Graphic file (type png)
 <use figures/mg_h_apogee_holdout.png>
 Package pdftex.def Info: figures/mg_h_apogee_holdout.png  used on input line 31
-2.
+5.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/mg_h_harps.png, id=271, 875.4306pt x 369.5406pt>
+<figures/mg_h_harps.png, id=268, 875.4306pt x 369.5406pt>
 File: figures/mg_h_harps.png Graphic file (type png)
 <use figures/mg_h_harps.png>
-Package pdftex.def Info: figures/mg_h_harps.png  used on input line 313.
+Package pdftex.def Info: figures/mg_h_harps.png  used on input line 316.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/si_h_apogee_holdout.png, id=272, 875.4306pt x 369.5406pt>
+<figures/si_h_apogee_holdout.png, id=269, 875.4306pt x 369.5406pt>
 File: figures/si_h_apogee_holdout.png Graphic file (type png)
 <use figures/si_h_apogee_holdout.png>
 Package pdftex.def Info: figures/si_h_apogee_holdout.png  used on input line 31
-5.
+8.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/si_h_harps.png, id=273, 875.4306pt x 369.5406pt>
+<figures/si_h_harps.png, id=270, 875.4306pt x 369.5406pt>
 File: figures/si_h_harps.png Graphic file (type png)
 <use figures/si_h_harps.png>
-Package pdftex.def Info: figures/si_h_harps.png  used on input line 316.
+Package pdftex.def Info: figures/si_h_harps.png  used on input line 319.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/LGBM_c_h_dependence_fe_h_by_rperi.png, id=277, 496.7358pt x 349.305pt>
+<figures/LGBM_c_h_dependence_fe_h_by_rperi.png, id=274, 496.7358pt x 349.305pt>
 
 File: figures/LGBM_c_h_dependence_fe_h_by_rperi.png Graphic file (type png)
 <use figures/LGBM_c_h_dependence_fe_h_by_rperi.png>
 Package pdftex.def Info: figures/LGBM_c_h_dependence_fe_h_by_rperi.png  used on
- input line 343.
+ input line 346.
 (pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
-<figures/LGBM_o_h_dependence_fe_h_by_rperi.png, id=278, 496.7358pt x 349.305pt>
+<figures/LGBM_o_h_dependence_fe_h_by_rperi.png, id=275, 496.7358pt x 349.305pt>
 
 File: figures/LGBM_o_h_dependence_fe_h_by_rperi.png Graphic file (type png)
 <use figures/LGBM_o_h_dependence_fe_h_by_rperi.png>
 Package pdftex.def Info: figures/LGBM_o_h_dependence_fe_h_by_rperi.png  used on
- input line 344.
+ input line 347.
 (pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
-<figures/LGBM_mg_h_dependence_fe_h_by_rperi.png, id=279, 496.9767pt x 349.305pt
+<figures/LGBM_mg_h_dependence_fe_h_by_rperi.png, id=276, 496.9767pt x 349.305pt
 >
 File: figures/LGBM_mg_h_dependence_fe_h_by_rperi.png Graphic file (type png)
 <use figures/LGBM_mg_h_dependence_fe_h_by_rperi.png>
 Package pdftex.def Info: figures/LGBM_mg_h_dependence_fe_h_by_rperi.png  used o
-n input line 346.
+n input line 349.
 (pdftex.def)             Requested size: 209.40907pt x 147.18678pt.
-<figures/LGBM_si_h_dependence_fe_h_by_rperi.png, id=280, 496.7358pt x 349.305pt
+<figures/LGBM_si_h_dependence_fe_h_by_rperi.png, id=277, 496.7358pt x 349.305pt
 >
 File: figures/LGBM_si_h_dependence_fe_h_by_rperi.png Graphic file (type png)
 <use figures/LGBM_si_h_dependence_fe_h_by_rperi.png>
 Package pdftex.def Info: figures/LGBM_si_h_dependence_fe_h_by_rperi.png  used o
-n input line 347.
+n input line 350.
 (pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
 [6]
-Underfull \vbox (badness 2435) has occurred while \output is active []
+Underfull \vbox (badness 5302) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1047,116 +1039,111 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 _apogee_holdout.png> <./figures/o_h_harps.png> <./figures/mg_h_apogee_holdout.p
 ng> <./figures/mg_h_harps.png> <./figures/si_h_apogee_holdout.png> <./figures/s
 i_h_harps.png>]
-<figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png, id=305, 875.4306pt 
+Underfull \vbox (badness 1968) has occurred while \output is active []
+
+<figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png, id=301, 875.4306pt 
 x 369.5406pt>
 File: figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png Graphic file (t
 ype png)
 <use figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.
-png  used on input line 377.
+png  used on input line 380.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/prediction_panels_harps_fe_mg_si_o_h.png, id=306, 875.4306pt x 369.540
+<figures/prediction_panels_harps_fe_mg_si_o_h.png, id=302, 875.4306pt x 369.540
 6pt>
 File: figures/prediction_panels_harps_fe_mg_si_o_h.png Graphic file (type png)
 <use figures/prediction_panels_harps_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/prediction_panels_harps_fe_mg_si_o_h.png  used
- on input line 379.
+ on input line 382.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png, id=307, 875.4306pt 
+<figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png, id=303, 875.4306pt 
 x 369.5406pt>
 File: figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png Graphic file (t
 ype png)
 <use figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.
-png  used on input line 381.
+png  used on input line 384.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
-<figures/prediction_panels_harps_fe_mg_si_c_h.png, id=308, 875.4306pt x 369.540
+<figures/prediction_panels_harps_fe_mg_si_c_h.png, id=304, 875.4306pt x 369.540
 6pt>
 File: figures/prediction_panels_harps_fe_mg_si_c_h.png Graphic file (type png)
 <use figures/prediction_panels_harps_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/prediction_panels_harps_fe_mg_si_c_h.png  used
- on input line 383.
+ on input line 386.
 (pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 391--392
+Underfull \hbox (badness 1648) in paragraph at lines 394--395
 \T1/txr/m/n/10 In ad-di-tion to the machine-learning ex-per-i-ments de-scribed
  []
 
 [8 <./figures/LGBM_c_h_dependence_fe_h_by_rperi.png> <./figures/LGBM_o_h_depend
 ence_fe_h_by_rperi.png> <./figures/LGBM_mg_h_dependence_fe_h_by_rperi.png> <./f
 igures/LGBM_si_h_dependence_fe_h_by_rperi.png>]
-Underfull \hbox (badness 6893) in paragraph at lines 407--408
-[]\T1/txr/m/n/10 The com-par-i-son shows that the agree-ment be-tween
- []
-
-<figures/linear_fe_si_vs_feh.png, id=325, 854.33464pt x 335.02307pt>
+<figures/linear_fe_si_vs_feh.png, id=320, 508.41945pt x 335.3328pt>
 File: figures/linear_fe_si_vs_feh.png Graphic file (type png)
 <use figures/linear_fe_si_vs_feh.png>
-Package pdftex.def Info: figures/linear_fe_si_vs_feh.png  used on input line 41
-4.
-(pdftex.def)             Requested size: 256.53291pt x 100.5997pt.
-<figures/linear_mg_si_vs_feh.png, id=326, 854.33464pt x 335.02307pt>
+Package pdftex.def Info: figures/linear_fe_si_vs_feh.png  used on input line 40
+3.
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+<figures/linear_mg_si_vs_feh.png, id=321, 508.41945pt x 334.97145pt>
 File: figures/linear_mg_si_vs_feh.png Graphic file (type png)
 <use figures/linear_mg_si_vs_feh.png>
-Package pdftex.def Info: figures/linear_mg_si_vs_feh.png  used on input line 42
-0.
-(pdftex.def)             Requested size: 256.53291pt x 100.5997pt.
-<figures/linear_c_o_vs_feh.png, id=327, 854.33464pt x 335.02307pt>
+Package pdftex.def Info: figures/linear_mg_si_vs_feh.png  used on input line 40
+8.
+(pdftex.def)             Requested size: 256.53291pt x 169.01868pt.
+<figures/linear_c_o_vs_feh.png, id=322, 508.41945pt x 335.3328pt>
 File: figures/linear_c_o_vs_feh.png Graphic file (type png)
 <use figures/linear_c_o_vs_feh.png>
-Package pdftex.def Info: figures/linear_c_o_vs_feh.png  used on input line 428.
+Package pdftex.def Info: figures/linear_c_o_vs_feh.png  used on input line 415.
 
-(pdftex.def)             Requested size: 256.53291pt x 100.5997pt.
-<figures/linear_fe_o_vs_feh.png, id=328, 854.33464pt x 335.02307pt>
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+<figures/linear_fe_o_vs_feh.png, id=323, 508.41945pt x 335.3328pt>
 File: figures/linear_fe_o_vs_feh.png Graphic file (type png)
 <use figures/linear_fe_o_vs_feh.png>
-Package pdftex.def Info: figures/linear_fe_o_vs_feh.png  used on input line 434
+Package pdftex.def Info: figures/linear_fe_o_vs_feh.png  used on input line 420
 .
-(pdftex.def)             Requested size: 256.53291pt x 100.5997pt.
-[9 <./figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png> <./figures/pre
-diction_panels_harps_fe_mg_si_o_h.png> <./figures/prediction_panels_apogee_hold
-out_fe_mg_si_c_h.png> <./figures/prediction_panels_harps_fe_mg_si_c_h.png>]
-Underfull \hbox (badness 6995) in paragraph at lines 510--512
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+
+Underfull \hbox (badness 6995) in paragraph at lines 469--471
 \T1/txr/m/n/8 un-der the grants UIDB/04434/2020 (DOI: 10.54499/UIDB/04434/2020)
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--512
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
 \T1/txr/m/n/8 and UIDP/04434/2020 (DOI: 10.54499/UIDP/04434/2020), as well as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--512
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
 \T1/txr/m/n/8 u-lus pro-gram (ref-er-ence 2023.06055.CEECIND/CP2839/CT0005, DOI
 :
  []
 
-(./adibekyan_abundances_ML_revised.bbl [10 <./figures/linear_fe_si_vs_feh.png> 
-<./figures/linear_mg_si_vs_feh.png> <./figures/linear_c_o_vs_feh.png> <./figure
-s/linear_fe_o_vs_feh.png>]) [11
+(./adibekyan_abundances_ML_revised.bbl [9 <./figures/prediction_panels_apogee_h
+oldout_fe_mg_si_o_h.png> <./figures/prediction_panels_harps_fe_mg_si_o_h.png> <
+./figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png> <./figures/predict
+ion_panels_harps_fe_mg_si_c_h.png>]) [10
 
-]
-Underfull \hbox (badness 2229) in paragraph at lines 539--540
+ <./figures/linear_fe_si_vs_feh.png> <./figures/linear_mg_si_vs_feh.png> <./fig
+ures/linear_c_o_vs_feh.png> <./figures/linear_fe_o_vs_feh.png>]
+Underfull \hbox (badness 2229) in paragraph at lines 498--499
 \T1/txr/m/n/10 For the APOGEE sam-ple, we per-formed a care-ful qual-
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 539--540
+Underfull \hbox (badness 2035) in paragraph at lines 498--499
 \T1/txr/m/n/10 ity se-lec-tion to en-sure re-li-able stel-lar pa-ram-e-ters and
  el-
  []
 
 
-Underfull \hbox (badness 2856) in paragraph at lines 539--540
+Underfull \hbox (badness 2856) in paragraph at lines 498--499
 \T1/txr/m/n/10 e-men-tal abun-dances. We ex-cluded stars with prob-lem-atic
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 543--545
+Underfull \hbox (badness 1067) in paragraph at lines 502--504
 []\T1/txr/m/n/10 To guar-an-tee ro-bust stel-lar pa-ram-e-ters, el-e-men-tal ab
 un-
  []
@@ -1165,373 +1152,385 @@ un-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 597--598
+Underfull \hbox (badness 1769) in paragraph at lines 556--557
 []\T1/txr/m/n/10 Although the ab-so-lute val-ues of the co-ef-fi-cients dif-fer
 
  []
 
-<correlations.png, id=380, 722.7pt x 361.35pt>
+<correlations.png, id=370, 722.7pt x 361.35pt>
 File: correlations.png Graphic file (type png)
 <use correlations.png>
-Package pdftex.def Info: correlations.png  used on input line 601.
-(pdftex.def)             Requested size: 523.5307pt x 261.76527pt.
-[12
+Package pdftex.def Info: correlations.png  used on input line 560.
+(pdftex.def)             Requested size: 418.82616pt x 209.41222pt.
+[11
 
 ]
-Underfull \hbox (badness 1009) in paragraph at lines 618--619
+Underfull \hbox (badness 1009) in paragraph at lines 577--578
 \T1/txr/m/n/10 por-tance in the MI anal-y-sis com-pared to its rank cor-re-la-
  []
 
-<MI.png, id=389, 722.7pt x 433.62pt>
+<MI.png, id=380, 722.7pt x 433.62pt>
 File: MI.png Graphic file (type png)
 <use MI.png>
-Package pdftex.def Info: MI.png  used on input line 622.
-(pdftex.def)             Requested size: 523.5307pt x 314.11833pt.
-<VIF.png, id=391, 722.7pt x 433.62pt>
+Package pdftex.def Info: MI.png  used on input line 597.
+(pdftex.def)             Requested size: 256.53291pt x 153.91963pt.
+<VIF.png, id=381, 722.7pt x 433.62pt>
 File: VIF.png Graphic file (type png)
 <use VIF.png>
-Package pdftex.def Info: VIF.png  used on input line 644.
-(pdftex.def)             Requested size: 523.5307pt x 314.11833pt.
-<figures/dist_V_lsr.png, id=393, 505.89pt x 578.16pt>
-File: figures/dist_V_lsr.png Graphic file (type png)
-<use figures/dist_V_lsr.png>
-Package pdftex.def Info: figures/dist_V_lsr.png  used on input line 663.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_U_lsr.png, id=394, 505.89pt x 578.16pt>
-File: figures/dist_U_lsr.png Graphic file (type png)
-<use figures/dist_U_lsr.png>
-Package pdftex.def Info: figures/dist_U_lsr.png  used on input line 668.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_W_lsr.png, id=395, 505.89pt x 578.16pt>
-File: figures/dist_W_lsr.png Graphic file (type png)
-<use figures/dist_W_lsr.png>
-Package pdftex.def Info: figures/dist_W_lsr.png  used on input line 673.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_UVW_lsr.png, id=396, 505.89pt x 578.16pt>
-File: figures/dist_UVW_lsr.png Graphic file (type png)
-<use figures/dist_UVW_lsr.png>
-Package pdftex.def Info: figures/dist_UVW_lsr.png  used on input line 680.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_rapo.png, id=397, 505.89pt x 578.16pt>
-File: figures/dist_rapo.png Graphic file (type png)
-<use figures/dist_rapo.png>
-Package pdftex.def Info: figures/dist_rapo.png  used on input line 685.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_rperi.png, id=398, 505.89pt x 578.16pt>
-File: figures/dist_rperi.png Graphic file (type png)
-<use figures/dist_rperi.png>
-Package pdftex.def Info: figures/dist_rperi.png  used on input line 690.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_eccentricity.png, id=399, 505.89pt x 578.16pt>
-File: figures/dist_eccentricity.png Graphic file (type png)
-<use figures/dist_eccentricity.png>
-Package pdftex.def Info: figures/dist_eccentricity.png  used on input line 697.
-
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_zmax.png, id=400, 505.89pt x 578.16pt>
-File: figures/dist_zmax.png Graphic file (type png)
-<use figures/dist_zmax.png>
-Package pdftex.def Info: figures/dist_zmax.png  used on input line 702.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
-<figures/dist_P_gal.png, id=401, 505.89pt x 578.16pt>
-File: figures/dist_P_gal.png Graphic file (type png)
-<use figures/dist_P_gal.png>
-Package pdftex.def Info: figures/dist_P_gal.png  used on input line 707.
-(pdftex.def)             Requested size: 167.53365pt x 191.46385pt.
+Package pdftex.def Info: VIF.png  used on input line 599.
+(pdftex.def)             Requested size: 256.53291pt x 153.91963pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./correlations.png>] [14 <./MI.png> <./VIF.png>] [15 <./figures/dist_V_ls
-r.png> <./figures/dist_U_lsr.png> <./figures/dist_W_lsr.png> <./figures/dist_UV
-W_lsr.png> <./figures/dist_rapo.png> <./figures/dist_rperi.png> <./figures/dist
-_eccentricity.png> <./figures/dist_zmax.png> <./figures/dist_P_gal.png>]
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 785.
+ [12 <./correlations.png> <./MI.png> <./VIF.png>]
+<figures/dist_V_lsr.png, id=392, 505.89pt x 578.16pt>
+File: figures/dist_V_lsr.png Graphic file (type png)
+<use figures/dist_V_lsr.png>
+Package pdftex.def Info: figures/dist_V_lsr.png  used on input line 618.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_U_lsr.png, id=393, 505.89pt x 578.16pt>
+File: figures/dist_U_lsr.png Graphic file (type png)
+<use figures/dist_U_lsr.png>
+Package pdftex.def Info: figures/dist_U_lsr.png  used on input line 622.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_W_lsr.png, id=394, 505.89pt x 578.16pt>
+File: figures/dist_W_lsr.png Graphic file (type png)
+<use figures/dist_W_lsr.png>
+Package pdftex.def Info: figures/dist_W_lsr.png  used on input line 626.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_UVW_lsr.png, id=395, 505.89pt x 578.16pt>
+File: figures/dist_UVW_lsr.png Graphic file (type png)
+<use figures/dist_UVW_lsr.png>
+Package pdftex.def Info: figures/dist_UVW_lsr.png  used on input line 633.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_rapo.png, id=396, 505.89pt x 578.16pt>
+File: figures/dist_rapo.png Graphic file (type png)
+<use figures/dist_rapo.png>
+Package pdftex.def Info: figures/dist_rapo.png  used on input line 637.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_rperi.png, id=397, 505.89pt x 578.16pt>
+File: figures/dist_rperi.png Graphic file (type png)
+<use figures/dist_rperi.png>
+Package pdftex.def Info: figures/dist_rperi.png  used on input line 641.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_eccentricity.png, id=398, 505.89pt x 578.16pt>
+File: figures/dist_eccentricity.png Graphic file (type png)
+<use figures/dist_eccentricity.png>
+Package pdftex.def Info: figures/dist_eccentricity.png  used on input line 648.
 
-Underfull \hbox (badness 1028) in paragraph at lines 789--790
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_zmax.png, id=399, 505.89pt x 578.16pt>
+File: figures/dist_zmax.png Graphic file (type png)
+<use figures/dist_zmax.png>
+Package pdftex.def Info: figures/dist_zmax.png  used on input line 652.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_P_gal.png, id=400, 505.89pt x 578.16pt>
+File: figures/dist_P_gal.png Graphic file (type png)
+<use figures/dist_P_gal.png>
+Package pdftex.def Info: figures/dist_P_gal.png  used on input line 656.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 731.
+
+Underfull \hbox (badness 1028) in paragraph at lines 735--736
 []\T1/txr/m/n/10 Compared to the de-fault con-fig-u-ra-tions re-ported in Ta-
  []
 
+[13]
+Underfull \vbox (badness 4765) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/LGBM_builtin_gain.png, id=440, 578.16pt x 433.62pt>
+<figures/LGBM_builtin_gain.png, id=419, 578.16pt x 433.62pt>
 File: figures/LGBM_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_builtin_gain.png>
-Package pdftex.def Info: figures/LGBM_builtin_gain.png  used on input line 844.
+Package pdftex.def Info: figures/LGBM_builtin_gain.png  used on input line 747.
 
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/XGB_builtin_gain.png, id=441, 578.16pt x 433.62pt>
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_builtin_gain.png, id=420, 578.16pt x 433.62pt>
 File: figures/XGB_builtin_gain.png Graphic file (type png)
 <use figures/XGB_builtin_gain.png>
-Package pdftex.def Info: figures/XGB_builtin_gain.png  used on input line 846.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/LGBM_permutation_dRMSE.png, id=442, 578.16pt x 433.62pt>
+Package pdftex.def Info: figures/XGB_builtin_gain.png  used on input line 748.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_permutation_dRMSE.png, id=421, 578.16pt x 433.62pt>
 File: figures/LGBM_permutation_dRMSE.png Graphic file (type png)
 <use figures/LGBM_permutation_dRMSE.png>
 Package pdftex.def Info: figures/LGBM_permutation_dRMSE.png  used on input line
- 854.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/XGB_permutation_dRMSE.png, id=443, 578.16pt x 433.62pt>
+ 750.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_permutation_dRMSE.png, id=422, 578.16pt x 433.62pt>
 File: figures/XGB_permutation_dRMSE.png Graphic file (type png)
 <use figures/XGB_permutation_dRMSE.png>
 Package pdftex.def Info: figures/XGB_permutation_dRMSE.png  used on input line 
-856.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/LGBM_single_feature_rmse.png, id=444, 578.16pt x 433.62pt>
+751.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_single_feature_rmse.png, id=423, 578.16pt x 433.62pt>
 File: figures/LGBM_single_feature_rmse.png Graphic file (type png)
 <use figures/LGBM_single_feature_rmse.png>
 Package pdftex.def Info: figures/LGBM_single_feature_rmse.png  used on input li
-ne 864.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/XGB_single_feature_rmse.png, id=445, 578.16pt x 433.62pt>
+ne 753.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_single_feature_rmse.png, id=424, 578.16pt x 433.62pt>
 File: figures/XGB_single_feature_rmse.png Graphic file (type png)
 <use figures/XGB_single_feature_rmse.png>
 Package pdftex.def Info: figures/XGB_single_feature_rmse.png  used on input lin
-e 866.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/LGBM_shap_meanabs.png, id=446, 578.16pt x 433.62pt>
+e 754.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_shap_meanabs.png, id=425, 578.16pt x 433.62pt>
 File: figures/LGBM_shap_meanabs.png Graphic file (type png)
 <use figures/LGBM_shap_meanabs.png>
-Package pdftex.def Info: figures/LGBM_shap_meanabs.png  used on input line 873.
+Package pdftex.def Info: figures/LGBM_shap_meanabs.png  used on input line 756.
 
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/XGB_shap_meanabs.png, id=447, 578.16pt x 433.62pt>
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_shap_meanabs.png, id=426, 578.16pt x 433.62pt>
 File: figures/XGB_shap_meanabs.png Graphic file (type png)
 <use figures/XGB_shap_meanabs.png>
-Package pdftex.def Info: figures/XGB_shap_meanabs.png  used on input line 875.
-(pdftex.def)             Requested size: 251.2925pt x 188.46437pt.
-<figures/correlations_c_h.png, id=448, 722.7pt x 361.35pt>
+Package pdftex.def Info: figures/XGB_shap_meanabs.png  used on input line 757.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./figures/dist_V_lsr.png> <./figures/dist_U_lsr.png> <./figures/dist_W_ls
+r.png> <./figures/dist_UVW_lsr.png> <./figures/dist_rapo.png> <./figures/dist_r
+peri.png> <./figures/dist_eccentricity.png> <./figures/dist_zmax.png> <./figure
+s/dist_P_gal.png>]
+<figures/correlations_c_h.png, id=440, 722.7pt x 361.35pt>
 File: figures/correlations_c_h.png Graphic file (type png)
 <use figures/correlations_c_h.png>
-Package pdftex.def Info: figures/correlations_c_h.png  used on input line 894.
+Package pdftex.def Info: figures/correlations_c_h.png  used on input line 778.
 (pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
-<figures/correlations_o_h.png, id=449, 722.7pt x 361.35pt>
+<figures/correlations_o_h.png, id=441, 722.7pt x 361.35pt>
 File: figures/correlations_o_h.png Graphic file (type png)
 <use figures/correlations_o_h.png>
-Package pdftex.def Info: figures/correlations_o_h.png  used on input line 896.
+Package pdftex.def Info: figures/correlations_o_h.png  used on input line 780.
 (pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
-<figures/correlations_mg_h.png, id=450, 722.7pt x 361.35pt>
+<figures/correlations_mg_h.png, id=442, 722.7pt x 361.35pt>
 File: figures/correlations_mg_h.png Graphic file (type png)
 <use figures/correlations_mg_h.png>
-Package pdftex.def Info: figures/correlations_mg_h.png  used on input line 898.
+Package pdftex.def Info: figures/correlations_mg_h.png  used on input line 782.
 
 (pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
-<figures/correlations_si_h.png, id=451, 722.7pt x 361.35pt>
+<figures/correlations_si_h.png, id=443, 722.7pt x 361.35pt>
 File: figures/correlations_si_h.png Graphic file (type png)
 <use figures/correlations_si_h.png>
-Package pdftex.def Info: figures/correlations_si_h.png  used on input line 900.
+Package pdftex.def Info: figures/correlations_si_h.png  used on input line 784.
 
 (pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
-<figures/mi_c_h.png, id=452, 722.7pt x 433.62pt>
+<figures/mi_c_h.png, id=444, 722.7pt x 433.62pt>
 File: figures/mi_c_h.png Graphic file (type png)
 <use figures/mi_c_h.png>
-Package pdftex.def Info: figures/mi_c_h.png  used on input line 908.
+Package pdftex.def Info: figures/mi_c_h.png  used on input line 792.
 (pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
-<figures/mi_o_h.png, id=453, 722.7pt x 433.62pt>
+<figures/mi_o_h.png, id=445, 722.7pt x 433.62pt>
 File: figures/mi_o_h.png Graphic file (type png)
 <use figures/mi_o_h.png>
-Package pdftex.def Info: figures/mi_o_h.png  used on input line 910.
+Package pdftex.def Info: figures/mi_o_h.png  used on input line 794.
 (pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
-<figures/mi_mg_h.png, id=454, 722.7pt x 433.62pt>
+<figures/mi_mg_h.png, id=446, 722.7pt x 433.62pt>
 File: figures/mi_mg_h.png Graphic file (type png)
 <use figures/mi_mg_h.png>
-Package pdftex.def Info: figures/mi_mg_h.png  used on input line 912.
+Package pdftex.def Info: figures/mi_mg_h.png  used on input line 796.
 (pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
-<figures/mi_si_h.png, id=455, 722.7pt x 433.62pt>
+<figures/mi_si_h.png, id=447, 722.7pt x 433.62pt>
 File: figures/mi_si_h.png Graphic file (type png)
 <use figures/mi_si_h.png>
-Package pdftex.def Info: figures/mi_si_h.png  used on input line 914.
+Package pdftex.def Info: figures/mi_si_h.png  used on input line 798.
 (pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
-[16]
-<figures/LGBM_c_h_builtin_gain.png, id=469, 710.95613pt x 494.14612pt>
+
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+<figures/LGBM_c_h_builtin_gain.png, id=449, 710.95613pt x 494.14612pt>
 File: figures/LGBM_c_h_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_c_h_builtin_gain.png>
 Package pdftex.def Info: figures/LGBM_c_h_builtin_gain.png  used on input line 
-1009.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_c_h_permutation_dRMSE.png, id=470, 710.95613pt x 494.14612pt>
+887.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_permutation_dRMSE.png, id=450, 710.95613pt x 494.14612pt>
 File: figures/LGBM_c_h_permutation_dRMSE.png Graphic file (type png)
 <use figures/LGBM_c_h_permutation_dRMSE.png>
 Package pdftex.def Info: figures/LGBM_c_h_permutation_dRMSE.png  used on input 
-line 1011.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_c_h_shap_meanabs.png, id=471, 710.95613pt x 494.14612pt>
+line 888.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_shap_meanabs.png, id=451, 710.95613pt x 494.14612pt>
 File: figures/LGBM_c_h_shap_meanabs.png Graphic file (type png)
 <use figures/LGBM_c_h_shap_meanabs.png>
 Package pdftex.def Info: figures/LGBM_c_h_shap_meanabs.png  used on input line 
-1013.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_c_h_single_feature_rmse.png, id=472, 710.50444pt x 494.14612pt>
+889.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_single_feature_rmse.png, id=452, 710.50444pt x 494.14612pt>
 File: figures/LGBM_c_h_single_feature_rmse.png Graphic file (type png)
 <use figures/LGBM_c_h_single_feature_rmse.png>
 Package pdftex.def Info: figures/LGBM_c_h_single_feature_rmse.png  used on inpu
-t line 1015.
-(pdftex.def)             Requested size: 251.2925pt x 174.77087pt.
-<figures/LGBM_o_h_builtin_gain.png, id=473, 710.95613pt x 494.14612pt>
+t line 890.
+(pdftex.def)             Requested size: 125.65024pt x 87.38167pt.
+<figures/LGBM_o_h_builtin_gain.png, id=453, 710.95613pt x 494.14612pt>
 File: figures/LGBM_o_h_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_o_h_builtin_gain.png>
 Package pdftex.def Info: figures/LGBM_o_h_builtin_gain.png  used on input line 
-1024.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_o_h_permutation_dRMSE.png, id=474, 710.95613pt x 494.14612pt>
+899.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_permutation_dRMSE.png, id=454, 710.95613pt x 494.14612pt>
 File: figures/LGBM_o_h_permutation_dRMSE.png Graphic file (type png)
 <use figures/LGBM_o_h_permutation_dRMSE.png>
 Package pdftex.def Info: figures/LGBM_o_h_permutation_dRMSE.png  used on input 
-line 1026.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_o_h_shap_meanabs.png, id=475, 710.95613pt x 494.14612pt>
+line 900.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_shap_meanabs.png, id=455, 710.95613pt x 494.14612pt>
 File: figures/LGBM_o_h_shap_meanabs.png Graphic file (type png)
 <use figures/LGBM_o_h_shap_meanabs.png>
 Package pdftex.def Info: figures/LGBM_o_h_shap_meanabs.png  used on input line 
-1028.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_o_h_single_feature_rmse.png, id=476, 710.50444pt x 494.14612pt>
+901.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_single_feature_rmse.png, id=456, 710.50444pt x 494.14612pt>
 File: figures/LGBM_o_h_single_feature_rmse.png Graphic file (type png)
 <use figures/LGBM_o_h_single_feature_rmse.png>
 Package pdftex.def Info: figures/LGBM_o_h_single_feature_rmse.png  used on inpu
-t line 1030.
-(pdftex.def)             Requested size: 251.2925pt x 174.77087pt.
-<figures/LGBM_mg_h_builtin_gain.png, id=479, 710.95613pt x 494.14612pt>
+t line 902.
+(pdftex.def)             Requested size: 125.65024pt x 87.38167pt.
+<figures/LGBM_mg_h_builtin_gain.png, id=459, 710.95613pt x 494.14612pt>
 File: figures/LGBM_mg_h_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_mg_h_builtin_gain.png>
 Package pdftex.def Info: figures/LGBM_mg_h_builtin_gain.png  used on input line
- 1038.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_mg_h_permutation_dRMSE.png, id=480, 710.95613pt x 494.14612pt>
+ 910.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_permutation_dRMSE.png, id=460, 710.95613pt x 494.14612pt>
 File: figures/LGBM_mg_h_permutation_dRMSE.png Graphic file (type png)
 <use figures/LGBM_mg_h_permutation_dRMSE.png>
 Package pdftex.def Info: figures/LGBM_mg_h_permutation_dRMSE.png  used on input
- line 1040.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_mg_h_shap_meanabs.png, id=481, 710.95613pt x 494.14612pt>
+ line 911.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_shap_meanabs.png, id=461, 710.95613pt x 494.14612pt>
 File: figures/LGBM_mg_h_shap_meanabs.png Graphic file (type png)
 <use figures/LGBM_mg_h_shap_meanabs.png>
 Package pdftex.def Info: figures/LGBM_mg_h_shap_meanabs.png  used on input line
- 1042.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_mg_h_single_feature_rmse.png, id=482, 710.95613pt x 494.14612pt>
+ 912.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_single_feature_rmse.png, id=462, 710.95613pt x 494.14612pt>
 File: figures/LGBM_mg_h_single_feature_rmse.png Graphic file (type png)
 <use figures/LGBM_mg_h_single_feature_rmse.png>
 Package pdftex.def Info: figures/LGBM_mg_h_single_feature_rmse.png  used on inp
-ut line 1044.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_si_h_builtin_gain.png, id=485, 710.95613pt x 494.14612pt>
+ut line 913.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_builtin_gain.png, id=465, 710.95613pt x 494.14612pt>
 File: figures/LGBM_si_h_builtin_gain.png Graphic file (type png)
 <use figures/LGBM_si_h_builtin_gain.png>
 Package pdftex.def Info: figures/LGBM_si_h_builtin_gain.png  used on input line
- 1051.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_si_h_permutation_dRMSE.png, id=486, 710.95613pt x 494.14612pt>
+ 920.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_permutation_dRMSE.png, id=466, 710.95613pt x 494.14612pt>
 File: figures/LGBM_si_h_permutation_dRMSE.png Graphic file (type png)
 <use figures/LGBM_si_h_permutation_dRMSE.png>
 Package pdftex.def Info: figures/LGBM_si_h_permutation_dRMSE.png  used on input
- line 1053.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_si_h_shap_meanabs.png, id=487, 710.95613pt x 494.14612pt>
+ line 921.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_shap_meanabs.png, id=467, 710.95613pt x 494.14612pt>
 File: figures/LGBM_si_h_shap_meanabs.png Graphic file (type png)
 <use figures/LGBM_si_h_shap_meanabs.png>
 Package pdftex.def Info: figures/LGBM_si_h_shap_meanabs.png  used on input line
- 1055.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/LGBM_si_h_single_feature_rmse.png, id=488, 710.95613pt x 494.14612pt>
+ 922.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_single_feature_rmse.png, id=468, 710.95613pt x 494.14612pt>
 File: figures/LGBM_si_h_single_feature_rmse.png Graphic file (type png)
 <use figures/LGBM_si_h_single_feature_rmse.png>
 Package pdftex.def Info: figures/LGBM_si_h_single_feature_rmse.png  used on inp
-ut line 1057.
-(pdftex.def)             Requested size: 251.2925pt x 174.65778pt.
-<figures/builtin_gain_fe_mg_si_c_h.png, id=492, 565.77086pt x 349.47707pt>
+ut line 923.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./figures/LGBM_builtin_gain.png> <./figures/XGB_builtin_gain.png> <./figu
+res/LGBM_permutation_dRMSE.png> <./figures/XGB_permutation_dRMSE.png> <./figure
+s/LGBM_single_feature_rmse.png> <./figures/XGB_single_feature_rmse.png> <./figu
+res/LGBM_shap_meanabs.png> <./figures/XGB_shap_meanabs.png> <./figures/correlat
+ions_c_h.png> <./figures/correlations_o_h.png> <./figures/correlations_mg_h.png
+> <./figures/correlations_si_h.png>]
+<figures/builtin_gain_fe_mg_si_c_h.png, id=490, 565.77086pt x 349.47707pt>
 File: figures/builtin_gain_fe_mg_si_c_h.png Graphic file (type png)
 <use figures/builtin_gain_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/builtin_gain_fe_mg_si_c_h.png  used on input l
-ine 1069.
-(pdftex.def)             Requested size: 251.2925pt x 155.22084pt.
-<figures/permutation_drmse_fe_mg_si_c_h.png, id=493, 566.28708pt x 349.47707pt>
+ine 935.
+(pdftex.def)             Requested size: 125.65024pt x 77.61041pt.
+<figures/permutation_drmse_fe_mg_si_c_h.png, id=491, 566.28708pt x 349.47707pt>
 
 File: figures/permutation_drmse_fe_mg_si_c_h.png Graphic file (type png)
 <use figures/permutation_drmse_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/permutation_drmse_fe_mg_si_c_h.png  used on in
-put line 1071.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/shap_mean_abs_fe_mg_si_c_h.png, id=494, 566.28708pt x 349.47707pt>
+put line 936.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/shap_mean_abs_fe_mg_si_c_h.png, id=492, 566.28708pt x 349.47707pt>
 File: figures/shap_mean_abs_fe_mg_si_c_h.png Graphic file (type png)
 <use figures/shap_mean_abs_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/shap_mean_abs_fe_mg_si_c_h.png  used on input 
-line 1073.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/single_feature_cv_rmse_fe_mg_si_c_h.png, id=495, 566.28708pt x 349.477
+line 937.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/single_feature_cv_rmse_fe_mg_si_c_h.png, id=493, 566.28708pt x 349.477
 07pt>
 File: figures/single_feature_cv_rmse_fe_mg_si_c_h.png Graphic file (type png)
 <use figures/single_feature_cv_rmse_fe_mg_si_c_h.png>
 Package pdftex.def Info: figures/single_feature_cv_rmse_fe_mg_si_c_h.png  used 
-on input line 1075.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/builtin_gain_fe_mg_si_o_h.png, id=496, 566.28708pt x 349.47707pt>
+on input line 938.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/builtin_gain_fe_mg_si_o_h.png, id=494, 566.28708pt x 349.47707pt>
 File: figures/builtin_gain_fe_mg_si_o_h.png Graphic file (type png)
 <use figures/builtin_gain_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/builtin_gain_fe_mg_si_o_h.png  used on input l
-ine 1082.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/permutation_drmse_fe_mg_si_o_h.png, id=497, 566.28708pt x 349.47707pt>
+ine 945.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/permutation_drmse_fe_mg_si_o_h.png, id=495, 566.28708pt x 349.47707pt>
 
 File: figures/permutation_drmse_fe_mg_si_o_h.png Graphic file (type png)
 <use figures/permutation_drmse_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/permutation_drmse_fe_mg_si_o_h.png  used on in
-put line 1084.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/shap_mean_abs_fe_mg_si_o_h.png, id=498, 566.28708pt x 349.47707pt>
+put line 946.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/shap_mean_abs_fe_mg_si_o_h.png, id=496, 566.28708pt x 349.47707pt>
 File: figures/shap_mean_abs_fe_mg_si_o_h.png Graphic file (type png)
 <use figures/shap_mean_abs_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/shap_mean_abs_fe_mg_si_o_h.png  used on input 
-line 1086.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
-<figures/single_feature_cv_rmse_fe_mg_si_o_h.png, id=499, 566.28708pt x 349.477
+line 947.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/single_feature_cv_rmse_fe_mg_si_o_h.png, id=497, 566.28708pt x 349.477
 07pt>
 File: figures/single_feature_cv_rmse_fe_mg_si_o_h.png Graphic file (type png)
 <use figures/single_feature_cv_rmse_fe_mg_si_o_h.png>
 Package pdftex.def Info: figures/single_feature_cv_rmse_fe_mg_si_o_h.png  used 
-on input line 1088.
-(pdftex.def)             Requested size: 251.2925pt x 155.0822pt.
- [17 <./figures/LGBM_builtin_gain.png> <./figures/XGB_builtin_gain.png>]
-[18 <./figures/LGBM_permutation_dRMSE.png> <./figures/XGB_permutation_dRMSE.png
-> <./figures/LGBM_single_feature_rmse.png> <./figures/XGB_single_feature_rmse.p
-ng> <./figures/LGBM_shap_meanabs.png> <./figures/XGB_shap_meanabs.png>]
-[19 <./figures/correlations_c_h.png> <./figures/correlations_o_h.png> <./figure
-s/correlations_mg_h.png> <./figures/correlations_si_h.png> <./figures/mi_c_h.pn
-g> <./figures/mi_o_h.png> <./figures/mi_mg_h.png> <./figures/mi_si_h.png>]
-[20] [21 <./figures/LGBM_c_h_builtin_gain.png> <./figures/LGBM_c_h_permutation_
-dRMSE.png> <./figures/LGBM_c_h_shap_meanabs.png> <./figures/LGBM_c_h_single_fea
-ture_rmse.png>] [22 <./figures/LGBM_o_h_builtin_gain.png> <./figures/LGBM_o_h_p
-ermutation_dRMSE.png> <./figures/LGBM_o_h_shap_meanabs.png> <./figures/LGBM_o_h
-_single_feature_rmse.png>] [23 <./figures/LGBM_mg_h_builtin_gain.png> <./figure
-s/LGBM_mg_h_permutation_dRMSE.png> <./figures/LGBM_mg_h_shap_meanabs.png> <./fi
-gures/LGBM_mg_h_single_feature_rmse.png>] [24 <./figures/LGBM_si_h_builtin_gain
-.png> <./figures/LGBM_si_h_permutation_dRMSE.png> <./figures/LGBM_si_h_shap_mea
-nabs.png> <./figures/LGBM_si_h_single_feature_rmse.png>] [25 <./figures/builtin
-_gain_fe_mg_si_c_h.png> <./figures/permutation_drmse_fe_mg_si_c_h.png> <./figur
-es/shap_mean_abs_fe_mg_si_c_h.png> <./figures/single_feature_cv_rmse_fe_mg_si_c
-_h.png>] [26 <./figures/builtin_gain_fe_mg_si_o_h.png> <./figures/permutation_d
-rmse_fe_mg_si_o_h.png> <./figures/shap_mean_abs_fe_mg_si_o_h.png> <./figures/si
-ngle_feature_cv_rmse_fe_mg_si_o_h.png>] (./adibekyan_abundances_ML_revised.aux)
+on input line 948.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+ [16
+
+ <./figures/mi_c_h.png> <./figures/mi_o_h.png> <./figures/mi_mg_h.png> <./figur
+es/mi_si_h.png> <./figures/LGBM_c_h_builtin_gain.png> <./figures/LGBM_c_h_permu
+tation_dRMSE.png> <./figures/LGBM_c_h_shap_meanabs.png> <./figures/LGBM_c_h_sin
+gle_feature_rmse.png>] [17 <./figures/LGBM_o_h_builtin_gain.png> <./figures/LGB
+M_o_h_permutation_dRMSE.png> <./figures/LGBM_o_h_shap_meanabs.png> <./figures/L
+GBM_o_h_single_feature_rmse.png> <./figures/LGBM_mg_h_builtin_gain.png> <./figu
+res/LGBM_mg_h_permutation_dRMSE.png> <./figures/LGBM_mg_h_shap_meanabs.png> <./
+figures/LGBM_mg_h_single_feature_rmse.png> <./figures/LGBM_si_h_builtin_gain.pn
+g> <./figures/LGBM_si_h_permutation_dRMSE.png> <./figures/LGBM_si_h_shap_meanab
+s.png> <./figures/LGBM_si_h_single_feature_rmse.png> <./figures/builtin_gain_fe
+_mg_si_c_h.png> <./figures/permutation_drmse_fe_mg_si_c_h.png> <./figures/shap_
+mean_abs_fe_mg_si_c_h.png> <./figures/single_feature_cv_rmse_fe_mg_si_c_h.png> 
+<./figures/builtin_gain_fe_mg_si_o_h.png> <./figures/permutation_drmse_fe_mg_si
+_o_h.png> <./figures/shap_mean_abs_fe_mg_si_o_h.png> <./figures/single_feature_
+cv_rmse_fe_mg_si_o_h.png>] [18
+
+
+]
+(./adibekyan_abundances_ML_revised.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `adibekyan_abundances_ML_revised.out' has not
  changed.
-(rerunfilecheck)             Checksum: 95CB16CE1B93FEA4AB8BEF7C3ADEBB15;7624.
+(rerunfilecheck)             Checksum: 758541142C28F0742258810DFBF3A68F;7628.
  ) 
 Here is how much of TeX's memory you used:
- 17218 strings out of 474222
- 284622 string characters out of 5748734
- 1985975 words of memory out of 5000000
- 39031 multiletter control sequences out of 15000+600000
+ 17196 strings out of 474222
+ 284278 string characters out of 5748734
+ 1966975 words of memory out of 5000000
+ 39026 multiletter control sequences out of 15000+600000
  657694 words of font info for 185 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,93p,2601b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,93p,2601b,708s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/f
@@ -1546,11 +1545,11 @@ helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on adibekyan_abundances_ML_revised.pdf (26 pages, 13997289 bytes
+Output written on adibekyan_abundances_ML_revised.pdf (18 pages, 14396274 bytes
 ).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
+ 644 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
  642 words of extra memory for PDF output out of 10000 (max. 10000000)
 
