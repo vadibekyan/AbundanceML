@@ -22,7 +22,8 @@
                                 % For landscape tables, see the longtable examples.
 \usepackage{placeins}           % useful with \FloatBarrier, to keep 
                                 % onecolumn floats from drifting to the next section
-
+\usepackage{xcolor}
+\newcommand{\vardan}[1]{{\color{red}#1}}
 
 
 \usepackage{hyperref}
@@ -40,9 +41,9 @@
 
 \begin{document}
 
-   \title{Inferring stellar metallicity and elemental abundances from kinematics and spectroscopy using machine learning}
+   \title{Inferring stellar metallicity and elemental abundances from kinematic and spectroscopic data using machine learning}
 
-   \subtitle{Applications to exoplanet host stars}
+   \subtitle{Implications for exoplanet host stars}
 
 
 \titlerunning{ML abundances}
@@ -53,15 +54,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
    \author{V.~Adibekyan\inst{1,2} \and
-    %B.~M.~T.~B.~Soares\inst{1,2} \and
-    %S.~G.~Sousa\inst{1,2} \and
-    %N.~C.~Santos \inst{1,2}
+    B.~M.~T.~B.~Soares\inst{1,2} \and
+    S.~G.~Sousa\inst{1,2} \and
+    N.~C.~Santos \inst{1,2} \and
+    E.~Delgado-Mena \inst{3,1} \and
+    I. Minchev \inst{4} \and
+   R. Chertovskih \inst{5} \and
+   A. Hakobyan \inst{6}	
         }
 
   \institute{
   	  Instituto de Astrof\'isica e Ci\^encias do Espa\c{c}o, Universidade do Porto, CAUP, Rua das Estrelas, 4150-762 Porto, Portugal \\
   	  \email{vadibekyan@astro.up.pt} \and
-  	  Departamento de F\'{\i}sica e Astronomia, Faculdade de Ci\^encias, Universidade do Porto, Rua do Campo  Alegre, 4169-007 Porto, Portugal
+  	  Departamento de F\'{\i}sica e Astronomia, Faculdade de Ci\^encias, Universidade do Porto, Rua do Campo  Alegre, 4169-007 Porto, Portugal \and
+            Centro de Astrobiolog\'{\i}a (CAB), CSIC--INTA, Camino Bajo del Castillo s/n, 28692 Villanueva de la Ca\~nada (Madrid), Spain \and
+	  Leibniz Institute for Astrophysics Potsdam (AIP), Potsdam, Germany \and
+           SYSTEC, ARISE, Faculty of Engineering, University of Porto, Rua Dr. Roberto Frias, s/n 4200-465, Porto, Portugal \and
+           Center for Cosmology and Astrophysics, Alikhanian National Science Laboratory, 2 Alikhanian Brothers Str., 0036 Yerevan, Armenia
   	  }
 
    \date{Date}
@@ -72,17 +81,17 @@
   \abstract
   % context heading (optional)
   % {} leave it empty if necessary  
-   {Elemental abundances of FGK stars can be measured routinely from high-resolution spectra, but this remains considerably more difficult for cooler stars, especially M dwarfs, whose spectra are strongly affected by blends and molecular features. Yet the chemical composition of planet-host stars is central to studies of planet formation and bulk composition. Machine-learning methods offer a practical route to infer otherwise inaccessible abundances from more widely available stellar information.}
+   {Elemental abundances of FGK stars can be derived routinely from high-resolution optical spectra, but this remains considerably more difficult for cooler stars. Yet, even estimates of the chemical composition of planet-host stars is central to studies of planet formation and interior composition. Machine-learning methods offer a practical route to infer otherwise inaccessible abundances from more widely available stellar data.}
   % aims heading (mandatory)
-   {We investigate how well stellar metallicity and individual elemental abundances can be inferred from kinematic and orbital information, and whether these empirical relations can be used to estimate the abundances and abundance ratios most relevant for the characterization of exoplanet-host stars.} 
+   {We investigate how much information on stellar metallicity and selected elemental abundances is encoded in kinematic and orbital properties, and whether these empirical relations can be used to estimate abundances and abundance ratios relevant for exoplanet-host characterization.} 
   % methods heading (mandatory)
-   {We use a large APOGEE DR17 sample of red giant stars as the main training set and an independent HARPS sample of nearby FGK dwarfs for external validation. From astrometry and radial velocities we derive Galactic velocities, orbital parameters, and population-membership probabilities. We benchmark several machine-learning regressors, optimize the strongest models, and analyse feature importance using gain-based metrics, permutation importance, single-feature models, and SHAP values. We also derive simple linear relations between abundance ratios and metallicity and apply the trained models to planet-host stars from SWEET-Cat.}
+   {We use a large APOGEE DR17 sample of red giant stars as the main training set and an independent HARPS sample of nearby FGK dwarfs for external validation. From astrometry and radial velocities we derive Galactic velocities, orbital parameters, and stellar population-membership probabilities. We benchmark several machine-learning regressors, optimize the strongest models, and analyse feature importance using gain-based metrics, permutation importance, single-feature models, and SHAP values. We also explored the prediction of C and O from Mg, Si, and [Fe/H], and derived simple empirical relations between selected abundance ratios (Fe/Si, Mg/Si, C/O, and Fe/O) and metallicity.}
   % results heading (mandatory)
-   {Kinematic information alone recovers a substantial fraction of the variance in stellar metallicity, with tuned gradient-boosting models reaching an RMSE of about 0.199 dex on APOGEE and 0.224 dex on the independent HARPS sample. The dominant predictor is the maximum vertical excursion $Z_{\max}$, followed by radial orbital parameters. When [Fe/H] is combined with kinematics, the abundances of C, O, Mg, and Si are predicted much more accurately than with the baseline approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. For predicting C and O from Mg, Si, and [Fe/H], Mg carries most of the predictive power and additional kinematic information provides little improvement. The resulting models can then be used to estimate abundance patterns and chemically relevant ratios for planet-host stars lacking direct determinations.}
+   {Kinematic information alone recovers only a limited fraction of the variance in stellar metallicity, with a clear performance ceiling at RMSE $\sim$0.20 dex. The most informative predictor is the maximum vertical orbital excursion, $Z_{\max}$, followed by radial orbital parameters. When [Fe/H] is combined with kinematic information, the abundances of C, O, Mg, and Si are predicted significantly more accurately than with the baseline approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. In contrast, when predicting C and O from Mg, Si, and [Fe/H], most of the predictive power is already contained in the elemental abundances themselves, with Mg being the dominant contributor, and the addition of kinematic information provides little improvement. The trained models reproduce the main abundance trends associated with Galactic chemical evolution. We find that the slopes of the relations between Fe/Si, Mg/Si, C/O, and Fe/O and metallicity differ slightly between the HARPS and APOGEE samples, with fractional differences generally below 20\%.}
   % conclusions heading (optional), leave it empty if necessary
-   {The achievable accuracy is limited mainly by the information content of the predictors rather than by model choice. Orbital structure, especially $Z_{\max}$, contains robust information on stellar metallicity, while metallicity remains the dominant predictor of individual elemental abundances. These empirical relations provide a practical framework for estimating abundance patterns and composition-sensitive abundance ratios in stars for which direct spectroscopic determinations are difficult.}
+   {Stellar kinematics and orbital parameters contain only limited information on stellar metallicity, with predictive performance primarily constrained by the intrinsic information content of the input features rather than by the choice of model architecture. Nevertheless, when combined with metallicity, these parameters enable accurate predictions of elemental abundances, including those that are difficult to measure directly. This provides a practical framework for extending chemical characterization to stars for which detailed abundance determinations are challenging.}
 
-   \keywords{stars: abundances -- stars: kinematics and dynamics -- methods: data analysis -- methods: statistical -- planetary systems}
+ \keywords{stars: abundances -- stars: kinematics and dynamics -- methods: data analysis -- methods: statistical -- planetary systems}
 
 \maketitle
 
@@ -91,25 +100,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Detailed chemical abundances are central to studies of stellar populations, Galactic evolution, and planet formation. In exoplanet science, abundance ratios such as C/O, Mg/Si, and Fe/Si are especially important because they influence the chemistry, mineralogy, and interior structure expected for planets formed in a given protoplanetary environment. For solar-type FGK stars, these quantities can often be measured from high-resolution spectra with high precision. The situation is considerably more difficult for cooler stars, however. In K dwarfs at the cool end of the FGK regime, and especially in M dwarfs, line blending and strong molecular absorption complicate both continuum placement and the measurement of individual elemental abundances.
+Determining stellar chemical abundances is fundamental for a wide range of astrophysical studies, from Galactic chemical evolution to the formation and characterization of planetary systems.  In the context of exoplanets, the chemical composition of the host star is of particular interest because it reflects, to first order, the composition of the protoplanetary disk. Stellar metallicity is known to correlate with the occurrence of giant planets \citep{Santos-04, FischerValenti-05, Adibekyan-19}, while abundance ratios such as Mg/Si, Fe/Si, and C/O are relevant for the mineralogy, internal structure, and bulk composition of planets \citep{Bond-10, Dorn-15, Wang-19, Adibekyan-21, DelgadoMena-21}. 
 
-This observational difficulty motivates the search for indirect approaches. If abundance patterns are linked to stellar properties that are easier to obtain than detailed spectroscopy, then machine-learning methods may provide a practical route to estimating otherwise inaccessible chemical information. Among the most promising candidates are stellar kinematics and orbital properties. These quantities encode information about population membership and the dynamical history of stars, and they are therefore indirectly connected to Galactic chemical evolution.
+Large surveys such as the Apache Point Observatory Galactic Evolution Experiment \citep[APOGEE;][]{Abdurrouf-22} and the GALactic Archaeology with HERMES survey \citep[GALAH;][]{Buder-25} have enabled precise determinations of chemical abundances for hundreds of thousands of stars. However, accurate abundance determinations remain challenging for several stellar regimes and chemical species. In cool stars, particularly at optical wavelengths, spectra are strongly affected by molecular absorption and severe line blending, which complicate both the determination of stellar parameters and detailed abundance analyses \citep{Woolf-05, Passegger-18, Maldonado-20, Marfil-21}. This problem is especially acute for M dwarfs, for which even metallicity determinations remain difficult and are often based on indirect calibrations or limited spectral diagnostics \citep{Neves-12, Rojas-Ayala-12, Mann-13, Antoniadis-Karnavas-24, Duque-Arribas-25}. Even when high-resolution near-infrared spectra are available, multi-element abundance determinations for M dwarfs still require careful modelling and remain limited to relatively small samples \citep{Souto-22, Vilar-25, Olander-25}. The determination of C and O abundances from optical spectra is also challenging for stars cooler than 5200\,K \citep{DelgadoMena-21}, because the lines become weak at these temperatures and blends become increasingly important.
 
-At the population level, the link between chemistry and dynamics is well established. Stars on dynamically hotter orbits and with larger excursions from the Galactic plane tend, on average, to be older and more metal-poor than stars confined to the thin disk. Radial orbital structure also traces population mixing across the Galaxy. These trends suggest that kinematic information may contain predictive power not only for metallicity, but also for abundance patterns that correlate with metallicity and Galactic origin. The key question is how much of that information can be recovered at the level of individual stars.
+The growing volume of stellar datasets motivate the use of data-driven methods. Machine-learning (ML) techniques have been widely applied to derive stellar parameters and abundances from spectra and photometric data, capturing complex and non-linear relations that are difficult to model explicitly \citep{Ball-10,  Ness-15, Fabbro-18, Leung-19}. Recent studies have shown that ML models can recover metallicity for cool stars from photometric data in M dwarfs \citep{Duque-Arribas-25}, further illustrating the potential of these methods in regimes where classical analyses face limitations.
 
-In this work we explore that question using machine learning. We use a large APOGEE sample as the main training set and an independent HARPS sample as an external validation set. We first examine how well [Fe/H] can be inferred from kinematic and orbital parameters alone. We then test whether [Fe/H] together with kinematics can recover the abundances of C, O, Mg, and Si, and finally assess the extent to which C and O can be predicted directly from Mg, Si, and [Fe/H]. We also derive simple metallicity-based relations for abundance ratios relevant to exoplanet studies and apply the trained models to planet-host stars from SWEET-Cat. Throughout the paper, we focus not only on predictive performance, but also on interpretability and on the extent to which the inferred relations transfer to an independent dataset.
+The connection between stellar chemistry and dynamics is an important ingredient of Galactic archaeology, since stars with different birth radii, ages, and evolutionary histories populate different regions of chemo-dynamical space \citep{Adibekyan-11, Boeche-13, Minchev-14, Ratcliffe-23, Hackshaw-24}. In particular, metallicity and abundance ratios have been shown to correlate with orbital properties reflecting the coupled chemical and dynamical evolution of the Galactic disc \citep{Boeche-13}.
+
+In this work, we investigate how well stellar metallicity and individual elemental abundances can be inferred from kinematic and orbital information, and whether these relations can be exploited to estimate abundances that are particularly relevant for exoplanet studies. We first examine the predictive power of stellar dynamics for metallicity (relevant for M dwarfs), and then explore the extent to which metallicity and kinematics can recover the abundances of C, O, Mg, and Si. Finally, we test whether C and O can be predicted from Mg, Si, and [Fe/H], with optional inclusion of kinematic information. This approach is particularly relevant for extending chemical characterization to stars for which direct abundance determinations, especially of C and O, are difficult.
+
+Finally, we apply our models to stars hosting planets and investigate the resulting abundance distributions. This allows us to extend chemical studies of planet-host stars to samples where direct abundance measurements are unavailable, providing new insights into the chemical conditions associated with planet formation.
+
+
+This article is organized as follows. In Sect.~\ref{sample} we describe the samples and the derivation of the kinematic and orbital parameters used throughout this work. In Sect.~\ref{feh_from_kinematics} we investigate how well stellar metallicity can be inferred from kinematic and orbital information alone. In Sect.~\ref{abundances_from_feh} we explore the prediction of individual elemental abundances from [Fe/H] combined with kinematic information. In Sect.~\ref{main_CO_from_MgSiFe} we focus on the prediction of C and O abundances from Mg, Si, and [Fe/H], and assess the extent to which additional kinematic information improves those predictions. In Sect.~\ref{sec:ratio_metallicity_trends} we examine simple empirical relations between abundance ratios and metallicity that are relevant for exoplanet studies. Finally, in Sect.~\ref{conclusion} we summarize our main results and conclusions. %In Sect.~\ref{hosts_abund} we apply the trained models to planet-host stars and discuss the resulting abundance patterns. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The samples}
+\section{The samples} \label{sample}
 
 %In this study, we employed stellar data from two large-scale spectroscopic surveys, the GALactic Archaeology with HERMES \citep[GALAH;][]{Buder-25} and the Apache Point Observatory Galactic Evolution Experiment \citep[APOGEE;][]{Abdurrouf-22}, complemented by a smaller sample of nearby FGK-type dwarf stars from the High Accuracy Radial velocity Planet Searcher (HARPS) exoplanet survey \citep{Mayor-03, Adibekyan-12}. The APOGEE~DR17 and GALAH~DR4 surveys already provide astrometric data from \textit{Gaia}~EDR3 \citep{Gaia-21} and DR3 \citep{Gaia-23}, respectively, while for the HARPS sample the astrometric information was taken from \textit{Gaia}~DR3.
 
-In this study, we use stellar data from the Apache Point Observatory Galactic Evolution Experiment \citep[APOGEE;][]{Abdurrouf-22}, complemented by a smaller sample of nearby FGK-type dwarf stars from the High Accuracy Radial velocity Planet Searcher (HARPS) exoplanet survey \citep{Mayor-03, Adibekyan-12}. APOGEE~DR17 provides astrometric information from \textit{Gaia}~EDR3 \citep{Gaia-21}, while for the HARPS sample the astrometry was taken from \textit{Gaia}~DR3 \citep{Gaia-23}.
+In this study, we use stellar data from the APOGEE, complemented by a smaller sample of nearby FGK-type dwarf stars from the High Accuracy Radial velocity Planet Searcher (HARPS) exoplanet survey \citep{Mayor-03, Adibekyan-12}. APOGEE~DR17 provides astrometric information from \textit{Gaia}~EDR3 \citep{Gaia-21}, while for the HARPS sample the astrometry was taken from \textit{Gaia}~DR3 \citep{Gaia-23}.
 
 From APOGEE we selected red giant stars with high-quality spectra and reliable abundance determinations, and we restricted the metallicity range to $-1.0 < [\mathrm{Fe/H}] < 0.6$ dex. The HARPS sample spans a similar metallicity regime and provides precise spectroscopic parameters and abundances for well-characterized stars in the solar neighbourhood, many of which are relevant for exoplanet studies.
 
-Using astrometry, positions, and radial velocities, we computed Galactic space velocities and population-membership probabilities with \texttt{GalVel\_Pop}\footnote{The code is available at \url{https://github.com/vadibekyan/GalVel_Pop}} and derived orbital parameters with \texttt{galpy}\footnote{The code is available at \url{http://github.com/jobovy/galpy}}.
+Using astrometry, positions, and radial velocities, we computed Galactic space velocitiy components and population-membership probabilities with \texttt{GalVel\_Pop}\footnote{The code is available at \url{https://github.com/vadibekyan/GalVel_Pop}} and derived orbital parameters with \texttt{galpy}\footnote{The code is available at \url{http://github.com/jobovy/galpy}}.
 
 Together, these two datasets allow us to examine the links between metallicity, dynamics, and detailed abundance patterns, while also testing how well models trained on APOGEE transfer to an independent, chemically precise HARPS sample. A full description of the target selection and parameter derivation is given in Sect.~\ref{target_selection}.
 
@@ -151,12 +167,11 @@ We benchmarked a diverse set of regression algorithms to predict stellar metalli
 To provide a consistent baseline comparison, we adopted standard implementations of each algorithm with default hyperparameters and did not perform hyperparameter tuning. The goal of this experiment was to assess the intrinsic predictive power of the kinematic features
 rather than to optimize individual models.
 
-Linear regression yield RMSE values of approximately 0.21 dex. Given that the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex (corresponding to the RMSE of a trivial mean predictor), these models explain roughly 30\% of the total variance in [Fe/H]. This indicates that the metallicity–kinematics relation is intrinsically nonlinear. Tree-based ensemble models significantly outperform these approaches, with LightGBM achieving the lowest RMSE of $0.199 \pm 0.001$ dex ($R^2 \approx 0.41$). CatBoost and XGBoost produce nearly identical performance, while random forest and extra trees are slightly less accurate.
+Linear regression yields RMSE values of approximately 0.21 dex. Given that the standard deviation of the metallicity distribution is $\sigma_{\rm [Fe/H]} \approx 0.26$ dex (corresponding to the RMSE of a trivial mean predictor), these models explain roughly 30\% of the total variance in [Fe/H]. This indicates that the metallicity–kinematics relation is intrinsically nonlinear. Tree-based ensemble models significantly outperform these approaches, with LightGBM achieving the lowest RMSE of $0.199 \pm 0.001$ dex ($R^2 \approx 0.41$). CatBoost and XGBoost produce nearly identical performance, while random forest and extra trees are slightly less accurate.
 
 We further explored ensemble strategies. A weighted voting regressor combining the strongest tree-based models did not yield a measurable improvement over the best individual learner. A stacked ensemble based on out-of-fold predictions and a ridge meta-learner provided a marginal gain, reducing the RMSE only at the fourth decimal level.
 
-This limited improvement reflects the high correlation between the predictions of the base models and indicates that performance is
-primarily constrained by the information content of the kinematic features rather than by algorithmic choice.
+This limited improvement reflects the high correlation between the predictions of the base models and indicates that performance is primarily constrained by the information content of the kinematic features rather than by algorithmic choice.
 
 We additionally explored a quantile-based transformation of the target variable, mapping [Fe/H] to a Gaussian distribution prior to training. While such transformations can stabilize variance and improve regression performance in skewed distributions, they did not yield any measurable improvement in our case. This result reflects both the approximately symmetric metallicity distribution
 and the robustness of tree-based ensemble methods to monotonic target transformations.
@@ -168,7 +183,7 @@ model architecture.
 
 We performed a series of additional experiments exploring alternative modeling strategies, automated ML frameworks, and extensive feature transformations with the aim of improving the predictive performance of our models.
 
-First, we employed two automated machine-learning frameworks, AutoGluon \citep{Erickson2020} and H2O AutoML \citep{LeDell2020}. AutoML systems automatically explore large spaces of ML pipelines by training and evaluating multiple algorithms, tuning hyperparameters, and constructing model ensembles. Such approaches are designed to approximate the best achievable performance on tabular datasets by systematically searching the model space and leveraging ensemble learning. We ran both AutoML frameworks for more than 200 hours each, allowing them to evaluate hundreds of candidate models and ensemble configurations.
+First, we employed two automated machine-learning frameworks, AutoGluon \citep{Erickson2020} and H2O AutoML \citep{LeDell2020}. AutoML systems automatically explore large spaces of ML pipelines by training and evaluating multiple algorithms, tuning hyperparameters, and constructing model ensembles. Such approaches are designed to approximate the best achievable performance on tabular datasets by systematically searching the model space and leveraging ensemble learning. We ran both AutoML frameworks for extended periods (of order $\sim$20 hours in total), allowing them to evaluate hundreds of candidate models and ensemble configurations.
 
 Second, we investigated whether additional nonlinear interactions between the input variables could improve the predictive power. Starting from the original set of parameters, we randomly generated 300 sets of interaction features using simple algebraic transformations (multiplication, subtraction, addition, and squared terms). These engineered features were appended to the base feature set and evaluated using the tuned LightGBM model.
 
@@ -231,27 +246,33 @@ In summary, the metallicity–kinematics relation is primarily driven by vertica
 
 \subsection{\texorpdfstring{The $Z_{\max}$--metallicity relation}{The Zmax-metallicity relation}}
 
-Given the dominant role of $Z_{\max}$ in all feature-importance diagnostics, we further examine its detailed relation with metallicity using SHAP dependence plots (Fig.~\ref{fig:shap_zmax_apogee_harps}). These plots show the SHAP contribution of $Z_{\max}$ to the predicted metallicity as a function of its physical value, with points color-coded by apocentric distance $R_{\mathrm{apo}}$ and thin-disk membership probability $P_{\rm gal}$.
+Given the dominant role of $Z_{\max}$ in all feature-importance diagnostics, we further examine its detailed relation with metallicity using SHAP dependence plots (Fig.~\ref{fig:shap_zmax_apogee_harps}). These plots show the SHAP contribution of $Z_{\max}$ to the predicted metallicity as a function of its physical value, with points colour-coded by apocentric distance $R_{\mathrm{apo}}$ and thin-disk membership probability $P_{\rm gal}$.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{figures/LGBM_zmax_rapo_dependence_pretty.png}
 \vfill
 \includegraphics[width=\linewidth]{figures/LGBM_zmax_pgal_dependence_pretty.png}
-\caption{SHAP dependence of $Z_{\max}$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max}$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are color-coded by apocentric radius $R_{\mathrm{apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm gal}$ (bottom panel).}
+\caption{SHAP dependence of $Z_{\max}$ for the tuned LightGBM model. The vertical axis shows the SHAP contribution of $Z_{\max}$ to the predicted metallicity, while the horizontal axis shows its physical value in kpc. Points are colour-coded by apocentric radius $R_{\mathrm{apo}}$ (top panel) and by their thin-disk membership probability $P_{\rm gal}$ (bottom panel).}
 \label{fig:shap_zmax_apogee_harps}
 \end{figure}
 
 For the APOGEE sample, the SHAP dependence plot reveals a strong and monotonic decrease of the SHAP contribution of $Z_{\max}$ with increasing $Z_{\max}$. Since SHAP values quantify the shift of the prediction relative to the global mean metallicity of the training data, positive values indicate that $Z_{\max}$ increases the predicted metallicity, while negative values indicate that it decreases it. Stars confined close to the Galactic plane ($Z_{\max} \lesssim 1$ kpc) therefore tend to have their predicted metallicities shifted upward relative to the mean, whereas stars reaching large vertical distances shift the prediction downward.
 
-The relation steepens at small $Z_{\max}$ and gradually flattens beyond $\sim$3–4 kpc. Interestingly, the dispersion of SHAP values becomes minimal and approaches zero around $Z_{\max} \sim 1$–1.5 kpc. This indicates a regime in which the vertical orbital extent alone does not strongly bias the prediction relative to the mean metallicity, and where additional orbital parameters begin to modulate the metallicity more significantly. At larger $Z_{\max}$, the increasing dispersion reflects a broader range of metallicities among dynamically hotter populations, consistent with a transition from thin-disk dominated stars to thick-disk and kinematically heated components.
+\vardan{
+Vardan: this part in red (the interpretation) should be revisted and corrected
 
-The color-coding by $R_{\mathrm{apo}}$ suggests a secondary modulation by radial orbital extent. At small $Z_{\max}$, stars with larger apocentric distances tend to show slightly more negative SHAP contributions, indicating lower predicted metallicities. Beyond $Z_{\max} \sim 1$ kpc, this trend weakens and partially reverses, suggesting that the coupling between vertical and radial orbital properties changes across disk populations. We regard this secondary trend as suggestive rather than definitive, but it is broadly consistent with a changing mixture of thin- and thick-disk stars across the $Z_{\max}$ sequence.
+The relation steepens at small $Z_{\max}$ and gradually flattens beyond $\sim$3–4 kpc. Interestingly, the dispersion of SHAP values becomes minimal and approaches zero around $Z_{\max} \sim 1$–1.5 kpc.  In this region, the predictive contribution of $Z_{\mathrm{max}}$ alone becomes less discriminative, and other orbital parameters contribute more strongly to the model predictions. At larger $Z_{\max}$, the increasing dispersion reflects a broader range of metallicities among dynamically hotter populations, consistent with a transition from thin-disk dominated stars to thick-disk and kinematically heated components.
+
+The colour-coding by $R_{\mathrm{apo}}$ suggests a secondary modulation by radial orbital extent. At small $Z_{\max}$, stars with larger apocentric distances tend to show slightly more negative SHAP contributions, indicating lower predicted metallicities. Beyond $Z_{\max} \sim 1$ kpc, this trend weakens and partially reverses, suggesting that the coupling between vertical and radial orbital properties changes across disk populations. We regard this secondary trend as suggestive rather than definitive, but it is broadly consistent with a changing mixture of thin- and thick-disk stars across the $Z_{\max}$ sequence.
 
 Overall, this analysis indicates that vertical orbital extent provides the primary dynamical imprint on metallicity, while radial orbital properties introduce a secondary, population-dependent modulation. Such behaviour is consistent with expectations from Galactic chemo-dynamical evolution, in which dynamically hotter and more radially extended stellar populations are typically older and more metal-poor.
 
+The analysis of RAVE giants by \citet{Boeche-13}, for example, showed that the $e$--$Z_{\max}$ plane is especially useful for grouping stars with similar orbital properties and for revealing populations with distinct abundance patterns, including stars whose chemistry and kinematics suggest heating and/or radial migration. Such results support the idea that kinematic and orbital parameters carry non-negligible information about stellar chemical properties.
+}
 
-\section{Predicting individual abundances from [Fe/H] and kinematics}
+
+\section{Predicting individual abundances from [Fe/H] and kinematics} \label{abundances_from_feh}
 
 We next investigate whether the abundances of individual elements can be predicted from stellar metallicity combined with kinematic information. We focus on C, O, Mg, and Si, which are of particular interest for exoplanet studies and especially relevant for M-dwarf applications, where reliable determinations of individual elemental abundances are far more difficult than measurements of the overall metallicity.
 
@@ -293,7 +314,7 @@ RMSE$_{\mathrm{[Fe/H]}}$ (HARPS)  & 0.170 & 0.107 & 0.078 & 0.106 \\
 \label{tab:abundance_predictions}
 \end{table}
 
-Figure~\ref{fig:abundance_predictions} illustrates the performance of the tuned models for both the APOGEE holdout sample and the HARPS dataset. The left panels show the predicted abundance ratios as a function of metallicity, compared with the true stellar abundances. The predicted values closely follow the global trends expected from Galactic chemical evolution.
+Figure~\ref{fig:abundance_predictions} illustrates the performance of the tuned models for both the APOGEE holdout sample and the HARPS dataset. The left panels show the predicted abundance ratios as a function of metallicity, compared with the true stellar abundances. The predicted values closely follow the overall trends expected from Galactic chemical evolution.
 
 However, it is also evident that the predictions become less reliable at the extremes of the metallicity distribution. In particular, stars with $\mathrm{[Fe/H]} < -0.8$ dex and $\mathrm{[Fe/H]} > 0.35$ dex show larger deviations between predicted and true abundances. This behaviour is primarily driven by the scarcity of training data in these metallicity regimes. To focus on the regime where the models are most reliable, the residual distributions shown in the right panels are restricted to stars within the metallicity interval $-0.8 < \mathrm{[Fe/H]} < 0.35$ dex.
 
@@ -329,12 +350,18 @@ As in the metallicity analysis (Sect.~\ref{feh_from_kinematics}), we examined th
 
 As expected, stellar metallicity [Fe/H] emerges as the dominant predictor for all considered elements. This reflects the strong chemical coupling between the abundances of C, O, Mg, and Si and the overall metallicity driven by Galactic chemical evolution. Across all importance diagnostics, [Fe/H] consistently exhibits the largest contribution to the model predictions.
 
-Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{peri}}$ typically provides the next most significant contribution, while  $Z_{\max}$ has a smaller but still measurable impact. The remaining kinematic parameters contribute only marginally once metallicity and the main orbital parameters are included.
 
+\vardan{
+Vardan: this part in red (the interpretation) should be revisted and extended.
+
+Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{peri}}$ typically provides the next most significant contribution, while  $Z_{\max}$ has a smaller but still measurable impact. The remaining kinematic parameters contribute only marginally once metallicity and the main orbital parameters are included.
 
 To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~\ref{fig:shap_dependence_abundances_feh}). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
 
-The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is subtle compared to the dominant metallicity dependence, it suggests that orbital properties encode additional information related to population mixing and Galactic chemical history that is not fully captured by [Fe/H] alone.
+The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is modest and model-dependent, it suggests that orbital properties encode additional information related to population mixing and Galactic chemical history that is not fully captured by [Fe/H] alone.
+}
+
+
 
 We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, but no clear dependence of the SHAP values on $Z_{\max}$ was visually apparent in the corresponding dependence plots.
 
@@ -361,11 +388,11 @@ Baseline models trained using only Mg, Si, and [Fe/H] already achieve strong pre
 
 We also explored a range of feature-engineering strategies aimed at capturing nonlinear interactions between the input abundances. These included combinations such as the mean abundance of Mg and Si, as well as pairwise differences (e.g., Mg$-$Si, Mg$-$Fe, Si$-$Fe) and simple algebraic transformations. However, none of these engineered features produced a measurable improvement in predictive accuracy.
 
-For both C and O abundance predictions, we find that Mg abundance carries the dominant predictive power. In fact, models trained using only Mg abundance achieve RMSE values comparable to those obtained when including Si and [Fe/H]. This result indicates a strong coupling between Mg and the C and O abundances, reflecting their common nucleosynthetic origin. The feature-importance analysis is presented in Appendix~\ref{appendix:CO_from_MgSiFe}, where we show the results of gain-based importance, permutation importance, SHAP values, and single-feature predictive performance.
+For both C and O abundance predictions, we find that Mg abundance carries the dominant predictive power. In fact, models trained using only Mg abundance achieve RMSE values comparable to those obtained when including Si and [Fe/H]. This result indicates a strong coupling between Mg and the C and O abundances, reflecting their common nucleosynthetic origin in massive stars \citep[e.g.][]{Kobayashi-20},  which induces strong correlations between their abundances. The feature-importance analysis is presented in Appendix~\ref{appendix:CO_from_MgSiFe}, where we show the results of gain-based importance, permutation importance, SHAP values, and single-feature predictive performance.
 
 Figure~\ref{fig:CO_predictions} illustrates the performance of the tuned LightGBM models for predicting [O/H] and [C/H] using the APOGEE holdout sample and the independent HARPS dataset. The left panels show the predicted abundance ratios as a function of metallicity, while the right panels display the residuals as a function of the true abundance.
 
-For the APOGEE sample, the model reproduces the global abundance trends remarkably well, capturing both the overall slope and the intrinsic scatter of the [O/Fe]--[Fe/H] relation. The predicted values closely follow the true abundances across the full metallicity range, although a mild compression of the dynamic range is visible. This behaviour is consistent with the regression-to-the-mean effect, arising from incomplete information in the input features. The residuals exhibit a clear heteroscedastic pattern, with slightly larger scatter at lower abundances and a gradual tightening toward higher metallicities.
+For the APOGEE sample, the model reproduces the overall abundance trends remarkably well, capturing both the overall slope and the intrinsic scatter of the [O/Fe]--[Fe/H] relation. The predicted values closely follow the true abundances across the full metallicity range, although a mild compression of the dynamic range is visible. This behaviour is consistent with the regression-to-the-mean effect, arising from incomplete information in the input features. The residuals exhibit a clear heteroscedastic pattern, with slightly larger scatter at lower abundances and a gradual tightening toward higher metallicities.
 
 When applied to the independent HARPS sample, the model performance degrades. In particular, the [O/Fe] ratio at low metallicities is systematically underestimated relative to the HARPS values. Nevertheless, the achieved RMSE remains lower than that obtained from a simple baseline assuming [O/H] = [Mg/H], indicating that the model retains predictive power beyond this approximation.
 
@@ -390,7 +417,7 @@ The situation is less favourable for carbon. A clear offset is observed between 
 
 In addition to the machine-learning experiments described above, we explored the empirical behaviour of several abundance ratios that are particularly relevant for exoplanet composition studies. The purpose of this exercise is to provide a quick and simple way of obtaining these ratios just from metallicity. Using the APOGEE and HARPS samples separately, we examined the linear abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O as a function of metallicity, [Fe/H]. The uncertainties on the fitted parameters were estimated by bootstrap resampling. In addition to the slope and intercept uncertainties (which were very small) we also computed the rms scatter around each best-fit relation over the full metallicity range considered.
 
-The resulting trends are shown in Fig.~\ref{fig:ratio_fits_feh}, while the fitted slopes and rms scatter values are listed in Table~\ref{tab:ratio_slopes_rms}.  While some differences are observed between the two samples. Fe/Si and Fe/O increase with metallicity in both APOGEE and HARPS, whereas Mg/Si decreases with increasing [Fe/H]. The C/O ratio also increases with metallicity in both datasets. The qualitative behaviour of the fits for the two samples is similar, although the fitted slopes are not identical. However, the differences are within the rms scatter of the samples. In particular, the largest fractional offset between the two empirical relations at the whole range of metallicity is less than 20\%.
+The resulting trends are shown in Fig.~\ref{fig:ratio_fits_feh}, while the fitted slopes and rms scatter values are listed in Table~\ref{tab:ratio_slopes_rms}.  Fe/Si and Fe/O increase with metallicity in both APOGEE and HARPS, whereas Mg/Si decreases with increasing [Fe/H]. The C/O ratio also increases with metallicity in both datasets. The qualitative behaviour of the fits for the two samples is similar, although the fitted slopes are not identical. However, the differences are within the rms scatter of the samples. In particular, the largest fractional offset between the two empirical relations at the whole range of metallicity is less than 20\%.
 
 
 \begin{figure*}[ht]
@@ -443,27 +470,34 @@ HARPS & Fe/O & $y = (0.0541 \pm 0.0006) + (0.0475 \pm 0.0027)\,[\mathrm{Fe/H}]$ 
 \end{tabular}
 \end{table*}
 
-\section{Predicted abundances of planet host stars}
 
-As a practical application of the developed framework, we applied the trained models to planet-host stars from SWEET-Cat, one of the largest catalogues of stars with homogeneous atmospheric parameters in exoplanet systems. For these stars we combined the published SWEET-Cat metallicities with \textit{Gaia} DR3 astrometry and radial velocities to derive Galactic velocities and orbital parameters in the same way as for the training samples.
+%\section{Predicted abundances of planet host stars} \label{hosts_abund}
+%
+%Having established the predictive capability of our models, we apply the trained LightGBM model to a sample of stars known to host planets. The goal of this analysis is to investigate whether the predicted abundances reproduce the chemical trends previously identified for planet-host stars, and to assess the potential of the method for extending such studies to stars without direct abundance determinations.
+%
+%The predicted abundances of carbon and oxygen for planet-host stars show clear and physically meaningful trends. In particular, the distributions are broadly consistent with those derived from spectroscopic analyses, reinforcing the reliability of the model predictions. This agreement indicates that the underlying correlations between Mg, Si, Fe, and the target elements encode substantial information about stellar chemistry.
+%
+%We further examine the behaviour of abundance ratios relevant for planet formation, such as C/O. The predicted ratios follow the expected distributions and exhibit trends with metallicity similar to those reported in previous studies. This suggests that the model successfully captures the chemical enrichment history of the Galactic disk, which is known to influence the composition of protoplanetary disks.
+%
+%An important advantage of this approach is that it enables the estimation of elemental abundances for stars where direct measurements are not available or are highly uncertain. This is particularly relevant for cool stars and large survey datasets, where obtaining precise abundances for all elements is observationally expensive or infeasible.
+%
+%Overall, these results demonstrate that machine learning predictions can be reliably used to study the chemical properties of planet-host stars. This opens the possibility of significantly increasing the sample size in studies of the star–planet connection, thereby improving the statistical robustness of the inferred trends.
 
-Using these inputs, we predicted the abundances of C, O, Mg, and Si for SWEET-Cat stars lacking homogeneous determinations of these quantities. From the predicted abundances we further derived the abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O, which are particularly relevant for interpreting the bulk composition and mineralogy of exoplanets. In parallel, we evaluated the simple linear abundance-ratio relations derived from APOGEE and HARPS as a function of [Fe/H], providing an alternative low-dimensional approximation when only metallicity is available.
 
-This application illustrates the main practical value of our approach. Even when direct abundance measurements are unavailable or difficult to obtain, one can combine metallicity with kinematic information to estimate chemically informative quantities for planet-host stars and to place them in the broader context of Galactic chemical evolution.
+\section{Conclusions and summary} \label{conclusion}
 
-\section{Conclusion and summary}
+We have investigated the extent to which stellar metallicity and individual elemental abundances can be inferred from kinematics, orbital properties, and a limited set of chemical inputs. Using the APOGEE sample for training and the HARPS sample for external validation, we draw the following main conclusions.
 
-We have investigated how far stellar metallicity and individual abundances can be inferred from kinematics, orbital properties, and a limited set of elemental abundances. APOGEE was used as the main training set, while HARPS provided an external and chemically precise validation sample. Our main conclusions are as follows.
+First, kinematic and orbital information alone contains very limited, predictive signal for stellar metallicity. Gradient-boosting models achieve an RMSE of $\sim0.20$ dex for APOGEE and $\sim0.22$ dex for HARPS. The dominant role of $Z_{\mathrm{max}}$ across all feature-importance diagnostics demonstrates that the vertical structure of stellar orbits is the primary dynamical tracer of metallicity in our analysis.
 
-Kinematic information alone contains significant, although limited, predictive power for stellar metallicity. Gradient-boosting models reach an RMSE of about 0.20 dex on APOGEE and about 0.22 dex on the independent HARPS sample. Across all feature-importance diagnostics, $Z_{\max}$ emerges as the dominant predictor, showing that the vertical extent of stellar orbits carries the strongest dynamical imprint of metallicity in our analysis.
+Second, once [Fe/H] is included, the abundances of C, O, Mg, and Si can be predicted with significantly higher precision than the baseline assumption [X/H] = [Fe/H]. In these models, metallicity is by far the dominant predictor, while orbital parameters such as $R_{\mathrm{peri}}$ and $Z_{\mathrm{max}}$ provide secondary but non-negligible contributions.
 
-When [Fe/H] is included among the predictors, the abundances of C, O, Mg, and Si can be estimated much more accurately than with the simple approximation $\mathrm{[X/H]}=\mathrm{[Fe/H]}$. In these models, metallicity is by far the main driver of the predictions, while orbital properties such as $R_{\mathrm{peri}}$ and $Z_{\max}$ provide secondary but measurable additional information. The gain relative to the baseline demonstrates that kinematics can refine abundance estimates even when metallicity is already known.
+Third, the abundances of carbon and oxygen can be inferred from Mg, Si, and [Fe/H] with useful accuracy. The inclusion of kinematic information does not lead to a measurable improvement, indicating that most of the predictive information is already encoded in the elemental abundances themselves, particularly Mg. The main limitation when transferring the models to independent datasets arises from systematic differences in abundance scales rather than model performance.
 
-C and O can also be inferred from Mg, Si, and [Fe/H] with useful precision. In this case, adding kinematic information does not materially improve the predictions, implying that most of the relevant information is already encoded in the elemental abundances themselves, especially Mg. The main limitation when transferring the models to an external sample is not model flexibility, but systematic differences between abundance scales, most clearly seen for carbon.
+Finally, we provide simple empirical relations for key abundance ratios as a function of metallicity, offering a complementary and computationally inexpensive approach for estimating quantities relevant to exoplanet composition.
 
-In addition to the machine-learning models, we derived simple linear relations between the abundance ratios Fe/Si, Mg/Si, C/O, and Fe/O and stellar metallicity for both APOGEE and HARPS. These relations do not replace the full predictive models, but they provide a compact and practical approximation for applications in which only [Fe/H] is available.
+Overall, our results demonstrate that ML methods provide a practical framework for estimating stellar chemical properties when direct spectroscopic determinations are not possible. At the same time, the convergence of multiple models and extensive tests indicates that predictive performance is primarily limited by the intrinsic information content of the available features. Future improvements will therefore depend more on the quality, homogeneity, and physical richness of the input data than on further increases in model complexity.
 
-Overall, our results show that machine-learning models trained on spectroscopic surveys can provide a practical route to estimating chemically informative quantities for stars whose detailed abundances are difficult to measure directly, including many exoplanet hosts. At the same time, the limited gains obtained from trying a wide range of algorithms and feature-engineering strategies indicate that future progress will depend primarily on the quality, homogeneity, and physical informativeness of the available input data rather than on further increases in model complexity.
 
 %comparison between the surveys https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.107H/abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -533,7 +567,7 @@ We then estimated the probability of each star belonging to one of the three mai
 
 To further characterize the stellar orbits, we used the \texttt{galpy} package \citep{Bovy-15} to compute orbital parameters within a realistic Milky Way gravitational potential. For each star, we derived the pericentric ($R_{\mathrm{peri}}$) and apocentric ($R_{\mathrm{apo}}$) distances, orbital eccentricity ($e$), and the maximum vertical distance from the Galactic plane ($Z_{\mathrm{max}}$). The orbit integration was carried out assuming the \texttt{MWPotential2014} model provided by \texttt{galpy}, integrating each orbit over several Galactic rotations. 
 
-These quantities provide insight into the dynamical behavior and population membership of the stars, and the methodology has been extensively applied in previous works \citep[e.g.,][]{Adibekyan-12}.
+These quantities provide insight into the dynamical behaviour and population membership of the stars, and the methodology has been extensively applied in previous works \citep[e.g.,][]{Adibekyan-12}.
 
 
 
