@@ -1,0 +1,1630 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.2)  27 MAR 2026 13:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**adibekyan_abundances_ML_v0.tex
+(./adibekyan_abundances_ML_v0.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./aa.cls
+Document Class: aa 2024/08/08{} v9.2{} Class for AA journal
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\skip48
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen140
+)
+\aa@fullwidth=\skip51
+\aa@fullheight=\skip52
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count195
+\calc@Bcount=\count196
+\calc@Adimen=\dimen141
+\calc@Bdimen=\dimen142
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count197
+\calc@Cskip=\skip55
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
+\et@xins=\count198
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count199
+Normal \count register pool exhausted, switching to extended pool.
+\Gm@cntv=\count277
+\c@Gm@tempcnt=\count278
+\Gm@bindingoffset=\dimen143
+\Gm@wd@mp=\dimen144
+\Gm@odd@mp=\dimen145
+\Gm@even@mp=\dimen146
+\Gm@layoutwidth=\dimen147
+\Gm@layoutheight=\dimen148
+\Gm@layouthoffset=\dimen149
+\Gm@layoutvoffset=\dimen150
+\Gm@dimlist=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip56
+\f@nch@O@elh=\skip57
+\f@nch@O@erh=\skip58
+\f@nch@O@olh=\skip59
+\f@nch@O@orh=\skip60
+\f@nch@O@elf=\skip61
+\f@nch@O@erf=\skip62
+\f@nch@O@olf=\skip63
+\f@nch@O@orf=\skip64
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/cuted.sty
+Package: cuted 2021/10/04 v2.0 Mixing onecolumn and twocolumn modes
+\At@ViperColsBreak=\toks21
+\preCutedStrip=\toks22
+\postCutedStrip=\toks23
+\cuted@@tempbox@a=\box51
+\cuted@@tempbox@c=\box52
+\cuted@@tempbox@var=\box53
+\hold@viper=\box54
+\@viper=\box55
+\cuted@@varbox@a=\box56
+\cuted@@varbox@c=\box57
+\cuted@@tempdim@spread=\dimen151
+\cuted@@tempdim@a=\dimen152
+\cuted@@tempdim@b=\dimen153
+\ht@hold@viper=\dimen154
+\ht@viper=\dimen155
+\var@@pagediscards@ht=\dimen156
+\stripsep=\skip65
+\viper@penalty=\count279
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip66
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks24
+\ex@=\dimen157
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen158
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count280
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count281
+\leftroot@=\count282
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count283
+\DOTSCASE@=\count284
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen159
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count285
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count286
+\dotsspace@=\muskip16
+\c@parentequation=\count287
+\dspbrk@lvl=\count288
+\tag@help=\toks25
+\row@=\count289
+\column@=\count290
+\maxfields@=\count291
+\andhelp@=\toks26
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks27
+\multlinegap=\skip67
+\multlinetaggap=\skip68
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count292
+\LTcapwidth=\dimen166
+\LT@head=\box60
+\LT@firsthead=\box61
+\LT@foot=\box62
+\LT@lastfoot=\box63
+\LT@gbox=\box64
+\LT@cols=\count293
+\LT@rows=\count294
+\c@LT@tables=\count295
+\c@LT@chunks=\count296
+\LT@p@ftn=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip73
+\bibsep=\skip74
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count297
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count298
+\U@D=\dimen167
+\l@unhyphenated=\language89
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count299
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language80). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language80). Reported on input line 108.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen168
+\Gin@req@width=\dimen169
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count300
+\rotFPtop=\skip75
+\rotFPbot=\skip76
+\rot@float@box=\box65
+\rot@mess@toks=\toks31
+)
+\aa@cnta=\count301
+\aa@cntb=\count302
+\aa@nbwords=\count303
+\aa@nbauthors=\count304
+\aa@nbinstitutes=\count305
+\c@aa@institutecnt=\count306
+\aa@savecounter=\count307
+\aa@dima=\skip77
+\aa@dimb=\skip78
+\aa@dimc=\skip79
+\VSpaceBeforeTheorem=\skip80
+\VSpaceAfterTheorem=\skip81
+\HSpaceIndentTheorem=\skip82
+\HVSpaceSepTheorem=\skip83
+\aa@securityheadmargin=\skip84
+\aa@bleedmargin=\skip85
+\aa@voffsetlettername=\skip86
+\aa@hoffsetlettername=\skip87
+\aa@hoffsetgray=\skip88
+\aa@aftercontentsnameskip=\skip89
+\aa@aftercontentsAutnameskip=\skip90
+\aa@beforeheadboxskip=\skip91
+\aa@afterheadboxskip=\skip92
+\aa@beforetopicsskip=\skip93
+\aa@aftertopicsskip=\skip94
+\aa@afterletternameskip=\skip95
+\aa@beforeletternameskip=\skip96
+\aa@beforeheadnoteskip=\skip97
+\aa@afterheadnoteskip=\skip98
+\aa@aftertitleskip=\skip99
+\aa@beforesubtitleskip=\skip100
+\aa@aftersubtitleskip=\skip101
+\aa@afterauthorskip=\skip102
+\aa@beforedefaultheadnoteskip=\skip103
+\aa@headingleftmargin=\skip104
+\aa@headingrightmargin=\skip105
+\aa@afterinstituteskip=\skip106
+\aa@instituteindent=\skip107
+\aa@afterdateskip=\skip108
+\aa@afterdedicationskip=\skip109
+\aa@afterabstractnameskip=\skip110
+\aa@afterabstractskip=\skip111
+\aa@aftersubabstractskip=\skip112
+\aa@afterkeywordsskip=\skip113
+\aa@beforeacknowledgementsskip=\skip114
+\aa@afteracknowledgementsskip=\skip115
+\aa@figgap=\skip116
+\aa@sidecaptionminwidth=\skip117
+\aa@sidecaptionwidth=\skip118
+\VSpaceBeforeFigCaption=\skip119
+\VSpaceAfterTabCaption=\skip120
+\VSpaceBeforeTabBib=\skip121
+\VSpaceBeforeTabFoot=\skip122
+\aftertext=\skip123
+\aa@entryboxwidth=\skip124
+\betweenumberspace=\skip125
+\authorlink=\toks32
+\yearCop=\toks33
+\aa@stripbox=\box66
+\aa@outputbox=\box67
+\c@AAproof=\count308
+\c@AAtheorem=\count309
+ (./linenoaa.sty
+Package: linenoaa 2023/03/12 v0.02
+
+(./lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count310
+\output=\toks34
+\linenoprevgraf=\count311
+\linenumbersep=\dimen170
+\linenumberwidth=\dimen171
+\c@linenumber=\count312
+\c@pagewiselinenumber=\count313
+\c@LN@truepage=\count314
+\c@internallinenumber=\count315
+\c@internallinenumbers=\count316
+\quotelinenumbersep=\dimen172
+\bframerule=\dimen173
+\bframesep=\dimen174
+\bframebox=\box68
+LaTeX Info: Redefining \\ on input line 3056.
+)) (/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
+Package: txfonts 2008/01/22 v3.2.1
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/txr/m/n on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/txr/m/n on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/txr/m/n --> OT1/txr/bx/n on input line 22.
+\symitalic=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `italic' in version `bold'
+(Font)                  OT1/txr/m/it --> OT1/txr/bx/it on input line 26.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/txr/bx/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/txr/bx/n on input line 29.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 30.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/txr/m/it on input line 30.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/txr/m/it on input line 30.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/txr/m/it --> OT1/txr/bx/it on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 40.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/txss/m/n on input line 40.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/txss/m/n on input line 40.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/txss/m/n --> OT1/txss/b/n on input line 41.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 50.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/txtt/m/n on input line 50.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/txtt/m/n on input line 50.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/txtt/m/n --> OT1/txtt/b/n on input line 51.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 58.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/txmi/m/it on input line 58.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/txmi/m/it on input line 58.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/txmi/m/it --> OML/txmi/bx/it on input line 59.
+\symlettersA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/txmia/m/it --> U/txmia/bx/it on input line 67.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 70.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 77.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/txsy/m/n on input line 77.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/txsy/m/n on input line 77.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/txsy/m/n --> OMS/txsy/bx/n on input line 78.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 93.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/txsya/m/n on input line 93.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/txsya/m/n on input line 93.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/txsya/m/n --> U/txsya/bx/n on input line 94.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 102.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/txsyb/m/n on input line 102.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/txsyb/m/n on input line 102.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/txsyb/m/n --> U/txsyb/bx/n on input line 103.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/txsyc/m/n --> U/txsyc/bx/n on input line 113.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/txex/m/n on input line 120.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/txex/m/n on input line 120.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/txex/m/n --> OMX/txex/bx/n on input line 121.
+\symlargesymbolsA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
+(Font)                  U/txexa/m/n --> U/txexa/bx/n on input line 129.
+LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
+LaTeX Info: Redefining \not on input line 1043.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-01-22 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count317
+\l__pdf_internal_box=\box69
+))
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count318
+\l__lipsum_a_int=\count319
+\l__lipsum_b_int=\count320
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen175
+\captionmargin=\dimen176
+\caption@leftmargin=\dimen177
+\caption@rightmargin=\dimen178
+\caption@width=\dimen179
+\caption@indent=\dimen180
+\caption@parindent=\dimen181
+\caption@hangindent=\dimen182
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\aa@captionfont \ifx \@
+captype \aa@figtype \par \vskip \VSpaceBeforeFigCaption \aa@@makecaption {#1}\a
+a@capstrut #2\par \else {\aa@headcaptionfont #1\aa@floatcounterend }\aa@capstru
+t #2\par \vskip \VSpaceAfterTabCaption \fi  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count321
+\c@continuedfloat=\count322
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: rotating package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count323
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count324
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count325
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count326
+)
+\@linkdim=\dimen183
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count329
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count330
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen184
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count331
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip126
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+LaTeX Font Info:    Trying to load font information for T1+txr on input line 41
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txr.fd
+File: t1txr.fd 2000/12/15 v3.1
+)
+(./adibekyan_abundances_ML_v0.aux)
+\openout1 = `adibekyan_abundances_ML_v0.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 41.
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
+41.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+File: omltxmi.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 41.
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
+41.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
+File: omstxsy.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 41.
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
+41.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
+File: omxtxex.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 41.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 4
+1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
+File: utxexa.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(36.98859pt, 523.5307pt, 36.98859pt)
+* v-part:(T,H,B)=(56.01874pt, 705.0pt, 84.0281pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=523.5307pt
+* \textheight=705.0pt
+* \oddsidemargin=-35.2814pt
+* \evensidemargin=-35.2814pt
+* \topmargin=-40.25125pt
+* \headheight=12.0pt
+* \headsep=12.0pt
+* \topskip=10.0pt
+* \footskip=20.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=11.38109pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count337
+\scratchdimen=\dimen187
+\scratchbox=\box70
+\nofMPsegments=\count338
+\nofMParguments=\count339
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count340
+\MPscratchDim=\dimen188
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
+\everyMPtoPDFconversion=\toks36
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 41.
+
+(./adibekyan_abundances_ML_v0.out) (./adibekyan_abundances_ML_v0.out)
+\@outlinefile=\write3
+\openout3 = `adibekyan_abundances_ML_v0.out'.
+
+
+
+
+IMPORTANT
+
+Class aa Warning: Around 414 words in the abstract instead of 300 (max). You sh
+ould rewrite your abstract on input line 91.
+
+IMPORTANT 
+
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 9
+6.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
+File: ot1txr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
+File: utxsya.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
+File: utxsyb.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
+File: utxmia.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
+File: utxsyc.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Trying to load font information for T1+txss on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
+File: t1txss.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 16.41594pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/b/n' in size <17.28> not available
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 16.41594pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/b/n' in size <14.4> not available
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 13.67995pt on input line 96.
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 8.54997pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/b/n' in size <9> not available
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 8.54997pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/m/it' in size <9> not available
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
+(Font)              scaled to size 8.54997pt on input line 96.
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 100.
+LaTeX Font Info:    Font shape `T1/txss/b/n' in size <10.95> not available
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 100.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 10.40245pt on input line 100.
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 6.64998pt on input line 100.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 104--105
+[]\T1/txr/m/n/10 Large sur-veys such as the Apache Point Ob-ser-va-tory
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 104--105
+\T1/txr/m/n/10 Galac-tic Evo-lu-tion Ex-per-i-ment (APOGEE; [][][][][]
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 104--105
+[][]\T1/txr/m/n/10 2022[][]) and the GALac-tic Ar-chae-ol-ogy with HER-MES sur-
+
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 104--105
+[][][][][] [][]\T1/txr/m/n/10 2024[][]; [][][][][] [][]2025[][]).
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 104--105
+\T1/txr/m/n/10 Even when high-resolution near-infrared spec-tra are avail-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf
+-dist/fonts/enc/dvips/base/8r.enc}
+
+
+]
+Underfull \hbox (badness 1097) in paragraph at lines 106--107
+\T1/txr/m/n/10 dances from spec-tra and pho-to-met-ric data, cap-tur-ing com-
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 123--124
+\T1/txr/m/it/10 Gaia \T1/txr/m/n/10 EDR3 ([][][][][] [][]2021[][]), while for t
+he
+ []
+
+
+Underfull \hbox (badness 1742) in paragraph at lines 127--127
+[][][]\T1/txr/m/n/9 The code is avail-able at [][]$\T1/txtt/m/n/9 https : / / g
+ithub . com / vadibekyan /
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 127--128
+\T1/txr/m/n/10 puted Galac-tic space ve-loc-i-tiy com-po-nents and population-
+ []
+
+<feh_distributions_apogee_harps.png, id=247, 433.62pt x 578.16pt>
+File: feh_distributions_apogee_harps.png Graphic file (type png)
+<use feh_distributions_apogee_harps.png>
+Package pdftex.def Info: feh_distributions_apogee_harps.png  used on input line
+ 136.
+(pdftex.def)             Requested size: 256.0748pt x 341.44667pt.
+[2]
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 162.
+LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 162.
+LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
+(Font)              scaled to size 9.49997pt on input line 162.
+ [3 <./feh_distributions_apogee_harps.png>]
+Underfull \hbox (badness 1092) in paragraph at lines 209--210
+[]\T1/txr/m/n/10 To fur-ther il-lus-trate the per-for-mance of the Light-GBM
+ []
+
+<figures/fig_apogee_lgbm_pred_resid_scatter.png, id=327, 514.0806pt x 225.0006p
+t>
+File: figures/fig_apogee_lgbm_pred_resid_scatter.png Graphic file (type png)
+<use figures/fig_apogee_lgbm_pred_resid_scatter.png>
+Package pdftex.def Info: figures/fig_apogee_lgbm_pred_resid_scatter.png  used o
+n input line 215.
+(pdftex.def)             Requested size: 256.0748pt x 112.08115pt.
+<figures/fig_harps_lgbm_pred_resid_scatter.png, id=328, 514.0806pt x 225.0006pt
+>
+File: figures/fig_harps_lgbm_pred_resid_scatter.png Graphic file (type png)
+<use figures/fig_harps_lgbm_pred_resid_scatter.png>
+Package pdftex.def Info: figures/fig_harps_lgbm_pred_resid_scatter.png  used on
+ input line 217.
+(pdftex.def)             Requested size: 256.0748pt x 112.08115pt.
+[4]
+<figures/LGBM_zmax_rapo_dependence_pretty.png, id=350, 542.025pt x 361.35pt>
+File: figures/LGBM_zmax_rapo_dependence_pretty.png Graphic file (type png)
+<use figures/LGBM_zmax_rapo_dependence_pretty.png>
+Package pdftex.def Info: figures/LGBM_zmax_rapo_dependence_pretty.png  used on 
+input line 252.
+(pdftex.def)             Requested size: 256.0748pt x 170.72223pt.
+<figures/LGBM_zmax_pgal_dependence_pretty.png, id=351, 542.025pt x 361.35pt>
+File: figures/LGBM_zmax_pgal_dependence_pretty.png Graphic file (type png)
+<use figures/LGBM_zmax_pgal_dependence_pretty.png>
+Package pdftex.def Info: figures/LGBM_zmax_pgal_dependence_pretty.png  used on 
+input line 254.
+(pdftex.def)             Requested size: 256.0748pt x 170.72223pt.
+
+Underfull \vbox (badness 2689) has occurred while \output is active []
+
+ [5 <./figures/fig_apogee_lgbm_pred_resid_scatter.png> <./figures/fig_harps_lgb
+m_pred_resid_scatter.png> <./figures/LGBM_zmax_rapo_dependence_pretty.png> <./f
+igures/LGBM_zmax_pgal_dependence_pretty.png>]
+Overfull \hbox (2.61826pt too wide) in paragraph at lines 296--308
+ [][] 
+ []
+
+[6]
+<figures/c_h_apogee_holdout.png, id=389, 875.4306pt x 369.5406pt>
+File: figures/c_h_apogee_holdout.png Graphic file (type png)
+<use figures/c_h_apogee_holdout.png>
+Package pdftex.def Info: figures/c_h_apogee_holdout.png  used on input line 320
+.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/c_h_harps.png, id=390, 875.4306pt x 369.5406pt>
+File: figures/c_h_harps.png Graphic file (type png)
+<use figures/c_h_harps.png>
+Package pdftex.def Info: figures/c_h_harps.png  used on input line 321.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/o_h_apogee_holdout.png, id=391, 875.4306pt x 369.5406pt>
+File: figures/o_h_apogee_holdout.png Graphic file (type png)
+<use figures/o_h_apogee_holdout.png>
+Package pdftex.def Info: figures/o_h_apogee_holdout.png  used on input line 323
+.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/o_h_harps.png, id=392, 875.4306pt x 369.5406pt>
+File: figures/o_h_harps.png Graphic file (type png)
+<use figures/o_h_harps.png>
+Package pdftex.def Info: figures/o_h_harps.png  used on input line 324.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/mg_h_apogee_holdout.png, id=393, 875.4306pt x 369.5406pt>
+File: figures/mg_h_apogee_holdout.png Graphic file (type png)
+<use figures/mg_h_apogee_holdout.png>
+Package pdftex.def Info: figures/mg_h_apogee_holdout.png  used on input line 32
+6.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/mg_h_harps.png, id=394, 875.4306pt x 369.5406pt>
+File: figures/mg_h_harps.png Graphic file (type png)
+<use figures/mg_h_harps.png>
+Package pdftex.def Info: figures/mg_h_harps.png  used on input line 327.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/si_h_apogee_holdout.png, id=395, 875.4306pt x 369.5406pt>
+File: figures/si_h_apogee_holdout.png Graphic file (type png)
+<use figures/si_h_apogee_holdout.png>
+Package pdftex.def Info: figures/si_h_apogee_holdout.png  used on input line 32
+9.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/si_h_harps.png, id=396, 875.4306pt x 369.5406pt>
+File: figures/si_h_harps.png Graphic file (type png)
+<use figures/si_h_harps.png>
+Package pdftex.def Info: figures/si_h_harps.png  used on input line 330.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/LGBM_c_h_dependence_fe_h_by_rperi.png, id=402, 496.7358pt x 349.305pt>
+
+File: figures/LGBM_c_h_dependence_fe_h_by_rperi.png Graphic file (type png)
+<use figures/LGBM_c_h_dependence_fe_h_by_rperi.png>
+Package pdftex.def Info: figures/LGBM_c_h_dependence_fe_h_by_rperi.png  used on
+ input line 358.
+(pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
+<figures/LGBM_o_h_dependence_fe_h_by_rperi.png, id=403, 496.7358pt x 349.305pt>
+
+File: figures/LGBM_o_h_dependence_fe_h_by_rperi.png Graphic file (type png)
+<use figures/LGBM_o_h_dependence_fe_h_by_rperi.png>
+Package pdftex.def Info: figures/LGBM_o_h_dependence_fe_h_by_rperi.png  used on
+ input line 359.
+(pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
+<figures/LGBM_mg_h_dependence_fe_h_by_rperi.png, id=404, 496.9767pt x 349.305pt
+>
+File: figures/LGBM_mg_h_dependence_fe_h_by_rperi.png Graphic file (type png)
+<use figures/LGBM_mg_h_dependence_fe_h_by_rperi.png>
+Package pdftex.def Info: figures/LGBM_mg_h_dependence_fe_h_by_rperi.png  used o
+n input line 361.
+(pdftex.def)             Requested size: 209.40907pt x 147.18678pt.
+<figures/LGBM_si_h_dependence_fe_h_by_rperi.png, id=405, 496.7358pt x 349.305pt
+>
+File: figures/LGBM_si_h_dependence_fe_h_by_rperi.png Graphic file (type png)
+<use figures/LGBM_si_h_dependence_fe_h_by_rperi.png>
+Package pdftex.def Info: figures/LGBM_si_h_dependence_fe_h_by_rperi.png  used o
+n input line 362.
+(pdftex.def)             Requested size: 209.40907pt x 147.25607pt.
+ [7]
+<figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png, id=418, 875.4306pt 
+x 369.5406pt>
+File: figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png Graphic file (t
+ype png)
+<use figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/prediction_panels_apogee_holdout_fe_mg_si_o_h.
+png  used on input line 392.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/prediction_panels_harps_fe_mg_si_o_h.png, id=419, 875.4306pt x 369.540
+6pt>
+File: figures/prediction_panels_harps_fe_mg_si_o_h.png Graphic file (type png)
+<use figures/prediction_panels_harps_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/prediction_panels_harps_fe_mg_si_o_h.png  used
+ on input line 394.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png, id=420, 875.4306pt 
+x 369.5406pt>
+File: figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png Graphic file (t
+ype png)
+<use figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.
+png  used on input line 396.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+<figures/prediction_panels_harps_fe_mg_si_c_h.png, id=421, 875.4306pt x 369.540
+6pt>
+File: figures/prediction_panels_harps_fe_mg_si_c_h.png Graphic file (type png)
+<use figures/prediction_panels_harps_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/prediction_panels_harps_fe_mg_si_c_h.png  used
+ on input line 398.
+(pdftex.def)             Requested size: 251.2925pt x 106.07574pt.
+
+Underfull \hbox (badness 1648) in paragraph at lines 406--407
+\T1/txr/m/n/10 In ad-di-tion to the machine-learning ex-per-i-ments de-scribed
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./figures/c_h_apogee_holdout.png> <./figures/c_h_harps.png> <./figures/o_h
+_apogee_holdout.png> <./figures/o_h_harps.png> <./figures/mg_h_apogee_holdout.p
+ng> <./figures/mg_h_harps.png> <./figures/si_h_apogee_holdout.png> <./figures/s
+i_h_harps.png>]
+<figures/linear_fe_si_vs_feh.png, id=440, 508.41945pt x 335.3328pt>
+File: figures/linear_fe_si_vs_feh.png Graphic file (type png)
+<use figures/linear_fe_si_vs_feh.png>
+Package pdftex.def Info: figures/linear_fe_si_vs_feh.png  used on input line 41
+5.
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+<figures/linear_mg_si_vs_feh.png, id=441, 508.41945pt x 334.97145pt>
+File: figures/linear_mg_si_vs_feh.png Graphic file (type png)
+<use figures/linear_mg_si_vs_feh.png>
+Package pdftex.def Info: figures/linear_mg_si_vs_feh.png  used on input line 42
+0.
+(pdftex.def)             Requested size: 256.53291pt x 169.01868pt.
+<figures/linear_c_o_vs_feh.png, id=442, 508.41945pt x 335.3328pt>
+File: figures/linear_c_o_vs_feh.png Graphic file (type png)
+<use figures/linear_c_o_vs_feh.png>
+Package pdftex.def Info: figures/linear_c_o_vs_feh.png  used on input line 427.
+
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+<figures/linear_fe_o_vs_feh.png, id=443, 508.41945pt x 335.3328pt>
+File: figures/linear_fe_o_vs_feh.png Graphic file (type png)
+<use figures/linear_fe_o_vs_feh.png>
+Package pdftex.def Info: figures/linear_fe_o_vs_feh.png  used on input line 432
+.
+(pdftex.def)             Requested size: 256.53291pt x 169.201pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./figures/LGBM_c_h_dependence_fe_h_by_rperi.png> <./figures/LGBM_o_h_depen
+dence_fe_h_by_rperi.png> <./figures/LGBM_mg_h_dependence_fe_h_by_rperi.png> <./
+figures/LGBM_si_h_dependence_fe_h_by_rperi.png> <./figures/prediction_panels_ap
+ogee_holdout_fe_mg_si_o_h.png> <./figures/prediction_panels_harps_fe_mg_si_o_h.
+png> <./figures/prediction_panels_apogee_holdout_fe_mg_si_c_h.png> <./figures/p
+rediction_panels_harps_fe_mg_si_c_h.png>]
+Underfull \hbox (badness 1675) in paragraph at lines 479--480
+[]\T1/txr/m/n/10 First, kine-matic and or-bital in-for-ma-tion alone con-tains
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./figures/linear_fe_si_vs_feh.png> <./figures/linear_mg_si_vs_feh.png> <.
+/figures/linear_c_o_vs_feh.png> <./figures/linear_fe_o_vs_feh.png>]
+Underfull \hbox (badness 6995) in paragraph at lines 492--494
+\T1/txr/m/n/8 un-der the grants UIDB/04434/2020 (DOI: 10.54499/UIDB/04434/2020)
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
+\T1/txr/m/n/8 and UIDP/04434/2020 (DOI: 10.54499/UIDP/04434/2020), as well as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
+\T1/txr/m/n/8 u-lus pro-gram (ref-er-ence 2023.06055.CEECIND/CP2839/CT0005, DOI
+:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
+\T1/txr/m/n/8 10.54499/2023.06055.CEECIND/CP2839/CT0005). R. C. ac-knowl-edges
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 492--494
+\T1/txr/m/n/8 sup-port by UID/00147 -- Re-search Cen-ter for Sys-tems and Tech-
+nolo-gies
+ []
+
+(./adibekyan_abundances_ML_v0.bbl
+Underfull \hbox (badness 6575) in paragraph at lines 121--123
+[]\T1/txr/m/n/8 Erickson, N., Mueller, J., Shirkov, A., et al. 2020, arXiv e-pr
+ints,
+ []
+
+) [11]
+Underfull \hbox (badness 2229) in paragraph at lines 521--522
+\T1/txr/m/n/10 For the APOGEE sam-ple, we per-formed a care-ful qual-
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 521--522
+\T1/txr/m/n/10 ity se-lec-tion to en-sure re-li-able stel-lar pa-ram-e-ters and
+ el-
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 521--522
+\T1/txr/m/n/10 e-men-tal abun-dances. We ex-cluded stars with prob-lem-atic
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 525--527
+[]\T1/txr/m/n/10 To guar-an-tee ro-bust stel-lar pa-ram-e-ters, el-e-men-tal ab
+un-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 579--580
+[]\T1/txr/m/n/10 Although the ab-so-lute val-ues of the co-ef-fi-cients dif-fer
+
+ []
+
+<correlations.png, id=496, 722.7pt x 361.35pt>
+File: correlations.png Graphic file (type png)
+<use correlations.png>
+Package pdftex.def Info: correlations.png  used on input line 583.
+(pdftex.def)             Requested size: 418.82616pt x 209.41222pt.
+[12
+
+]
+Underfull \hbox (badness 1009) in paragraph at lines 600--601
+\T1/txr/m/n/10 por-tance in the MI anal-y-sis com-pared to its rank cor-re-la-
+ []
+
+<MI.png, id=506, 722.7pt x 433.62pt>
+File: MI.png Graphic file (type png)
+<use MI.png>
+Package pdftex.def Info: MI.png  used on input line 620.
+(pdftex.def)             Requested size: 256.53291pt x 153.91963pt.
+<VIF.png, id=507, 722.7pt x 433.62pt>
+File: VIF.png Graphic file (type png)
+<use VIF.png>
+Package pdftex.def Info: VIF.png  used on input line 622.
+(pdftex.def)             Requested size: 256.53291pt x 153.91963pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./correlations.png> <./MI.png> <./VIF.png>]
+<figures/dist_V_lsr.png, id=519, 505.89pt x 578.16pt>
+File: figures/dist_V_lsr.png Graphic file (type png)
+<use figures/dist_V_lsr.png>
+Package pdftex.def Info: figures/dist_V_lsr.png  used on input line 641.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_U_lsr.png, id=520, 505.89pt x 578.16pt>
+File: figures/dist_U_lsr.png Graphic file (type png)
+<use figures/dist_U_lsr.png>
+Package pdftex.def Info: figures/dist_U_lsr.png  used on input line 645.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_W_lsr.png, id=521, 505.89pt x 578.16pt>
+File: figures/dist_W_lsr.png Graphic file (type png)
+<use figures/dist_W_lsr.png>
+Package pdftex.def Info: figures/dist_W_lsr.png  used on input line 649.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_UVW_lsr.png, id=522, 505.89pt x 578.16pt>
+File: figures/dist_UVW_lsr.png Graphic file (type png)
+<use figures/dist_UVW_lsr.png>
+Package pdftex.def Info: figures/dist_UVW_lsr.png  used on input line 656.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_rapo.png, id=523, 505.89pt x 578.16pt>
+File: figures/dist_rapo.png Graphic file (type png)
+<use figures/dist_rapo.png>
+Package pdftex.def Info: figures/dist_rapo.png  used on input line 660.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_rperi.png, id=524, 505.89pt x 578.16pt>
+File: figures/dist_rperi.png Graphic file (type png)
+<use figures/dist_rperi.png>
+Package pdftex.def Info: figures/dist_rperi.png  used on input line 664.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_eccentricity.png, id=525, 505.89pt x 578.16pt>
+File: figures/dist_eccentricity.png Graphic file (type png)
+<use figures/dist_eccentricity.png>
+Package pdftex.def Info: figures/dist_eccentricity.png  used on input line 671.
+
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_zmax.png, id=526, 505.89pt x 578.16pt>
+File: figures/dist_zmax.png Graphic file (type png)
+<use figures/dist_zmax.png>
+Package pdftex.def Info: figures/dist_zmax.png  used on input line 675.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+<figures/dist_P_gal.png, id=527, 505.89pt x 578.16pt>
+File: figures/dist_P_gal.png Graphic file (type png)
+<use figures/dist_P_gal.png>
+Package pdftex.def Info: figures/dist_P_gal.png  used on input line 679.
+(pdftex.def)             Requested size: 130.88268pt x 149.577pt.
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 754.
+
+Underfull \hbox (badness 1028) in paragraph at lines 758--759
+[]\T1/txr/m/n/10 Compared to the de-fault con-fig-u-ra-tions re-ported in Ta-
+ []
+
+[14]
+Underfull \vbox (badness 4765) has occurred while \output is active []
+
+<figures/LGBM_builtin_gain.png, id=546, 578.16pt x 433.62pt>
+File: figures/LGBM_builtin_gain.png Graphic file (type png)
+<use figures/LGBM_builtin_gain.png>
+Package pdftex.def Info: figures/LGBM_builtin_gain.png  used on input line 770.
+
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_builtin_gain.png, id=547, 578.16pt x 433.62pt>
+File: figures/XGB_builtin_gain.png Graphic file (type png)
+<use figures/XGB_builtin_gain.png>
+Package pdftex.def Info: figures/XGB_builtin_gain.png  used on input line 771.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_permutation_dRMSE.png, id=548, 578.16pt x 433.62pt>
+File: figures/LGBM_permutation_dRMSE.png Graphic file (type png)
+<use figures/LGBM_permutation_dRMSE.png>
+Package pdftex.def Info: figures/LGBM_permutation_dRMSE.png  used on input line
+ 773.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_permutation_dRMSE.png, id=549, 578.16pt x 433.62pt>
+File: figures/XGB_permutation_dRMSE.png Graphic file (type png)
+<use figures/XGB_permutation_dRMSE.png>
+Package pdftex.def Info: figures/XGB_permutation_dRMSE.png  used on input line 
+774.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_single_feature_rmse.png, id=550, 578.16pt x 433.62pt>
+File: figures/LGBM_single_feature_rmse.png Graphic file (type png)
+<use figures/LGBM_single_feature_rmse.png>
+Package pdftex.def Info: figures/LGBM_single_feature_rmse.png  used on input li
+ne 776.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_single_feature_rmse.png, id=551, 578.16pt x 433.62pt>
+File: figures/XGB_single_feature_rmse.png Graphic file (type png)
+<use figures/XGB_single_feature_rmse.png>
+Package pdftex.def Info: figures/XGB_single_feature_rmse.png  used on input lin
+e 777.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/LGBM_shap_meanabs.png, id=552, 578.16pt x 433.62pt>
+File: figures/LGBM_shap_meanabs.png Graphic file (type png)
+<use figures/LGBM_shap_meanabs.png>
+Package pdftex.def Info: figures/LGBM_shap_meanabs.png  used on input line 779.
+
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+<figures/XGB_shap_meanabs.png, id=553, 578.16pt x 433.62pt>
+File: figures/XGB_shap_meanabs.png Graphic file (type png)
+<use figures/XGB_shap_meanabs.png>
+Package pdftex.def Info: figures/XGB_shap_meanabs.png  used on input line 780.
+(pdftex.def)             Requested size: 125.65024pt x 94.23218pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./figures/dist_V_lsr.png> <./figures/dist_U_lsr.png> <./figures/dist_W_ls
+r.png> <./figures/dist_UVW_lsr.png> <./figures/dist_rapo.png> <./figures/dist_r
+peri.png> <./figures/dist_eccentricity.png> <./figures/dist_zmax.png> <./figure
+s/dist_P_gal.png>]
+<figures/correlations_c_h.png, id=567, 722.7pt x 361.35pt>
+File: figures/correlations_c_h.png Graphic file (type png)
+<use figures/correlations_c_h.png>
+Package pdftex.def Info: figures/correlations_c_h.png  used on input line 801.
+(pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
+<figures/correlations_o_h.png, id=568, 722.7pt x 361.35pt>
+File: figures/correlations_o_h.png Graphic file (type png)
+<use figures/correlations_o_h.png>
+Package pdftex.def Info: figures/correlations_o_h.png  used on input line 803.
+(pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
+<figures/correlations_mg_h.png, id=569, 722.7pt x 361.35pt>
+File: figures/correlations_mg_h.png Graphic file (type png)
+<use figures/correlations_mg_h.png>
+Package pdftex.def Info: figures/correlations_mg_h.png  used on input line 805.
+
+(pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
+<figures/correlations_si_h.png, id=570, 722.7pt x 361.35pt>
+File: figures/correlations_si_h.png Graphic file (type png)
+<use figures/correlations_si_h.png>
+Package pdftex.def Info: figures/correlations_si_h.png  used on input line 807.
+
+(pdftex.def)             Requested size: 251.2925pt x 125.64732pt.
+<figures/mi_c_h.png, id=571, 722.7pt x 433.62pt>
+File: figures/mi_c_h.png Graphic file (type png)
+<use figures/mi_c_h.png>
+Package pdftex.def Info: figures/mi_c_h.png  used on input line 815.
+(pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
+<figures/mi_o_h.png, id=572, 722.7pt x 433.62pt>
+File: figures/mi_o_h.png Graphic file (type png)
+<use figures/mi_o_h.png>
+Package pdftex.def Info: figures/mi_o_h.png  used on input line 817.
+(pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
+<figures/mi_mg_h.png, id=573, 722.7pt x 433.62pt>
+File: figures/mi_mg_h.png Graphic file (type png)
+<use figures/mi_mg_h.png>
+Package pdftex.def Info: figures/mi_mg_h.png  used on input line 819.
+(pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
+<figures/mi_si_h.png, id=574, 722.7pt x 433.62pt>
+File: figures/mi_si_h.png Graphic file (type png)
+<use figures/mi_si_h.png>
+Package pdftex.def Info: figures/mi_si_h.png  used on input line 821.
+(pdftex.def)             Requested size: 251.2925pt x 150.7768pt.
+
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+<figures/LGBM_c_h_builtin_gain.png, id=576, 710.95613pt x 494.14612pt>
+File: figures/LGBM_c_h_builtin_gain.png Graphic file (type png)
+<use figures/LGBM_c_h_builtin_gain.png>
+Package pdftex.def Info: figures/LGBM_c_h_builtin_gain.png  used on input line 
+910.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_permutation_dRMSE.png, id=577, 710.95613pt x 494.14612pt>
+File: figures/LGBM_c_h_permutation_dRMSE.png Graphic file (type png)
+<use figures/LGBM_c_h_permutation_dRMSE.png>
+Package pdftex.def Info: figures/LGBM_c_h_permutation_dRMSE.png  used on input 
+line 911.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_shap_meanabs.png, id=578, 710.95613pt x 494.14612pt>
+File: figures/LGBM_c_h_shap_meanabs.png Graphic file (type png)
+<use figures/LGBM_c_h_shap_meanabs.png>
+Package pdftex.def Info: figures/LGBM_c_h_shap_meanabs.png  used on input line 
+912.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_c_h_single_feature_rmse.png, id=579, 710.50444pt x 494.14612pt>
+File: figures/LGBM_c_h_single_feature_rmse.png Graphic file (type png)
+<use figures/LGBM_c_h_single_feature_rmse.png>
+Package pdftex.def Info: figures/LGBM_c_h_single_feature_rmse.png  used on inpu
+t line 913.
+(pdftex.def)             Requested size: 125.65024pt x 87.38167pt.
+<figures/LGBM_o_h_builtin_gain.png, id=580, 710.95613pt x 494.14612pt>
+File: figures/LGBM_o_h_builtin_gain.png Graphic file (type png)
+<use figures/LGBM_o_h_builtin_gain.png>
+Package pdftex.def Info: figures/LGBM_o_h_builtin_gain.png  used on input line 
+922.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_permutation_dRMSE.png, id=581, 710.95613pt x 494.14612pt>
+File: figures/LGBM_o_h_permutation_dRMSE.png Graphic file (type png)
+<use figures/LGBM_o_h_permutation_dRMSE.png>
+Package pdftex.def Info: figures/LGBM_o_h_permutation_dRMSE.png  used on input 
+line 923.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_shap_meanabs.png, id=582, 710.95613pt x 494.14612pt>
+File: figures/LGBM_o_h_shap_meanabs.png Graphic file (type png)
+<use figures/LGBM_o_h_shap_meanabs.png>
+Package pdftex.def Info: figures/LGBM_o_h_shap_meanabs.png  used on input line 
+924.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_o_h_single_feature_rmse.png, id=583, 710.50444pt x 494.14612pt>
+File: figures/LGBM_o_h_single_feature_rmse.png Graphic file (type png)
+<use figures/LGBM_o_h_single_feature_rmse.png>
+Package pdftex.def Info: figures/LGBM_o_h_single_feature_rmse.png  used on inpu
+t line 925.
+(pdftex.def)             Requested size: 125.65024pt x 87.38167pt.
+<figures/LGBM_mg_h_builtin_gain.png, id=586, 710.95613pt x 494.14612pt>
+File: figures/LGBM_mg_h_builtin_gain.png Graphic file (type png)
+<use figures/LGBM_mg_h_builtin_gain.png>
+Package pdftex.def Info: figures/LGBM_mg_h_builtin_gain.png  used on input line
+ 933.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_permutation_dRMSE.png, id=587, 710.95613pt x 494.14612pt>
+File: figures/LGBM_mg_h_permutation_dRMSE.png Graphic file (type png)
+<use figures/LGBM_mg_h_permutation_dRMSE.png>
+Package pdftex.def Info: figures/LGBM_mg_h_permutation_dRMSE.png  used on input
+ line 934.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_shap_meanabs.png, id=588, 710.95613pt x 494.14612pt>
+File: figures/LGBM_mg_h_shap_meanabs.png Graphic file (type png)
+<use figures/LGBM_mg_h_shap_meanabs.png>
+Package pdftex.def Info: figures/LGBM_mg_h_shap_meanabs.png  used on input line
+ 935.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_mg_h_single_feature_rmse.png, id=589, 710.95613pt x 494.14612pt>
+File: figures/LGBM_mg_h_single_feature_rmse.png Graphic file (type png)
+<use figures/LGBM_mg_h_single_feature_rmse.png>
+Package pdftex.def Info: figures/LGBM_mg_h_single_feature_rmse.png  used on inp
+ut line 936.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_builtin_gain.png, id=592, 710.95613pt x 494.14612pt>
+File: figures/LGBM_si_h_builtin_gain.png Graphic file (type png)
+<use figures/LGBM_si_h_builtin_gain.png>
+Package pdftex.def Info: figures/LGBM_si_h_builtin_gain.png  used on input line
+ 943.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_permutation_dRMSE.png, id=593, 710.95613pt x 494.14612pt>
+File: figures/LGBM_si_h_permutation_dRMSE.png Graphic file (type png)
+<use figures/LGBM_si_h_permutation_dRMSE.png>
+Package pdftex.def Info: figures/LGBM_si_h_permutation_dRMSE.png  used on input
+ line 944.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_shap_meanabs.png, id=594, 710.95613pt x 494.14612pt>
+File: figures/LGBM_si_h_shap_meanabs.png Graphic file (type png)
+<use figures/LGBM_si_h_shap_meanabs.png>
+Package pdftex.def Info: figures/LGBM_si_h_shap_meanabs.png  used on input line
+ 945.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+<figures/LGBM_si_h_single_feature_rmse.png, id=595, 710.95613pt x 494.14612pt>
+File: figures/LGBM_si_h_single_feature_rmse.png Graphic file (type png)
+<use figures/LGBM_si_h_single_feature_rmse.png>
+Package pdftex.def Info: figures/LGBM_si_h_single_feature_rmse.png  used on inp
+ut line 946.
+(pdftex.def)             Requested size: 125.65024pt x 87.32889pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./figures/LGBM_builtin_gain.png> <./figures/XGB_builtin_gain.png> <./figu
+res/LGBM_permutation_dRMSE.png> <./figures/XGB_permutation_dRMSE.png> <./figure
+s/LGBM_single_feature_rmse.png> <./figures/XGB_single_feature_rmse.png> <./figu
+res/LGBM_shap_meanabs.png> <./figures/XGB_shap_meanabs.png> <./figures/correlat
+ions_c_h.png> <./figures/correlations_o_h.png> <./figures/correlations_mg_h.png
+> <./figures/correlations_si_h.png>]
+<figures/builtin_gain_fe_mg_si_c_h.png, id=617, 565.77086pt x 349.47707pt>
+File: figures/builtin_gain_fe_mg_si_c_h.png Graphic file (type png)
+<use figures/builtin_gain_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/builtin_gain_fe_mg_si_c_h.png  used on input l
+ine 958.
+(pdftex.def)             Requested size: 125.65024pt x 77.61041pt.
+<figures/permutation_drmse_fe_mg_si_c_h.png, id=618, 566.28708pt x 349.47707pt>
+
+File: figures/permutation_drmse_fe_mg_si_c_h.png Graphic file (type png)
+<use figures/permutation_drmse_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/permutation_drmse_fe_mg_si_c_h.png  used on in
+put line 959.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/shap_mean_abs_fe_mg_si_c_h.png, id=619, 566.28708pt x 349.47707pt>
+File: figures/shap_mean_abs_fe_mg_si_c_h.png Graphic file (type png)
+<use figures/shap_mean_abs_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/shap_mean_abs_fe_mg_si_c_h.png  used on input 
+line 960.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/single_feature_cv_rmse_fe_mg_si_c_h.png, id=620, 566.28708pt x 349.477
+07pt>
+File: figures/single_feature_cv_rmse_fe_mg_si_c_h.png Graphic file (type png)
+<use figures/single_feature_cv_rmse_fe_mg_si_c_h.png>
+Package pdftex.def Info: figures/single_feature_cv_rmse_fe_mg_si_c_h.png  used 
+on input line 961.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/builtin_gain_fe_mg_si_o_h.png, id=621, 566.28708pt x 349.47707pt>
+File: figures/builtin_gain_fe_mg_si_o_h.png Graphic file (type png)
+<use figures/builtin_gain_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/builtin_gain_fe_mg_si_o_h.png  used on input l
+ine 968.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/permutation_drmse_fe_mg_si_o_h.png, id=622, 566.28708pt x 349.47707pt>
+
+File: figures/permutation_drmse_fe_mg_si_o_h.png Graphic file (type png)
+<use figures/permutation_drmse_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/permutation_drmse_fe_mg_si_o_h.png  used on in
+put line 969.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/shap_mean_abs_fe_mg_si_o_h.png, id=623, 566.28708pt x 349.47707pt>
+File: figures/shap_mean_abs_fe_mg_si_o_h.png Graphic file (type png)
+<use figures/shap_mean_abs_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/shap_mean_abs_fe_mg_si_o_h.png  used on input 
+line 970.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+<figures/single_feature_cv_rmse_fe_mg_si_o_h.png, id=624, 566.28708pt x 349.477
+07pt>
+File: figures/single_feature_cv_rmse_fe_mg_si_o_h.png Graphic file (type png)
+<use figures/single_feature_cv_rmse_fe_mg_si_o_h.png>
+Package pdftex.def Info: figures/single_feature_cv_rmse_fe_mg_si_o_h.png  used 
+on input line 971.
+(pdftex.def)             Requested size: 125.65024pt x 77.54109pt.
+ [17
+
+ <./figures/mi_c_h.png> <./figures/mi_o_h.png> <./figures/mi_mg_h.png> <./figur
+es/mi_si_h.png> <./figures/LGBM_c_h_builtin_gain.png> <./figures/LGBM_c_h_permu
+tation_dRMSE.png> <./figures/LGBM_c_h_shap_meanabs.png> <./figures/LGBM_c_h_sin
+gle_feature_rmse.png>] [18 <./figures/LGBM_o_h_builtin_gain.png> <./figures/LGB
+M_o_h_permutation_dRMSE.png> <./figures/LGBM_o_h_shap_meanabs.png> <./figures/L
+GBM_o_h_single_feature_rmse.png> <./figures/LGBM_mg_h_builtin_gain.png> <./figu
+res/LGBM_mg_h_permutation_dRMSE.png> <./figures/LGBM_mg_h_shap_meanabs.png> <./
+figures/LGBM_mg_h_single_feature_rmse.png> <./figures/LGBM_si_h_builtin_gain.pn
+g> <./figures/LGBM_si_h_permutation_dRMSE.png> <./figures/LGBM_si_h_shap_meanab
+s.png> <./figures/LGBM_si_h_single_feature_rmse.png> <./figures/builtin_gain_fe
+_mg_si_c_h.png> <./figures/permutation_drmse_fe_mg_si_c_h.png> <./figures/shap_
+mean_abs_fe_mg_si_c_h.png> <./figures/single_feature_cv_rmse_fe_mg_si_c_h.png> 
+<./figures/builtin_gain_fe_mg_si_o_h.png> <./figures/permutation_drmse_fe_mg_si
+_o_h.png> <./figures/shap_mean_abs_fe_mg_si_o_h.png> <./figures/single_feature_
+cv_rmse_fe_mg_si_o_h.png>] [19
+
+
+]
+(./adibekyan_abundances_ML_v0.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `adibekyan_abundances_ML_v0.out' has not chan
+ged.
+(rerunfilecheck)             Checksum: 65E79F112DA7C72C8772A24FCD87FF3D;7369.
+ ) 
+Here is how much of TeX's memory you used:
+ 17738 strings out of 474222
+ 291900 string characters out of 5748734
+ 1972975 words of memory out of 5000000
+ 39528 multiletter control sequences out of 15000+600000
+ 658355 words of font info for 187 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 87i,11n,93p,2596b,708s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
+s/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on adibekyan_abundances_ML_v0.pdf (19 pages, 14406026 bytes).
+PDF statistics:
+ 778 PDF objects out of 1000 (max. 8388607)
+ 560 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 634 words of extra memory for PDF output out of 10000 (max. 10000000)
+

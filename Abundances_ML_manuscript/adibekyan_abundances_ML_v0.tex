@@ -23,7 +23,6 @@
 \usepackage{placeins}           % useful with \FloatBarrier, to keep 
                                 % onecolumn floats from drifting to the next section
 \usepackage{xcolor}
-\newcommand{\vardan}[1]{{\color{red}#1}}
 
 
 \usepackage{hyperref}
@@ -58,9 +57,9 @@
     S.~G.~Sousa\inst{1,2} \and
     N.~C.~Santos \inst{1,2} \and
     E.~Delgado-Mena \inst{3,1} \and
-    I. Minchev \inst{4} \and
-   R. Chertovskih \inst{5} \and
-   A. Hakobyan \inst{6}	
+    I.~Minchev \inst{4} \and
+   R.~Chertovskih \inst{5} \and
+   A.~A.~Hakobyan \inst{6}
         }
 
   \institute{
@@ -69,8 +68,8 @@
   	  Departamento de F\'{\i}sica e Astronomia, Faculdade de Ci\^encias, Universidade do Porto, Rua do Campo  Alegre, 4169-007 Porto, Portugal \and
             Centro de Astrobiolog\'{\i}a (CAB), CSIC--INTA, Camino Bajo del Castillo s/n, 28692 Villanueva de la Ca\~nada (Madrid), Spain \and
 	  Leibniz Institute for Astrophysics Potsdam (AIP), Potsdam, Germany \and
-           SYSTEC, ARISE, Faculty of Engineering, University of Porto, Rua Dr. Roberto Frias, s/n 4200-465, Porto, Portugal \and
-           Center for Cosmology and Astrophysics, Alikhanian National Science Laboratory, 2 Alikhanian Brothers Str., 0036 Yerevan, Armenia
+	  Research Center for Systems and Technologies (SYSTEC/ARISE), Faculdade de Engenharia, Universidade do Porto, Rua Dr. Roberto Frias, 4200-465 Porto, Portugal \and
+	  Center for Cosmology and Astrophysics, Alikhanian National Science Laboratory, 2 Alikhanian Brothers Str., 0036 Yerevan, Armenia
   	  }
 
    \date{Date}
@@ -259,17 +258,11 @@ Given the dominant role of $Z_{\max}$ in all feature-importance diagnostics, we 
 
 For the APOGEE sample, the SHAP dependence plot reveals a strong and monotonic decrease of the SHAP contribution of $Z_{\max}$ with increasing $Z_{\max}$. Since SHAP values quantify the shift of the prediction relative to the global mean metallicity of the training data, positive values indicate that $Z_{\max}$ increases the predicted metallicity, while negative values indicate that it decreases it. Stars confined close to the Galactic plane ($Z_{\max} \lesssim 1$ kpc) therefore tend to have their predicted metallicities shifted upward relative to the mean, whereas stars reaching large vertical distances shift the prediction downward.
 
-\vardan{
-Vardan: this part in red (the interpretation) should be revisted and corrected
-
 The relation steepens at small $Z_{\max}$ and gradually flattens beyond $\sim$3–4 kpc. Interestingly, the dispersion of SHAP values becomes minimal and approaches zero around $Z_{\max} \sim 1$–1.5 kpc.  In this region, the predictive contribution of $Z_{\mathrm{max}}$ alone becomes less discriminative, and other orbital parameters contribute more strongly to the model predictions. At larger $Z_{\max}$, the increasing dispersion reflects a broader range of metallicities among dynamically hotter populations, consistent with a transition from thin-disk dominated stars to thick-disk and kinematically heated components.
 
-The colour-coding by $R_{\mathrm{apo}}$ suggests a secondary modulation by radial orbital extent. At small $Z_{\max}$, stars with larger apocentric distances tend to show slightly more negative SHAP contributions, indicating lower predicted metallicities. Beyond $Z_{\max} \sim 1$ kpc, this trend weakens and partially reverses, suggesting that the coupling between vertical and radial orbital properties changes across disk populations. We regard this secondary trend as suggestive rather than definitive, but it is broadly consistent with a changing mixture of thin- and thick-disk stars across the $Z_{\max}$ sequence.
+The colour coding by $R_{\mathrm{apo}}$ suggests a secondary modulation related to the radial extent of the orbits. At small $Z_{\max}$, stars with larger apocentric distances tend to show slightly more negative SHAP contributions, indicating lower predicted metallicities. Above $Z_{\max} \sim 1,\mathrm{kpc}$, this trend becomes weaker and partly reverses, suggesting that the relation between vertical and radial orbital properties changes across different disk populations.
 
-Overall, this analysis indicates that vertical orbital extent provides the primary dynamical imprint on metallicity, while radial orbital properties introduce a secondary, population-dependent modulation. Such behaviour is consistent with expectations from Galactic chemo-dynamical evolution, in which dynamically hotter and more radially extended stellar populations are typically older and more metal-poor.
-
-The analysis of RAVE giants by \citet{Boeche-13}, for example, showed that the $e$--$Z_{\max}$ plane is especially useful for grouping stars with similar orbital properties and for revealing populations with distinct abundance patterns, including stars whose chemistry and kinematics suggest heating and/or radial migration. Such results support the idea that kinematic and orbital parameters carry non-negligible information about stellar chemical properties.
-}
+This behaviour is broadly consistent with a changing mixture of thin and thick disk stars along the $Z_{\max}$ sequence, as well as with the observed radial and vertical metallicity gradients in the Galaxy \citep{Boeche-13}. Simulations predict a steep radial metallicity gradient close to the Galactic plane that becomes flatter at larger heights \citep{Miranda-16}. Observations also suggest a negative radial metallicity gradient for the thin disk \citep{Katz-21, Imig-23} and a flat or even positive gradient for the thick disk \citep{Recio-Blanco-14, Miranda-16}.
 
 
 \section{Predicting individual abundances from [Fe/H] and kinematics} \label{abundances_from_feh}
@@ -351,16 +344,11 @@ As in the metallicity analysis (Sect.~\ref{feh_from_kinematics}), we examined th
 As expected, stellar metallicity [Fe/H] emerges as the dominant predictor for all considered elements. This reflects the strong chemical coupling between the abundances of C, O, Mg, and Si and the overall metallicity driven by Galactic chemical evolution. Across all importance diagnostics, [Fe/H] consistently exhibits the largest contribution to the model predictions.
 
 
-\vardan{
-Vardan: this part in red (the interpretation) should be revisted and extended.
-
 Among the remaining parameters, the orbital pericentric distance $R_{\mathrm{peri}}$ typically provides the next most significant contribution, while  $Z_{\max}$ has a smaller but still measurable impact. The remaining kinematic parameters contribute only marginally once metallicity and the main orbital parameters are included.
 
 To further explore the role of stellar metallicity in the abundance predictions, we examined SHAP dependence plots for [Fe/H] in the tuned LightGBM models (Fig.~\ref{fig:shap_dependence_abundances_feh}). The SHAP values show an almost perfectly monotonic relation with [Fe/H] for all considered elements (C, O, Mg, and Si).
 
-The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. Although this effect is modest and model-dependent, it suggests that orbital properties encode additional information related to population mixing and Galactic chemical history that is not fully captured by [Fe/H] alone.
-}
-
+The colour-coding by the pericentric orbital distance $R_{\mathrm{peri}}$ reveals a secondary modulation of the predictions. At metallicities above approximately $[\mathrm{Fe/H}] \gtrsim -0.1$ dex, stars with larger $R_{\mathrm{peri}}$ tend to exhibit slightly higher SHAP contributions, indicating somewhat enhanced predicted abundances relative to stars with smaller pericentric distances. At lower metallicities the trend appears to reverse. This modest effect, supported by observations \citep{Katz-21},  suggests that orbital properties encode additional information related to Galactic chemical history that is not fully captured by [Fe/H] alone.
 
 
 We performed the same analysis using $Z_{\max}$ instead of $R_{\mathrm{peri}}$, but no clear dependence of the SHAP values on $Z_{\max}$ was visually apparent in the corresponding dependence plots.
@@ -502,7 +490,7 @@ Overall, our results demonstrate that ML methods provide a practical framework f
 %comparison between the surveys https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.107H/abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{acknowledgements}
-V.~A. acknowledges support from FCT – Funda\c{c}\~ao para a Ci\^encia e Tecnologia through national funds and from FEDER via COMPETE2020 – Programa Operacional Competitividade e Internacionalização, under the grants UIDB/04434/2020 (DOI: 10.54499/UIDB/04434/2020) and UIDP/04434/2020 (DOI: 10.54499/UIDP/04434/2020), as well as through a work contract funded by the FCT Scientific Employment Stimulus program (reference 2023.06055.CEECIND/CP2839/CT0005, DOI: 10.54499/2023.06055.CEECIND/CP2839/CT0005).
+V.~A. acknowledges support from FCT – Funda\c{c}\~ao para a Ci\^encia e Tecnologia through national funds and from FEDER via COMPETE2020 – Programa Operacional Competitividade e Internacionalização, under the grants UIDB/04434/2020 (DOI: 10.54499/UIDB/04434/2020) and UIDP/04434/2020 (DOI: 10.54499/UIDP/04434/2020), as well as through a work contract funded by the FCT Scientific Employment Stimulus program (reference 2023.06055.CEECIND/CP2839/CT0005, DOI: 10.54499/2023.06055.CEECIND/CP2839/CT0005). R.~C. acknowledges support by UID/00147 -- Research Center for Systems and Technologies (SYSTEC), and the Associate Laboratory Advanced Production and Intelligent Systems (ARISE, 10.54499/LA/P/0112/2020) both funded by Fundação para a Ciência e a Tecnologia, I.P./MCTES through the national funds. V.~A. and A.~A.~H acknowledge support from the Higher Education and Science Committee of MESCS RA (Research project \textnumero~24LCG--1C021).
 \end{acknowledgements}
 
 
